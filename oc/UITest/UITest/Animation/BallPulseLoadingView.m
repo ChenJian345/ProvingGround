@@ -37,6 +37,16 @@ static int stepFactor = 1;     // 默认递增1，当到最大index时，变为�
     return self;
 }
 
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    
+    if (self.allMutLayers == nil) {
+        self.allMutLayers = [[NSMutableArray alloc] init];
+    }
+    
+    return self;
+}
+
 - (void)setTotalBallCount:(int)totalCount fadeInBallCount:(int)eachFadeCount {
     if (self) {
         self.totalBallCount = totalCount;
