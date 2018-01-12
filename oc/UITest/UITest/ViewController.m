@@ -74,9 +74,11 @@ static void *paperKVOContext = &paperKVOContext;
 //        NSLog(@"2"); // 任务2
 //    });
     
-    BallPulseLoadingView *ballPulseAniView = [[BallPulseLoadingView alloc] initWithFrame:CGRectMake(0, 200, 400, 50)];
+    __block BallPulseLoadingView *ballPulseAniView = [[BallPulseLoadingView alloc] initWithFrame:CGRectMake(0, 200, 400, 50)];
     ballPulseAniView.backgroundColor = [UIColor lightGrayColor];
     [self.view addSubview:ballPulseAniView];
+    [ballPulseAniView setTotalBallCount:10 fadeInBallCount:2];
+    [ballPulseAniView startAnimation];
 }
 
 -(void)viewWillAppear:(BOOL)animated {

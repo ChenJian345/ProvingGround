@@ -10,4 +10,12 @@
 
 @interface BallPulseLoadingView : UIView
 
+@property (nonatomic, assign) int biggestBallIndex;             // Current biggest ball index, start from 0;
+
+- (void)setTotalBallCount:(int)totalCount fadeInBallCount:(int)eachFadeCount;
+
+- (void)startAnimation;
+
+- (void)stopAnimation;
+
 @end
