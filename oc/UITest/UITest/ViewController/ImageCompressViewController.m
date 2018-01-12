@@ -35,4 +35,20 @@
 }
 */
 
+#pragma mark - Image Compress Method
+- (UIImage *)compress:(UIImage *)image limitSizeInKB:(int)limitInKB {
+    CGFloat compression = 0.9f;
+    CGFloat maxCompression = 0.1f;
+    int maxFileSize = 250*1024;
+    
+    NSData *imageData = UIImageJPEGRepresentation(image, compression);
+    while ([imageData length] > maxFileSize && compression > maxCompression)
+    {
+        compression -= 0.1;
+        imageData = UIImageJPEGRepresentation(image, compression);
+    }
+    
+    return [UIImage imageWithData:imageData];
+}
+
 @end
