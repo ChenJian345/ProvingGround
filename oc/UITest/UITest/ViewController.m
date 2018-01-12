@@ -13,6 +13,10 @@
 
 #import "BallPulseLoadingView.h"
 
+#import "AnimationViewController.h"
+#import "ImageCompressViewController.h"
+#import "AlgorithmViewController.h"
+
 static void *paperKVOContext = &paperKVOContext;
 
 @interface ViewController ()
@@ -73,12 +77,6 @@ static void *paperKVOContext = &paperKVOContext;
 //    dispatch_sync(dispatch_get_main_queue(), ^{
 //        NSLog(@"2"); // 任务2
 //    });
-    
-    __block BallPulseLoadingView *ballPulseAniView = [[BallPulseLoadingView alloc] initWithFrame:CGRectMake(0, 200, 200, 20)];
-    ballPulseAniView.backgroundColor = [UIColor lightGrayColor];
-    [self.view addSubview:ballPulseAniView];
-    [ballPulseAniView setTotalBallCount:10 fadeInBallCount:2];
-    [ballPulseAniView startAnimation];
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -184,5 +182,17 @@ int searchInsert(int* nums, int numsSize, int target) {
     return position;
 }
 
+#pragma mark - Event Handling
+- (IBAction)onCompressImage:(id)sender {
+    [self.navigationController pushViewController:[[ImageCompressViewController alloc] init] animated:YES];
+}
+
+- (IBAction)didAnimationButtonClicked:(id)sender {    
+    [self.navigationController pushViewController:[[AnimationViewController alloc] init] animated:YES];
+}
+
+- (IBAction)didAlgorithmButtonClicked:(id)sender {
+    [self.navigationController pushViewController:[[AlgorithmViewController alloc] init] animated:YES];
+}
 
 @end

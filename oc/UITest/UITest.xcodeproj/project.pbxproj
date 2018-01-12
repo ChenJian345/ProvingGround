@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D04B0D62008BE8600821591 /* AnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D04B0D52008BE8600821591 /* AnimationViewController.m */; };
+		4D04B0D92008BF7100821591 /* ImageCompressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D04B0D82008BF7100821591 /* ImageCompressViewController.m */; };
+		4D04B0DC2008BFB800821591 /* AlgorithmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D04B0DB2008BFB800821591 /* AlgorithmViewController.m */; };
 		4DD9D36320087FCA007396D2 /* ColorUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9D36120087FCA007396D2 /* ColorUtils.m */; };
 		7F4D5B061F68D16D00B93721 /* PaperModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4D5B051F68D16D00B93721 /* PaperModel.m */; };
 		7F4D5B091F69827E00B93721 /* CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4D5B081F69827E00B93721 /* CustomView.m */; };
@@ -21,6 +24,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4D04B0D42008BE8600821591 /* AnimationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnimationViewController.h; sourceTree = "<group>"; };
+		4D04B0D52008BE8600821591 /* AnimationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnimationViewController.m; sourceTree = "<group>"; };
+		4D04B0D72008BF7100821591 /* ImageCompressViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageCompressViewController.h; sourceTree = "<group>"; };
+		4D04B0D82008BF7100821591 /* ImageCompressViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageCompressViewController.m; sourceTree = "<group>"; };
+		4D04B0DA2008BFB800821591 /* AlgorithmViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlgorithmViewController.h; sourceTree = "<group>"; };
+		4D04B0DB2008BFB800821591 /* AlgorithmViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlgorithmViewController.m; sourceTree = "<group>"; };
 		4DD9D36120087FCA007396D2 /* ColorUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorUtils.m; sourceTree = "<group>"; };
 		4DD9D36220087FCA007396D2 /* ColorUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorUtils.h; sourceTree = "<group>"; };
 		7F4D5B041F68D16D00B93721 /* PaperModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PaperModel.h; sourceTree = "<group>"; };
@@ -54,6 +63,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D04B0D32008BE6F00821591 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4D04B0D42008BE8600821591 /* AnimationViewController.h */,
+				4D04B0D52008BE8600821591 /* AnimationViewController.m */,
+				4D04B0D72008BF7100821591 /* ImageCompressViewController.h */,
+				4D04B0D82008BF7100821591 /* ImageCompressViewController.m */,
+				4D04B0DA2008BFB800821591 /* AlgorithmViewController.h */,
+				4D04B0DB2008BFB800821591 /* AlgorithmViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		4DD9D36020087FCA007396D2 /* Color */ = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +113,7 @@
 		7FF30F921F68BDB2000B3360 /* UITest */ = {
 			isa = PBXGroup;
 			children = (
+				4D04B0D32008BE6F00821591 /* ViewController */,
 				4DD9D36020087FCA007396D2 /* Color */,
 				7FA04C082007B57A006273C6 /* Animation */,
 				7FF30F931F68BDB2000B3360 /* AppDelegate.h */,
@@ -183,6 +206,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D04B0D92008BF7100821591 /* ImageCompressViewController.m in Sources */,
+				4D04B0D62008BE8600821591 /* AnimationViewController.m in Sources */,
 				7FA04C0B2007B57A006273C6 /* BallPulseLoadingView.m in Sources */,
 				7F4D5B091F69827E00B93721 /* CustomView.m in Sources */,
 				7F4D5B061F68D16D00B93721 /* PaperModel.m in Sources */,
@@ -191,6 +216,7 @@
 				7FF30FA31F68BDB2000B3360 /* main.m in Sources */,
 				7FF30F951F68BDB2000B3360 /* AppDelegate.m in Sources */,
 				4DD9D36320087FCA007396D2 /* ColorUtils.m in Sources */,
+				4D04B0DC2008BFB800821591 /* AlgorithmViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
