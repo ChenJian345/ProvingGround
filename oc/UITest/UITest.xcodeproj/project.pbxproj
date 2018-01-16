@@ -11,6 +11,8 @@
 		4D04B0D92008BF7100821591 /* ImageCompressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D04B0D82008BF7100821591 /* ImageCompressViewController.m */; };
 		4D04B0DC2008BFB800821591 /* AlgorithmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D04B0DB2008BFB800821591 /* AlgorithmViewController.m */; };
 		4DD9D36320087FCA007396D2 /* ColorUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9D36120087FCA007396D2 /* ColorUtils.m */; };
+		4DFEACD6200DEC9A003DBCDA /* CustomViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DFEACD4200DEC9A003DBCDA /* CustomViewViewController.m */; };
+		4DFEACD7200DEC9A003DBCDA /* CustomViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DFEACD5200DEC9A003DBCDA /* CustomViewViewController.xib */; };
 		7F4D5B061F68D16D00B93721 /* PaperModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4D5B051F68D16D00B93721 /* PaperModel.m */; };
 		7F4D5B091F69827E00B93721 /* CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4D5B081F69827E00B93721 /* CustomView.m */; };
 		7F4D5B0C1F6A297600B93721 /* A4PaperModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4D5B0B1F6A297600B93721 /* A4PaperModel.m */; };
@@ -32,6 +34,9 @@
 		4D04B0DB2008BFB800821591 /* AlgorithmViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlgorithmViewController.m; sourceTree = "<group>"; };
 		4DD9D36120087FCA007396D2 /* ColorUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorUtils.m; sourceTree = "<group>"; };
 		4DD9D36220087FCA007396D2 /* ColorUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorUtils.h; sourceTree = "<group>"; };
+		4DFEACD3200DEC9A003DBCDA /* CustomViewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomViewViewController.h; sourceTree = "<group>"; };
+		4DFEACD4200DEC9A003DBCDA /* CustomViewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomViewViewController.m; sourceTree = "<group>"; };
+		4DFEACD5200DEC9A003DBCDA /* CustomViewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomViewViewController.xib; sourceTree = "<group>"; };
 		7F4D5B041F68D16D00B93721 /* PaperModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PaperModel.h; sourceTree = "<group>"; };
 		7F4D5B051F68D16D00B93721 /* PaperModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PaperModel.m; sourceTree = "<group>"; };
 		7F4D5B071F69827E00B93721 /* CustomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomView.h; sourceTree = "<group>"; };
@@ -72,6 +77,9 @@
 				4D04B0D82008BF7100821591 /* ImageCompressViewController.m */,
 				4D04B0DA2008BFB800821591 /* AlgorithmViewController.h */,
 				4D04B0DB2008BFB800821591 /* AlgorithmViewController.m */,
+				4DFEACD3200DEC9A003DBCDA /* CustomViewViewController.h */,
+				4DFEACD4200DEC9A003DBCDA /* CustomViewViewController.m */,
+				4DFEACD5200DEC9A003DBCDA /* CustomViewViewController.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -195,6 +203,7 @@
 			files = (
 				7FF30FA01F68BDB2000B3360 /* LaunchScreen.storyboard in Resources */,
 				7FF30F9D1F68BDB2000B3360 /* Assets.xcassets in Resources */,
+				4DFEACD7200DEC9A003DBCDA /* CustomViewViewController.xib in Resources */,
 				7FF30F9B1F68BDB2000B3360 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -216,6 +225,7 @@
 				7FF30FA31F68BDB2000B3360 /* main.m in Sources */,
 				7FF30F951F68BDB2000B3360 /* AppDelegate.m in Sources */,
 				4DD9D36320087FCA007396D2 /* ColorUtils.m in Sources */,
+				4DFEACD6200DEC9A003DBCDA /* CustomViewViewController.m in Sources */,
 				4D04B0DC2008BFB800821591 /* AlgorithmViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
