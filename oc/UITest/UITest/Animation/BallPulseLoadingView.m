@@ -30,9 +30,8 @@ static int stepFactor = 1;     // 默认递增1，当到最大index时，变为�
 -(instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     
-    if (self.allMutLayers == nil) {
-        self.allMutLayers = [[NSMutableArray alloc] init];
-    }
+    // Setup data
+    [self setupData];
     
     return self;
 }
@@ -40,11 +39,16 @@ static int stepFactor = 1;     // 默认递增1，当到最大index时，变为�
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     
+    // Setup data
+    [self setupData];
+    
+    return self;
+}
+
+- (void)setupData {
     if (self.allMutLayers == nil) {
         self.allMutLayers = [[NSMutableArray alloc] init];
     }
-    
-    return self;
 }
 
 - (void)setTotalBallCount:(int)totalCount fadeInBallCount:(int)eachFadeCount {
@@ -105,7 +109,7 @@ static int stepFactor = 1;     // 默认递增1，当到最大index时，变为�
 
 /**
  计算一排球整个的宽度
-
+ 
  @return 所有球宽度值
  */
 - (CGFloat)calculateAllBallsWidth {
@@ -115,7 +119,7 @@ static int stepFactor = 1;     // 默认递增1，当到最大index时，变为�
     const float biggestBallDiameter = BIGGEST_BALL_DIAMETER;
     const float steps = (biggestBallDiameter - ballDiameter) / self.fadeInBallEachSideCount;
     float currentBallDiameter = ballDiameter;
-
+    
     for (int i = 0; i < self.totalBallCount; i++) {
         // 找到最大的
         if (self.biggestBallIndex == i) {
@@ -144,16 +148,13 @@ static int stepFactor = 1;     // 默认递增1，当到最大index时，变为�
     } else if (self.biggestBallIndex <= sideLeftNotChangeBallCount-1) {
         stepFactor = 1;
     }
-                                  
+    
     [self createBalls];
 }
 
 - (void)startAnimation {
     if (self.timer == nil) {
-        self.timer = [NSTimer scheduledTimerWithTimeInterval:0.15 repeats:YES block:^(NSTimer * _Nonnull timer) {
-            [self updateBiggestBallIndex];
-            [self sizeToFit];
-        }];
+        self.timer = [NSTimer scheduledTimerWithTimeInterval:0.05 target:self selector:@selector(updateBiggestBallIndex) userInfo:nil repeats:YES];
     }
 }
 
