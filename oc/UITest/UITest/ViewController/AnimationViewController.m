@@ -11,6 +11,8 @@
 
 @interface AnimationViewController ()
 
+@property (nonatomic, strong) BallPulseLoadingView *ballPulseAniView;
+
 @end
 
 @implementation AnimationViewController
@@ -18,12 +20,27 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.title = @"Animations";
+    self.view.backgroundColor = [UIColor blackColor];
     
-    __block BallPulseLoadingView *ballPulseAniView = [[BallPulseLoadingView alloc] initWithFrame:CGRectMake(0, 200, 200, 20)];
-    ballPulseAniView.backgroundColor = [UIColor lightGrayColor];
-    [self.view addSubview:ballPulseAniView];
-    [ballPulseAniView setTotalBallCount:10 fadeInBallCount:2];
-    [ballPulseAniView startAnimation];
+    UILabel *lblLoading = [[UILabel alloc] initWithFrame:CGRectMake(120, 80, 200, 40)];
+    lblLoading.text = @"Loading...";
+    lblLoading.textColor = [UIColor whiteColor];
+    [self.view addSubview:lblLoading];
+    
+    if (self.ballPulseAniView == nil) {
+        self.ballPulseAniView = [[BallPulseLoadingView alloc] initWithFrame:CGRectMake(60, 120, 200, 20)];
+        [self.view addSubview:self.ballPulseAniView];
+        [self.ballPulseAniView setTotalBallCount:20 fadeInBallCount:3];
+        
+    }
+    [self.ballPulseAniView startAnimation];
+}
+
+-(void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    [self.ballPulseAniView stopAnimation];
 }
 
 - (void)didReceiveMemoryWarning {
