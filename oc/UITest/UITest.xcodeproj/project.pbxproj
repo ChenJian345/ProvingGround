@@ -10,6 +10,7 @@
 		4D04B0D62008BE8600821591 /* AnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D04B0D52008BE8600821591 /* AnimationViewController.m */; };
 		4D04B0D92008BF7100821591 /* ImageCompressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D04B0D82008BF7100821591 /* ImageCompressViewController.m */; };
 		4D04B0DC2008BFB800821591 /* AlgorithmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D04B0DB2008BFB800821591 /* AlgorithmViewController.m */; };
+		4D73D4302010B4F200C61B21 /* IMG_3964.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 4D73D42F2010B4F100C61B21 /* IMG_3964.JPG */; };
 		4DD9D36320087FCA007396D2 /* ColorUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9D36120087FCA007396D2 /* ColorUtils.m */; };
 		4DFEACD6200DEC9A003DBCDA /* CustomViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DFEACD4200DEC9A003DBCDA /* CustomViewViewController.m */; };
 		4DFEACD7200DEC9A003DBCDA /* CustomViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DFEACD5200DEC9A003DBCDA /* CustomViewViewController.xib */; };
@@ -32,6 +33,7 @@
 		4D04B0D82008BF7100821591 /* ImageCompressViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageCompressViewController.m; sourceTree = "<group>"; };
 		4D04B0DA2008BFB800821591 /* AlgorithmViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlgorithmViewController.h; sourceTree = "<group>"; };
 		4D04B0DB2008BFB800821591 /* AlgorithmViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlgorithmViewController.m; sourceTree = "<group>"; };
+		4D73D42F2010B4F100C61B21 /* IMG_3964.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_3964.JPG; sourceTree = "<group>"; };
 		4DD9D36120087FCA007396D2 /* ColorUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorUtils.m; sourceTree = "<group>"; };
 		4DD9D36220087FCA007396D2 /* ColorUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorUtils.h; sourceTree = "<group>"; };
 		4DFEACD3200DEC9A003DBCDA /* CustomViewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomViewViewController.h; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 				7F4D5B051F68D16D00B93721 /* PaperModel.m */,
 				7F4D5B0A1F6A297600B93721 /* A4PaperModel.h */,
 				7F4D5B0B1F6A297600B93721 /* A4PaperModel.m */,
+				4D73D42F2010B4F100C61B21 /* IMG_3964.JPG */,
 			);
 			path = UITest;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 			files = (
 				7FF30FA01F68BDB2000B3360 /* LaunchScreen.storyboard in Resources */,
 				7FF30F9D1F68BDB2000B3360 /* Assets.xcassets in Resources */,
+				4D73D4302010B4F200C61B21 /* IMG_3964.JPG in Resources */,
 				4DFEACD7200DEC9A003DBCDA /* CustomViewViewController.xib in Resources */,
 				7FF30F9B1F68BDB2000B3360 /* Main.storyboard in Resources */,
 			);

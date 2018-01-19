@@ -23,14 +23,16 @@
     [super viewDidLoad];
     
     self.title = @"Image Compress";
+    self.view.backgroundColor = [UIColor blueColor];
     
-    UIImage *imgToCompress = [UIImage imageNamed:@"image_demo"];
-    self.ivToCompress = [[UIImageView alloc] initWithFrame:CGRectMake(0, 70, SCREEN_WIDTH, 300)];
+    NSString *imgFilePath = [[NSBundle mainBundle] pathForResource:@"IMG_3964" ofType:@"JPG"];
+    UIImage *imgToCompress = [UIImage imageWithContentsOfFile:imgFilePath];
+    
+    self.ivToCompress = [[UIImageView alloc] initWithFrame:CGRectMake(10, 70, SCREEN_WIDTH-20, 300)];
     self.ivToCompress.image = imgToCompress;
     [self.view addSubview:self.ivToCompress];
     
-    self.ivAfterCompress = [[UIImageView alloc] initWithFrame:CGRectMake(0, 380, SCREEN_WIDTH, 300)];
-    self.ivAfterCompress.image = imgToCompress;
+    self.ivAfterCompress = [[UIImageView alloc] initWithFrame:CGRectMake(10, 380, SCREEN_WIDTH-20, 300)];
     [self.view addSubview:self.ivAfterCompress];
 }
 
@@ -38,11 +40,18 @@
     [super viewWillAppear:animated];
     
     // Compress Image
-    UIImage *imgToCompress = [UIImage imageNamed:@"image_demo"];
-    UIImage *imgAfterCompress = [self compress:imgToCompress limitSizeInKB:200];
-    self.ivToCompress.image = imgAfterCompress;
+    NSString *imgFilePath = [[NSBundle mainBundle] pathForResource:@"IMG_3964" ofType:@"JPG"];
+    NSData *imgDataToCompress = [NSData dataWithContentsOfFile:imgFilePath];
     
-    NSLog(@"image size Before Compress : %lu KB, After Compress : %lu KB", (UIImageJPEGRepresentation(imgToCompress, 1.0).length/1024), (UIImageJPEGRepresentation(imgAfterCompress, 0).length/1024));
+    UIImage *imgToCompress = [UIImage imageWithData:imgDataToCompress];
+    
+    UIImage *imgAfterCompress = [self compress:imgToCompress limitSizeInKB:300];
+    self.ivAfterCompress.image = imgAfterCompress;
+    
+    NSString *filePath = [self getCompressedImageFilePath];
+    NSData *dataAfterCompress = [NSData dataWithContentsOfFile:filePath];
+    NSLog(@"原始文件大小：%lu KB, After compress file size : %lu KB", imgDataToCompress.length/1024, dataAfterCompress.length/1024);
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -50,32 +59,54 @@
     
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 #pragma mark - Image Compress Method
 - (UIImage *)compress:(UIImage *)image limitSizeInKB:(int)limitInKB {
     UIImage *imgAfterCompress = nil;
     CGFloat compression = 0.7f;
-    CGFloat maxCompression = 0.01f;
-    int maxFileSize = limitInKB*1024;
+    CGFloat maxCompression = 0.1f;
+    long long maxFileSize = limitInKB*1024;
     
     NSData *imageData = UIImageJPEGRepresentation(image, compression);
     while ([imageData length] > maxFileSize && compression > maxCompression) {
         compression -= 0.1;
         imageData = UIImageJPEGRepresentation(image, compression);
+        
+        // 压缩后的文件大小
+        NSLog(@"====== Image File Size : %lu KB", imageData.length/1024);
+    }
+    
+    // 写入文件
+    if ([self writeToFile:imageData]) {
+        NSLog(@"写入文件成功");
+    } else {
+        NSLog(@"写入文件失败");
     }
     imgAfterCompress = [UIImage imageWithData:imageData];
-    self.ivAfterCompress.image = imgAfterCompress;
     
     return imgAfterCompress;
+}
+
+
+/**
+ 将文件写入系统Document目录，当前是写入JPEG图片文件
+
+ @param imgDataToSave 需要写入的图片文件
+ @return 是否写入成功
+ */
+- (BOOL)writeToFile:(NSData *)imgDataToSave {
+    if (imgDataToSave == nil) {
+        return NO;
+    }
+    
+    NSString *filePath = [self getCompressedImageFilePath];
+    NSLog(@"=== Document Directory is %@", filePath);
+    return [imgDataToSave writeToFile:filePath atomically:YES];
+}
+
+- (NSString *)getCompressedImageFilePath {
+    // Create Directory
+    NSArray *documentDirectory = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    return [[documentDirectory objectAtIndex:0] stringByAppendingString:@"img_after_compress.jpg"];
 }
 
 @end
