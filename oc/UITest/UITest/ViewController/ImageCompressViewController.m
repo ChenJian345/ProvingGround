@@ -10,10 +10,16 @@
 
 #import "ImageCompressViewController.h"
 
+#define IMAGE_FILE_NAME         @"IMG_0397"
+#define IMAGE_FILE_SUFFIX       @"JPG"
+
 @interface ImageCompressViewController ()
 
 @property (nonatomic, strong) UIImageView *ivToCompress;
 @property (nonatomic, strong) UIImageView *ivAfterCompress;
+
+@property (nonatomic, strong) NSData *imgDataToCompress;
+@property (nonatomic, strong) UIImage *imgFileToCompress;
 
 @end
 
@@ -24,12 +30,17 @@
     
     self.title = @"Image Compress";
     self.view.backgroundColor = [UIColor blueColor];
+
+    // Init Data
+    if (self.imgFileToCompress == nil) {
+        NSString *imgFilePath = [[NSBundle mainBundle] pathForResource:IMAGE_FILE_NAME ofType:IMAGE_FILE_SUFFIX];
+        self.imgDataToCompress = [NSData dataWithContentsOfFile:imgFilePath];
+        self.imgFileToCompress = [UIImage imageWithContentsOfFile:imgFilePath];
+    }
     
-    NSString *imgFilePath = [[NSBundle mainBundle] pathForResource:@"IMG_3964" ofType:@"JPG"];
-    UIImage *imgToCompress = [UIImage imageWithContentsOfFile:imgFilePath];
-    
+    // Init UI
     self.ivToCompress = [[UIImageView alloc] initWithFrame:CGRectMake(10, 70, SCREEN_WIDTH-20, 300)];
-    self.ivToCompress.image = imgToCompress;
+    self.ivToCompress.image = self.imgFileToCompress;
     [self.view addSubview:self.ivToCompress];
     
     self.ivAfterCompress = [[UIImageView alloc] initWithFrame:CGRectMake(10, 380, SCREEN_WIDTH-20, 300)];
@@ -40,18 +51,13 @@
     [super viewWillAppear:animated];
     
     // Compress Image
-    NSString *imgFilePath = [[NSBundle mainBundle] pathForResource:@"IMG_3964" ofType:@"JPG"];
-    NSData *imgDataToCompress = [NSData dataWithContentsOfFile:imgFilePath];
-    
-    UIImage *imgToCompress = [UIImage imageWithData:imgDataToCompress];
-    
-    UIImage *imgAfterCompress = [self compress:imgToCompress limitSizeInKB:300];
+    UIImage *imgAfterCompress = [self compress:self.imgFileToCompress limitSizeInKB:300];
     self.ivAfterCompress.image = imgAfterCompress;
     
     NSString *filePath = [self getCompressedImageFilePath];
     NSData *dataAfterCompress = [NSData dataWithContentsOfFile:filePath];
-    NSLog(@"原始文件大小：%lu KB, After compress file size : %lu KB", imgDataToCompress.length/1024, dataAfterCompress.length/1024);
     
+    NSLog(@"Original File ：%lu KB, After compress : %lu KB",  self.imgDataToCompress.length/1024, dataAfterCompress.length/1024);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -63,23 +69,22 @@
 - (UIImage *)compress:(UIImage *)image limitSizeInKB:(int)limitInKB {
     UIImage *imgAfterCompress = nil;
     CGFloat compression = 0.7f;
-    CGFloat maxCompression = 0.1f;
+    CGFloat maxCompression = 0.01f;
     long long maxFileSize = limitInKB*1024;
     
     NSData *imageData = UIImageJPEGRepresentation(image, compression);
     while ([imageData length] > maxFileSize && compression > maxCompression) {
         compression -= 0.1;
         imageData = UIImageJPEGRepresentation(image, compression);
-        
-        // 压缩后的文件大小
-        NSLog(@"====== Image File Size : %lu KB", imageData.length/1024);
+
+        NSLog(@"====== Image File Size : %lu KB, compression = %.2f", imageData.length/1024, compression);
     }
     
-    // 写入文件
+    // Save to file
     if ([self writeToFile:imageData]) {
-        NSLog(@"写入文件成功");
+        NSLog(@"Save Successed");
     } else {
-        NSLog(@"写入文件失败");
+        NSLog(@"Save Failed");
     }
     imgAfterCompress = [UIImage imageWithData:imageData];
     
@@ -103,6 +108,12 @@
     return [imgDataToSave writeToFile:filePath atomically:YES];
 }
 
+
+/**
+ Get compressed image file path.
+
+ @return BOOL
+ */
 - (NSString *)getCompressedImageFilePath {
     // Create Directory
     NSArray *documentDirectory = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
