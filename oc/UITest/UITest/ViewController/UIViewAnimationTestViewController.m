@@ -87,6 +87,7 @@ typedef enum : NSUInteger {
         
         NSLog(@"Current color type = %ld", color);
     } completion:^(BOOL finished) {
+        NSLog(@"completion CALLED ---- %ld", color);
         if (finished) {
             self.currentColorType = color;
             NSLog(@"Current color type = %ld FINISH", self.currentColorType);
