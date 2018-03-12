@@ -10,6 +10,10 @@
 		4D04B0D62008BE8600821591 /* AnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D04B0D52008BE8600821591 /* AnimationViewController.m */; };
 		4D04B0D92008BF7100821591 /* ImageCompressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D04B0D82008BF7100821591 /* ImageCompressViewController.m */; };
 		4D04B0DC2008BFB800821591 /* AlgorithmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D04B0DB2008BFB800821591 /* AlgorithmViewController.m */; };
+		4D2A45A82056867A00A2BE99 /* CollectionViewAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D2A45A62056867900A2BE99 /* CollectionViewAnimationViewController.m */; };
+		4D2A45A92056867A00A2BE99 /* CollectionViewAnimationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D2A45A72056867A00A2BE99 /* CollectionViewAnimationViewController.xib */; };
+		4D2A45AD20569AC200A2BE99 /* CollectionViewAnimationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D2A45AB20569AC200A2BE99 /* CollectionViewAnimationCell.m */; };
+		4D2A45AE20569AC200A2BE99 /* CollectionViewAnimationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D2A45AC20569AC200A2BE99 /* CollectionViewAnimationCell.xib */; };
 		4D73D4302010B4F200C61B21 /* IMG_3964.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 4D73D42F2010B4F100C61B21 /* IMG_3964.JPG */; };
 		4D73D4322011A4D100C61B21 /* IMG_0397.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 4D73D4312011A4D100C61B21 /* IMG_0397.JPG */; };
 		4DD9D36320087FCA007396D2 /* ColorUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9D36120087FCA007396D2 /* ColorUtils.m */; };
@@ -35,6 +39,12 @@
 		4D04B0D82008BF7100821591 /* ImageCompressViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageCompressViewController.m; sourceTree = "<group>"; };
 		4D04B0DA2008BFB800821591 /* AlgorithmViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlgorithmViewController.h; sourceTree = "<group>"; };
 		4D04B0DB2008BFB800821591 /* AlgorithmViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlgorithmViewController.m; sourceTree = "<group>"; };
+		4D2A45A52056867900A2BE99 /* CollectionViewAnimationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewAnimationViewController.h; sourceTree = "<group>"; };
+		4D2A45A62056867900A2BE99 /* CollectionViewAnimationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewAnimationViewController.m; sourceTree = "<group>"; };
+		4D2A45A72056867A00A2BE99 /* CollectionViewAnimationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewAnimationViewController.xib; sourceTree = "<group>"; };
+		4D2A45AA20569AC200A2BE99 /* CollectionViewAnimationCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewAnimationCell.h; sourceTree = "<group>"; };
+		4D2A45AB20569AC200A2BE99 /* CollectionViewAnimationCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewAnimationCell.m; sourceTree = "<group>"; };
+		4D2A45AC20569AC200A2BE99 /* CollectionViewAnimationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewAnimationCell.xib; sourceTree = "<group>"; };
 		4D73D42F2010B4F100C61B21 /* IMG_3964.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_3964.JPG; sourceTree = "<group>"; };
 		4D73D4312011A4D100C61B21 /* IMG_0397.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_0397.JPG; sourceTree = "<group>"; };
 		4DD9D36120087FCA007396D2 /* ColorUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorUtils.m; sourceTree = "<group>"; };
@@ -78,6 +88,7 @@
 		4D04B0D32008BE6F00821591 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				4D2A45A12056848400A2BE99 /* CollectionViewAnimation */,
 				4D04B0D42008BE8600821591 /* AnimationViewController.h */,
 				4D04B0D52008BE8600821591 /* AnimationViewController.m */,
 				4D04B0D72008BF7100821591 /* ImageCompressViewController.h */,
@@ -91,6 +102,19 @@
 				7F2F85E5204D879500A1307D /* UIViewAnimationTestViewController.m */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		4D2A45A12056848400A2BE99 /* CollectionViewAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				4D2A45A52056867900A2BE99 /* CollectionViewAnimationViewController.h */,
+				4D2A45A62056867900A2BE99 /* CollectionViewAnimationViewController.m */,
+				4D2A45A72056867A00A2BE99 /* CollectionViewAnimationViewController.xib */,
+				4D2A45AA20569AC200A2BE99 /* CollectionViewAnimationCell.h */,
+				4D2A45AB20569AC200A2BE99 /* CollectionViewAnimationCell.m */,
+				4D2A45AC20569AC200A2BE99 /* CollectionViewAnimationCell.xib */,
+			);
+			path = CollectionViewAnimation;
 			sourceTree = "<group>";
 		};
 		4DD9D36020087FCA007396D2 /* Color */ = {
@@ -214,10 +238,12 @@
 			files = (
 				4D73D4322011A4D100C61B21 /* IMG_0397.JPG in Resources */,
 				7FF30FA01F68BDB2000B3360 /* LaunchScreen.storyboard in Resources */,
+				4D2A45A92056867A00A2BE99 /* CollectionViewAnimationViewController.xib in Resources */,
 				7FF30F9D1F68BDB2000B3360 /* Assets.xcassets in Resources */,
 				4D73D4302010B4F200C61B21 /* IMG_3964.JPG in Resources */,
 				4DFEACD7200DEC9A003DBCDA /* CustomViewViewController.xib in Resources */,
 				7FF30F9B1F68BDB2000B3360 /* Main.storyboard in Resources */,
+				4D2A45AE20569AC200A2BE99 /* CollectionViewAnimationCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,6 +254,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D2A45A82056867A00A2BE99 /* CollectionViewAnimationViewController.m in Sources */,
 				4D04B0D92008BF7100821591 /* ImageCompressViewController.m in Sources */,
 				4D04B0D62008BE8600821591 /* AnimationViewController.m in Sources */,
 				7F2F85E6204D879500A1307D /* UIViewAnimationTestViewController.m in Sources */,
@@ -237,6 +264,7 @@
 				7FF30F981F68BDB2000B3360 /* ViewController.m in Sources */,
 				7F4D5B0C1F6A297600B93721 /* A4PaperModel.m in Sources */,
 				7FF30FA31F68BDB2000B3360 /* main.m in Sources */,
+				4D2A45AD20569AC200A2BE99 /* CollectionViewAnimationCell.m in Sources */,
 				7FF30F951F68BDB2000B3360 /* AppDelegate.m in Sources */,
 				4DD9D36320087FCA007396D2 /* ColorUtils.m in Sources */,
 				4DFEACD6200DEC9A003DBCDA /* CustomViewViewController.m in Sources */,

@@ -17,6 +17,7 @@
 #import "ImageCompressViewController.h"
 #import "AlgorithmViewController.h"
 #import "UIViewAnimationTestViewController.h"
+#import "CollectionViewAnimationViewController.h"
 
 static void *paperKVOContext = &paperKVOContext;
 
@@ -195,8 +196,13 @@ int searchInsert(int* nums, int numsSize, int target) {
 - (IBAction)didAlgorithmButtonClicked:(id)sender {
     [self.navigationController pushViewController:[[AlgorithmViewController alloc] init] animated:YES];
 }
+
 - (IBAction)didUIViewAnimationClicked:(id)sender {
     [self.navigationController pushViewController:[[UIViewAnimationTestViewController alloc] init] animated:YES];
+}
+
+- (IBAction)didCollectionViewAnimationClicked:(id)sender {
+    [self.navigationController pushViewController:[[CollectionViewAnimationViewController alloc] init] animated:YES];
 }
 
 @end

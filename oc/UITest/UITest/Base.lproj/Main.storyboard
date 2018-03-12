@@ -65,6 +65,14 @@
                                     <action selector="didUIViewAnimationClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NFq-kG-yev"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pcd-Dl-hpl">
+                                <rect key="frame" x="25" y="232" width="174" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="CollectionView Animation"/>
+                                <connections>
+                                    <action selector="didCollectionViewAnimationClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fEp-9A-uZ7"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
