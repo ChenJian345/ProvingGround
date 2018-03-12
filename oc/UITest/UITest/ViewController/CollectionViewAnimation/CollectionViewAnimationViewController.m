@@ -28,6 +28,42 @@
     [self setupCollectionView];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    const int JUMP_HEIGHT = 200;
+    CGRect frameOrigin = self.collectionViewAnimation.frame;
+    CGRect frameDestination = frameOrigin;
+    frameDestination.origin.y -= JUMP_HEIGHT;
+    frameDestination.size.height += JUMP_HEIGHT;
+
+    [UIView animateKeyframesWithDuration:8 delay:0 options:UIViewKeyframeAnimationOptionCalculationModeCubic animations:^{
+        [UIView addKeyframeWithRelativeStartTime:0 relativeDuration:0.6 animations:^{
+            self.collectionViewAnimation.frame = frameDestination;
+            [self.collectionViewAnimation layoutIfNeeded];
+        }];
+        
+        [UIView addKeyframeWithRelativeStartTime:0.6 relativeDuration:0.4 animations:^{
+            self.collectionViewAnimation.frame = frameOrigin;
+            [self.collectionViewAnimation layoutIfNeeded];
+        }];
+    } completion:^(BOOL finished) {
+    
+    }];
+    
+//    [UIView animateWithDuration:5 animations:^{
+//        self.collectionViewAnimation.frame = frameDestination;
+//        [self.collectionViewAnimation layoutIfNeeded];
+//    } completion:^(BOOL finished) {
+//        [UIView animateWithDuration:3 animations:^{
+//            self.collectionViewAnimation.frame = frameOrigin;
+//            [self.collectionViewAnimation layoutIfNeeded];
+//        } completion:^(BOOL finished) {
+//
+//        }];
+//    }];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
