@@ -18,6 +18,7 @@
 #import "AlgorithmViewController.h"
 #import "UIViewAnimationTestViewController.h"
 #import "CollectionViewAnimationViewController.h"
+#import "PDFViewController.h"
 
 static void *paperKVOContext = &paperKVOContext;
 
@@ -219,8 +220,8 @@ int searchInsert(int* nums, int numsSize, int target) {
             
             case 5:         // PDF
         {
-            // PDF view, TODO
-            
+            PDFViewController *pdfViewController = [[PDFViewController alloc] init];
+            [self.navigationController pushViewController:pdfViewController animated:YES];
         }
             break;
             

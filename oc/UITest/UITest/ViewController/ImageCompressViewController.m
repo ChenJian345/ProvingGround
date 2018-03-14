@@ -5,10 +5,9 @@
 //  Created by Mark on 2018/1/12.
 //  Copyright © 2018年 markcj. All rights reserved.
 //
-#define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
-#define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
 
 #import "ImageCompressViewController.h"
+#import "Micros.h"
 
 #define IMAGE_FILE_NAME         @"IMG_0397"
 #define IMAGE_FILE_SUFFIX       @"JPG"

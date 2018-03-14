@@ -14,6 +14,7 @@
 		4D2A45A92056867A00A2BE99 /* CollectionViewAnimationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D2A45A72056867A00A2BE99 /* CollectionViewAnimationViewController.xib */; };
 		4D2A45AD20569AC200A2BE99 /* CollectionViewAnimationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D2A45AB20569AC200A2BE99 /* CollectionViewAnimationCell.m */; };
 		4D2A45AE20569AC200A2BE99 /* CollectionViewAnimationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D2A45AC20569AC200A2BE99 /* CollectionViewAnimationCell.xib */; };
+		4D2A45B42058F32900A2BE99 /* PDFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D2A45B32058F32900A2BE99 /* PDFViewController.m */; };
 		4D73D4302010B4F200C61B21 /* IMG_3964.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 4D73D42F2010B4F100C61B21 /* IMG_3964.JPG */; };
 		4D73D4322011A4D100C61B21 /* IMG_0397.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 4D73D4312011A4D100C61B21 /* IMG_0397.JPG */; };
 		4DD9D36320087FCA007396D2 /* ColorUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9D36120087FCA007396D2 /* ColorUtils.m */; };
@@ -45,6 +46,9 @@
 		4D2A45AA20569AC200A2BE99 /* CollectionViewAnimationCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewAnimationCell.h; sourceTree = "<group>"; };
 		4D2A45AB20569AC200A2BE99 /* CollectionViewAnimationCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewAnimationCell.m; sourceTree = "<group>"; };
 		4D2A45AC20569AC200A2BE99 /* CollectionViewAnimationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewAnimationCell.xib; sourceTree = "<group>"; };
+		4D2A45B22058F32900A2BE99 /* PDFViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PDFViewController.h; sourceTree = "<group>"; };
+		4D2A45B32058F32900A2BE99 /* PDFViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PDFViewController.m; sourceTree = "<group>"; };
+		4D2A45B62058F52700A2BE99 /* Micros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Micros.h; sourceTree = "<group>"; };
 		4D73D42F2010B4F100C61B21 /* IMG_3964.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_3964.JPG; sourceTree = "<group>"; };
 		4D73D4312011A4D100C61B21 /* IMG_0397.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_0397.JPG; sourceTree = "<group>"; };
 		4DD9D36120087FCA007396D2 /* ColorUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorUtils.m; sourceTree = "<group>"; };
@@ -88,6 +92,7 @@
 		4D04B0D32008BE6F00821591 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				4D2A45B12058F31800A2BE99 /* PDF */,
 				4D2A45A12056848400A2BE99 /* CollectionViewAnimation */,
 				4D04B0D42008BE8600821591 /* AnimationViewController.h */,
 				4D04B0D52008BE8600821591 /* AnimationViewController.m */,
@@ -115,6 +120,23 @@
 				4D2A45AC20569AC200A2BE99 /* CollectionViewAnimationCell.xib */,
 			);
 			path = CollectionViewAnimation;
+			sourceTree = "<group>";
+		};
+		4D2A45B12058F31800A2BE99 /* PDF */ = {
+			isa = PBXGroup;
+			children = (
+				4D2A45B22058F32900A2BE99 /* PDFViewController.h */,
+				4D2A45B32058F32900A2BE99 /* PDFViewController.m */,
+			);
+			path = PDF;
+			sourceTree = "<group>";
+		};
+		4D2A45B52058F50F00A2BE99 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				4D2A45B62058F52700A2BE99 /* Micros.h */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 		4DD9D36020087FCA007396D2 /* Color */ = {
@@ -154,6 +176,7 @@
 		7FF30F921F68BDB2000B3360 /* UITest */ = {
 			isa = PBXGroup;
 			children = (
+				4D2A45B52058F50F00A2BE99 /* Utility */,
 				4D04B0D32008BE6F00821591 /* ViewController */,
 				4DD9D36020087FCA007396D2 /* Color */,
 				7FA04C082007B57A006273C6 /* Animation */,
@@ -261,6 +284,7 @@
 				7FA04C0B2007B57A006273C6 /* BallPulseLoadingView.m in Sources */,
 				7F4D5B091F69827E00B93721 /* CustomView.m in Sources */,
 				7F4D5B061F68D16D00B93721 /* PaperModel.m in Sources */,
+				4D2A45B42058F32900A2BE99 /* PDFViewController.m in Sources */,
 				7FF30F981F68BDB2000B3360 /* ViewController.m in Sources */,
 				7F4D5B0C1F6A297600B93721 /* A4PaperModel.m in Sources */,
 				7FF30FA31F68BDB2000B3360 /* main.m in Sources */,
