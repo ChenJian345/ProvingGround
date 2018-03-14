@@ -12,4 +12,8 @@
 #define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
 #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
 
+#define STATUS_BAR_HEIGHT                            20
+#define NAVIGATION_BAR_HEIGHT                        44
+#define NAVIGATION_BAR_AND_STATUS_BAR_HEIGHT         (STATUS_BAR_HEIGHT + NAVIGATION_BAR_HEIGHT)
+
 #endif /* Micros_h */

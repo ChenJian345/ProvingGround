@@ -7,8 +7,11 @@
 //
 
 #import "PDFViewController.h"
+#import "Micros.h"
 
-@interface PDFViewController ()
+#define PDF_FILE_URL                @"https://www.silvair.com/whitepapers/how-to-build-a-wireless-sensor-driven-lighting-control-system-based-on-bluetooth-mesh-networking-by-silvair.pdf"
+
+@interface PDFViewController () <UIWebViewDelegate>
 
 @property (nonatomic, strong) UIWebView *webViewPDFViewer;
 
@@ -19,6 +22,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"PDF Viewer";
+    
+    // View using UIWebView
+    [self setupWebView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,5 +42,33 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (void)setupWebView {
+    if (self.webViewPDFViewer == nil) {
+        self.webViewPDFViewer = [[UIWebView alloc] initWithFrame:CGRectMake(0, NAVIGATION_BAR_AND_STATUS_BAR_HEIGHT, SCREEN_WIDTH, SCREEN_HEIGHT-NAVIGATION_BAR_AND_STATUS_BAR_HEIGHT)];
+        self.webViewPDFViewer.delegate = self;
+        [self.view addSubview:self.webViewPDFViewer];
+        
+        NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:PDF_FILE_URL]];
+        [self.webViewPDFViewer loadRequest:urlRequest];
+    }
+}
+
+#pragma mark - UIWebViewDelegate
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
+    return YES;
+}
+
+- (void)webViewDidStartLoad:(UIWebView *)webView {
+    NSLog(@"WebView start load... 🚀");
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+    NSLog(@"WebView load FINISHED! 🏆");
+}
+
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
+    NSLog(@"WebView load FAILED! 🎯");
+}
 
 @end
