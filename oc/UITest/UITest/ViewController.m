@@ -31,7 +31,9 @@ static void *paperKVOContext = &paperKVOContext;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    self.title = @"Test List";
+    
     
 //    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 100, 200, 200)];
 //    view.backgroundColor = [UIColor greenColor];
@@ -88,7 +90,7 @@ static void *paperKVOContext = &paperKVOContext;
     int target = 18;
     int size = 4;
     int resultLength = removeElement(numbers, size, target);
-    NSLog(@"result array length = %d, %d", resultLength);
+    NSLog(@"result array length = %d", resultLength);
     
     target = 25;
     int insertPosition = searchInsert(numbers, size, target);
@@ -112,7 +114,6 @@ static void *paperKVOContext = &paperKVOContext;
 
     NSLog(@"Current Paper name is %@", self.a4Pager.paperName);
 }
-
 
 // TEST KVO.
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
@@ -184,25 +185,49 @@ int searchInsert(int* nums, int numsSize, int target) {
     return position;
 }
 
-#pragma mark - Event Handling
-- (IBAction)onCompressImage:(id)sender {
-    [self.navigationController pushViewController:[[ImageCompressViewController alloc] init] animated:YES];
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    switch (indexPath.row) {
+        case 0:     // Image Compress
+        {
+            [self.navigationController pushViewController:[[ImageCompressViewController alloc] init] animated:YES];
+        }
+            break;
+            
+            case 1:         // Animation View
+        {
+            [self.navigationController pushViewController:[[AnimationViewController alloc] init] animated:YES];
+        }
+            break;
+            
+            case 2:         // Algorithm
+        {
+            [self.navigationController pushViewController:[[AlgorithmViewController alloc] init] animated:YES];
+        }
+            break;
+            
+            case 3:         // UI Animation
+        {
+            [self.navigationController pushViewController:[[UIViewAnimationTestViewController alloc] init] animated:YES];
+        }
+            break;
+            
+            case 4:         // Collection View keyframe animation
+        {
+            [self.navigationController pushViewController:[[CollectionViewAnimationViewController alloc] init] animated:YES];
+        }
+            break;
+            
+            case 5:         // PDF
+        {
+            // PDF view, TODO
+            
+        }
+            break;
+            
+        default:
+            break;
+    }
 }
 
-- (IBAction)didAnimationButtonClicked:(id)sender {    
-    [self.navigationController pushViewController:[[AnimationViewController alloc] init] animated:YES];
-}
-
-- (IBAction)didAlgorithmButtonClicked:(id)sender {
-    [self.navigationController pushViewController:[[AlgorithmViewController alloc] init] animated:YES];
-}
-
-- (IBAction)didUIViewAnimationClicked:(id)sender {
-    [self.navigationController pushViewController:[[UIViewAnimationTestViewController alloc] init] animated:YES];
-}
-
-- (IBAction)didCollectionViewAnimationClicked:(id)sender {
-    [self.navigationController pushViewController:[[CollectionViewAnimationViewController alloc] init] animated:YES];
-}
 
 @end
