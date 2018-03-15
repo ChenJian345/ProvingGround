@@ -155,6 +155,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		4D2A45CE205A3A3400A2BE99 /* Resouce */ = {
+			isa = PBXGroup;
+			children = (
+				7FF30F9C1F68BDB2000B3360 /* Assets.xcassets */,
+				4D73D4312011A4D100C61B21 /* IMG_0397.JPG */,
+				4D73D42F2010B4F100C61B21 /* IMG_3964.JPG */,
+			);
+			path = Resouce;
+			sourceTree = "<group>";
+		};
 		4DD9D36020087FCA007396D2 /* Color */ = {
 			isa = PBXGroup;
 			children = (
@@ -177,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				7FF30F921F68BDB2000B3360 /* ProvingGround */,
+				4D2A45CE205A3A3400A2BE99 /* Resouce */,
 				7FF30F911F68BDB2000B3360 /* Products */,
 				4D2A45B7205918C400A2BE99 /* Frameworks */,
 			);
@@ -202,18 +213,15 @@
 				7FF30F961F68BDB2000B3360 /* ViewController.h */,
 				7FF30F971F68BDB2000B3360 /* ViewController.m */,
 				7FF30F991F68BDB2000B3360 /* Main.storyboard */,
-				7FF30F9C1F68BDB2000B3360 /* Assets.xcassets */,
 				7FF30F9E1F68BDB2000B3360 /* LaunchScreen.storyboard */,
 				7FF30FA21F68BDB2000B3360 /* main.m */,
-				4D2A45CC205A38C600A2BE99 /* Info.plist */,
 				7F4D5B071F69827E00B93721 /* CustomView.h */,
 				7F4D5B081F69827E00B93721 /* CustomView.m */,
 				7F4D5B041F68D16D00B93721 /* PaperModel.h */,
 				7F4D5B051F68D16D00B93721 /* PaperModel.m */,
 				7F4D5B0A1F6A297600B93721 /* A4PaperModel.h */,
 				7F4D5B0B1F6A297600B93721 /* A4PaperModel.m */,
-				4D73D4312011A4D100C61B21 /* IMG_0397.JPG */,
-				4D73D42F2010B4F100C61B21 /* IMG_3964.JPG */,
+				4D2A45CC205A38C600A2BE99 /* Info.plist */,
 			);
 			path = ProvingGround;
 			sourceTree = "<group>";
