@@ -6,18 +6,20 @@
 //  Copyright © 2018年 markcj. All rights reserved.
 //
 
-#import "PDFViewController.h"
+#import "PDFWebViewViewController.h"
 #import "Micros.h"
 
 #define PDF_FILE_URL                @"https://www.silvair.com/whitepapers/how-to-build-a-wireless-sensor-driven-lighting-control-system-based-on-bluetooth-mesh-networking-by-silvair.pdf"
 
-@interface PDFViewController () <UIWebViewDelegate>
+@interface PDFWebViewViewController () <UIWebViewDelegate>
 
 @property (nonatomic, strong) UIWebView *webViewPDFViewer;
 
 @end
 
-@implementation PDFViewController
+
+
+@implementation PDFWebViewViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

@@ -18,7 +18,8 @@
 #import "AlgorithmViewController.h"
 #import "UIViewAnimationTestViewController.h"
 #import "CollectionViewAnimationViewController.h"
-#import "PDFViewController.h"
+#import "PDFWebViewViewController.h"
+#import "PDFQLPreviewController.h"
 
 static void *paperKVOContext = &paperKVOContext;
 
@@ -218,9 +219,16 @@ int searchInsert(int* nums, int numsSize, int target) {
         }
             break;
             
-            case 5:         // PDF
+            case 5:         // PDF WebView
         {
-            PDFViewController *pdfViewController = [[PDFViewController alloc] init];
+            PDFWebViewViewController *pdfViewController = [[PDFWebViewViewController alloc] init];
+            [self.navigationController pushViewController:pdfViewController animated:YES];
+        }
+            break;
+            
+        case 6:         // PDF Quick look view
+        {
+            PDFQLPreviewController *pdfViewController = [[PDFQLPreviewController alloc] init];
             [self.navigationController pushViewController:pdfViewController animated:YES];
         }
             break;
