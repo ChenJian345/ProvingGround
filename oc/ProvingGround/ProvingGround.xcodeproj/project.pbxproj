@@ -17,6 +17,8 @@
 		4D2A45B42058F32900A2BE99 /* PDFWebViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D2A45B32058F32900A2BE99 /* PDFWebViewViewController.m */; };
 		4D2A45B9205918C500A2BE99 /* QuickLook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D2A45B8205918C500A2BE99 /* QuickLook.framework */; };
 		4D2A45BC205918EE00A2BE99 /* PDFQLPreviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D2A45BB205918EE00A2BE99 /* PDFQLPreviewController.m */; };
+		4D2A45CA205A38AB00A2BE99 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FF30F991F68BDB2000B3360 /* Main.storyboard */; };
+		4D2A45CD205A38C600A2BE99 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4D2A45CC205A38C600A2BE99 /* Info.plist */; };
 		4D73D4302010B4F200C61B21 /* IMG_3964.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 4D73D42F2010B4F100C61B21 /* IMG_3964.JPG */; };
 		4D73D4322011A4D100C61B21 /* IMG_0397.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 4D73D4312011A4D100C61B21 /* IMG_0397.JPG */; };
 		4DD9D36320087FCA007396D2 /* ColorUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9D36120087FCA007396D2 /* ColorUtils.m */; };
@@ -29,9 +31,7 @@
 		7FA04C0B2007B57A006273C6 /* BallPulseLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FA04C0A2007B57A006273C6 /* BallPulseLoadingView.m */; };
 		7FF30F951F68BDB2000B3360 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF30F941F68BDB2000B3360 /* AppDelegate.m */; };
 		7FF30F981F68BDB2000B3360 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF30F971F68BDB2000B3360 /* ViewController.m */; };
-		7FF30F9B1F68BDB2000B3360 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FF30F991F68BDB2000B3360 /* Main.storyboard */; };
 		7FF30F9D1F68BDB2000B3360 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FF30F9C1F68BDB2000B3360 /* Assets.xcassets */; };
-		7FF30FA01F68BDB2000B3360 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FF30F9E1F68BDB2000B3360 /* LaunchScreen.storyboard */; };
 		7FF30FA31F68BDB2000B3360 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF30FA21F68BDB2000B3360 /* main.m */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +54,7 @@
 		4D2A45B8205918C500A2BE99 /* QuickLook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLook.framework; path = System/Library/Frameworks/QuickLook.framework; sourceTree = SDKROOT; };
 		4D2A45BA205918EE00A2BE99 /* PDFQLPreviewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PDFQLPreviewController.h; sourceTree = "<group>"; };
 		4D2A45BB205918EE00A2BE99 /* PDFQLPreviewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PDFQLPreviewController.m; sourceTree = "<group>"; };
+		4D2A45CC205A38C600A2BE99 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D73D42F2010B4F100C61B21 /* IMG_3964.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_3964.JPG; sourceTree = "<group>"; };
 		4D73D4312011A4D100C61B21 /* IMG_0397.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_0397.JPG; sourceTree = "<group>"; };
 		4DD9D36120087FCA007396D2 /* ColorUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorUtils.m; sourceTree = "<group>"; };
@@ -71,7 +72,7 @@
 		7F4D5B0B1F6A297600B93721 /* A4PaperModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = A4PaperModel.m; sourceTree = "<group>"; };
 		7FA04C092007B57A006273C6 /* BallPulseLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BallPulseLoadingView.h; sourceTree = "<group>"; };
 		7FA04C0A2007B57A006273C6 /* BallPulseLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BallPulseLoadingView.m; sourceTree = "<group>"; };
-		7FF30F901F68BDB2000B3360 /* UITest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UITest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FF30F901F68BDB2000B3360 /* ProvingGround.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProvingGround.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FF30F931F68BDB2000B3360 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7FF30F941F68BDB2000B3360 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		7FF30F961F68BDB2000B3360 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -79,7 +80,6 @@
 		7FF30F9A1F68BDB2000B3360 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7FF30F9C1F68BDB2000B3360 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7FF30F9F1F68BDB2000B3360 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		7FF30FA11F68BDB2000B3360 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7FF30FA21F68BDB2000B3360 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -176,7 +176,7 @@
 		7FF30F871F68BDB2000B3360 = {
 			isa = PBXGroup;
 			children = (
-				7FF30F921F68BDB2000B3360 /* UITest */,
+				7FF30F921F68BDB2000B3360 /* ProvingGround */,
 				7FF30F911F68BDB2000B3360 /* Products */,
 				4D2A45B7205918C400A2BE99 /* Frameworks */,
 			);
@@ -185,12 +185,12 @@
 		7FF30F911F68BDB2000B3360 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7FF30F901F68BDB2000B3360 /* UITest.app */,
+				7FF30F901F68BDB2000B3360 /* ProvingGround.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		7FF30F921F68BDB2000B3360 /* UITest */ = {
+		7FF30F921F68BDB2000B3360 /* ProvingGround */ = {
 			isa = PBXGroup;
 			children = (
 				4D2A45B52058F50F00A2BE99 /* Utility */,
@@ -204,8 +204,8 @@
 				7FF30F991F68BDB2000B3360 /* Main.storyboard */,
 				7FF30F9C1F68BDB2000B3360 /* Assets.xcassets */,
 				7FF30F9E1F68BDB2000B3360 /* LaunchScreen.storyboard */,
-				7FF30FA11F68BDB2000B3360 /* Info.plist */,
 				7FF30FA21F68BDB2000B3360 /* main.m */,
+				4D2A45CC205A38C600A2BE99 /* Info.plist */,
 				7F4D5B071F69827E00B93721 /* CustomView.h */,
 				7F4D5B081F69827E00B93721 /* CustomView.m */,
 				7F4D5B041F68D16D00B93721 /* PaperModel.h */,
@@ -215,15 +215,15 @@
 				4D73D4312011A4D100C61B21 /* IMG_0397.JPG */,
 				4D73D42F2010B4F100C61B21 /* IMG_3964.JPG */,
 			);
-			path = UITest;
+			path = ProvingGround;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7FF30F8F1F68BDB2000B3360 /* UITest */ = {
+		7FF30F8F1F68BDB2000B3360 /* ProvingGround */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7FF30FA61F68BDB2000B3360 /* Build configuration list for PBXNativeTarget "UITest" */;
+			buildConfigurationList = 7FF30FA61F68BDB2000B3360 /* Build configuration list for PBXNativeTarget "ProvingGround" */;
 			buildPhases = (
 				7FF30F8C1F68BDB2000B3360 /* Sources */,
 				7FF30F8D1F68BDB2000B3360 /* Frameworks */,
@@ -233,9 +233,9 @@
 			);
 			dependencies = (
 			);
-			name = UITest;
+			name = ProvingGround;
 			productName = UITest;
-			productReference = 7FF30F901F68BDB2000B3360 /* UITest.app */;
+			productReference = 7FF30F901F68BDB2000B3360 /* ProvingGround.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -253,7 +253,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 7FF30F8B1F68BDB2000B3360 /* Build configuration list for PBXProject "UITest" */;
+			buildConfigurationList = 7FF30F8B1F68BDB2000B3360 /* Build configuration list for PBXProject "ProvingGround" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -266,7 +266,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7FF30F8F1F68BDB2000B3360 /* UITest */,
+				7FF30F8F1F68BDB2000B3360 /* ProvingGround */,
 			);
 		};
 /* End PBXProject section */
@@ -276,13 +276,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D2A45CD205A38C600A2BE99 /* Info.plist in Resources */,
+				4D2A45CA205A38AB00A2BE99 /* Main.storyboard in Resources */,
 				4D73D4322011A4D100C61B21 /* IMG_0397.JPG in Resources */,
-				7FF30FA01F68BDB2000B3360 /* LaunchScreen.storyboard in Resources */,
 				4D2A45A92056867A00A2BE99 /* CollectionViewAnimationViewController.xib in Resources */,
 				7FF30F9D1F68BDB2000B3360 /* Assets.xcassets in Resources */,
 				4D73D4302010B4F200C61B21 /* IMG_3964.JPG in Resources */,
 				4DFEACD7200DEC9A003DBCDA /* CustomViewViewController.xib in Resources */,
-				7FF30F9B1F68BDB2000B3360 /* Main.storyboard in Resources */,
 				4D2A45AE20569AC200A2BE99 /* CollectionViewAnimationCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -446,9 +446,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D62BHWAPT5;
-				INFOPLIST_FILE = UITest/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/ProvingGround/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.markcj.test.UITest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.markcj.provingground;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -460,9 +461,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D62BHWAPT5;
-				INFOPLIST_FILE = UITest/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/ProvingGround/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.markcj.test.UITest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.markcj.provingground;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -471,7 +473,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7FF30F8B1F68BDB2000B3360 /* Build configuration list for PBXProject "UITest" */ = {
+		7FF30F8B1F68BDB2000B3360 /* Build configuration list for PBXProject "ProvingGround" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7FF30FA41F68BDB2000B3360 /* Debug */,
@@ -480,7 +482,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7FF30FA61F68BDB2000B3360 /* Build configuration list for PBXNativeTarget "UITest" */ = {
+		7FF30FA61F68BDB2000B3360 /* Build configuration list for PBXNativeTarget "ProvingGround" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7FF30FA71F68BDB2000B3360 /* Debug */,
