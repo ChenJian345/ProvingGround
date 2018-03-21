@@ -8,8 +8,7 @@
 
 #import "PDFQLPreviewController.h"
 #import "Micros.h"
-
-#define PDF_FILE_URL                @"https://www.silvair.com/whitepapers/how-to-build-a-wireless-sensor-driven-lighting-control-system-based-on-bluetooth-mesh-networking-by-silvair.pdf"
+#import "PDFMicros.h"
 
 @implementation PDFQLPreviewController
 
@@ -54,7 +53,8 @@
  * @result An item conforming to the QLPreviewItem protocol.
  */
 - (id <QLPreviewItem>)previewController:(QLPreviewController *)controller previewItemAtIndex:(NSInteger)index {
-    return [NSURL URLWithString:PDF_FILE_URL];
+    NSString *pdfFilePath = [[NSBundle mainBundle] pathForResource:@"Accessory-Design-Guidelines" ofType:@"pdf"];
+    return [NSURL fileURLWithPath:pdfFilePath];
 }
 
 @end

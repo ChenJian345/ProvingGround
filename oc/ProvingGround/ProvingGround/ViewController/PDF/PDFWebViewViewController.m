@@ -8,8 +8,8 @@
 
 #import "PDFWebViewViewController.h"
 #import "Micros.h"
+#import "PDFMicros.h"
 
-#define PDF_FILE_URL                @"https://www.silvair.com/whitepapers/how-to-build-a-wireless-sensor-driven-lighting-control-system-based-on-bluetooth-mesh-networking-by-silvair.pdf"
 
 @interface PDFWebViewViewController () <UIWebViewDelegate>
 
@@ -70,7 +70,7 @@
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
-    NSLog(@"WebView load FAILED! 🎯");
+    NSLog(@"WebView load FAILED! 🎯, error message : %@", error.localizedDescription);
 }
 
 @end

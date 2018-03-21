@@ -19,6 +19,7 @@
 		4D2A45BC205918EE00A2BE99 /* PDFQLPreviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D2A45BB205918EE00A2BE99 /* PDFQLPreviewController.m */; };
 		4D2A45CA205A38AB00A2BE99 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FF30F991F68BDB2000B3360 /* Main.storyboard */; };
 		4D2A45CD205A38C600A2BE99 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4D2A45CC205A38C600A2BE99 /* Info.plist */; };
+		4D52FF3E20623E3000ABB17A /* Accessory-Design-Guidelines.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4D52FF3D20623E3000ABB17A /* Accessory-Design-Guidelines.pdf */; };
 		4D73D4302010B4F200C61B21 /* IMG_3964.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 4D73D42F2010B4F100C61B21 /* IMG_3964.JPG */; };
 		4D73D4322011A4D100C61B21 /* IMG_0397.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 4D73D4312011A4D100C61B21 /* IMG_0397.JPG */; };
 		4DD9D36320087FCA007396D2 /* ColorUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9D36120087FCA007396D2 /* ColorUtils.m */; };
@@ -55,6 +56,8 @@
 		4D2A45BA205918EE00A2BE99 /* PDFQLPreviewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PDFQLPreviewController.h; sourceTree = "<group>"; };
 		4D2A45BB205918EE00A2BE99 /* PDFQLPreviewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PDFQLPreviewController.m; sourceTree = "<group>"; };
 		4D2A45CC205A38C600A2BE99 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D52FF3C206238A900ABB17A /* PDFMicros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PDFMicros.h; sourceTree = "<group>"; };
+		4D52FF3D20623E3000ABB17A /* Accessory-Design-Guidelines.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Accessory-Design-Guidelines.pdf"; sourceTree = "<group>"; };
 		4D73D42F2010B4F100C61B21 /* IMG_3964.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_3964.JPG; sourceTree = "<group>"; };
 		4D73D4312011A4D100C61B21 /* IMG_0397.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_0397.JPG; sourceTree = "<group>"; };
 		4DD9D36120087FCA007396D2 /* ColorUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorUtils.m; sourceTree = "<group>"; };
@@ -131,6 +134,7 @@
 		4D2A45B12058F31800A2BE99 /* PDF */ = {
 			isa = PBXGroup;
 			children = (
+				4D52FF3C206238A900ABB17A /* PDFMicros.h */,
 				4D2A45B22058F32900A2BE99 /* PDFWebViewViewController.h */,
 				4D2A45B32058F32900A2BE99 /* PDFWebViewViewController.m */,
 				4D2A45BA205918EE00A2BE99 /* PDFQLPreviewController.h */,
@@ -158,6 +162,7 @@
 		4D2A45CE205A3A3400A2BE99 /* Resouce */ = {
 			isa = PBXGroup;
 			children = (
+				4D52FF3D20623E3000ABB17A /* Accessory-Design-Guidelines.pdf */,
 				7FF30F9C1F68BDB2000B3360 /* Assets.xcassets */,
 				4D73D4312011A4D100C61B21 /* IMG_0397.JPG */,
 				4D73D42F2010B4F100C61B21 /* IMG_3964.JPG */,
@@ -287,6 +292,7 @@
 				4D2A45CD205A38C600A2BE99 /* Info.plist in Resources */,
 				4D2A45CA205A38AB00A2BE99 /* Main.storyboard in Resources */,
 				4D73D4322011A4D100C61B21 /* IMG_0397.JPG in Resources */,
+				4D52FF3E20623E3000ABB17A /* Accessory-Design-Guidelines.pdf in Resources */,
 				4D2A45A92056867A00A2BE99 /* CollectionViewAnimationViewController.xib in Resources */,
 				7FF30F9D1F68BDB2000B3360 /* Assets.xcassets in Resources */,
 				4D73D4302010B4F200C61B21 /* IMG_3964.JPG in Resources */,
