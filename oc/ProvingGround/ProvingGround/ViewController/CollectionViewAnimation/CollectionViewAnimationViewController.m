@@ -48,8 +48,9 @@
             [self.collectionViewAnimation layoutIfNeeded];
         }];
     } completion:^(BOOL finished) {
-    
+        
     }];
+    
     
 //    [UIView animateWithDuration:5 animations:^{
 //        self.collectionViewAnimation.frame = frameDestination;
@@ -89,6 +90,12 @@
         
     }
     return cell;
+}
+
+-(void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
+    [UIView performWithoutAnimation:^{
+        [cell layoutIfNeeded];
+    }];
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {

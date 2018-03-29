@@ -36,6 +36,14 @@ static void *paperKVOContext = &paperKVOContext;
     
     self.title = @"Test List";
     
+    UIView *headerView = [UIView new];
+    headerView.backgroundColor = [UIColor greenColor];
+    self.tableView.tableHeaderView = headerView;
+    
+    UIView *footerView = [UIView new];
+    footerView.backgroundColor = [UIColor redColor];
+    self.tableView.tableFooterView = footerView;
+    
     
 //    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 100, 200, 200)];
 //    view.backgroundColor = [UIColor greenColor];
