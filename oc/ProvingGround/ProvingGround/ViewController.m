@@ -21,6 +21,9 @@
 #import "PDFWebViewViewController.h"
 #import "PDFQLPreviewController.h"
 
+// JSON Merge Test
+#import "JSONMergeUtil.h"
+
 static void *paperKVOContext = &paperKVOContext;
 
 @interface ViewController ()
@@ -96,15 +99,15 @@ static void *paperKVOContext = &paperKVOContext;
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    int numbers[] = {3,6,15,24};
-    int target = 18;
-    int size = 4;
-    int resultLength = removeElement(numbers, size, target);
-    NSLog(@"result array length = %d", resultLength);
-    
-    target = 25;
-    int insertPosition = searchInsert(numbers, size, target);
-    NSLog(@"Insert position is %d", insertPosition);
+//    int numbers[] = {3,6,15,24};
+//    int target = 18;
+//    int size = 4;
+//    int resultLength = removeElement(numbers, size, target);
+//    NSLog(@"result array length = %d", resultLength);
+//
+//    target = 25;
+//    int insertPosition = searchInsert(numbers, size, target);
+//    NSLog(@"Insert position is %d", insertPosition);
 }
 
 -(void)dealloc {
@@ -234,10 +237,24 @@ int searchInsert(int* nums, int numsSize, int target) {
         }
             break;
             
-        case 6:         // PDF Quick look view
+            case 6:         // PDF Quick look view
         {
             PDFQLPreviewController *pdfViewController = [[PDFQLPreviewController alloc] init];
             [self.navigationController pushViewController:pdfViewController animated:YES];
+        }
+            break;
+            
+            case 7:         // JSON Merge time usage test
+        {
+            // 测试JSON Merge数据
+            JSONMergeUtil *jsonUtil = [[JSONMergeUtil alloc] init];
+            NSArray *arrJsonStrings = [jsonUtil produceJsonStringArray];
+            
+            NSTimeInterval startTime = [[NSDate date] timeIntervalSince1970];
+            NSArray *arrJsonStrAfterMerge = [jsonUtil mergeJSONString:arrJsonStrings];
+            NSTimeInterval endTime = [[NSDate date] timeIntervalSince1970];
+            NSLog(@"Merge JSON 操作耗时: %.2f ms", (endTime - startTime) * 1000);
+            NSLog(@"处理前：%ld 条，处理后的数据条数：%ld 条", arrJsonStrings.count, arrJsonStrAfterMerge.count);
         }
             break;
             
