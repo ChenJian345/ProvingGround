@@ -22,10 +22,10 @@
 		4D52FF522064E38500ABB17A /* CollectionViewAnimationFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D52FF512064E38500ABB17A /* CollectionViewAnimationFlowLayout.m */; };
 		4D73D4302010B4F200C61B21 /* IMG_3964.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 4D73D42F2010B4F100C61B21 /* IMG_3964.JPG */; };
 		4D73D4322011A4D100C61B21 /* IMG_0397.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 4D73D4312011A4D100C61B21 /* IMG_0397.JPG */; };
+		4D8B471422DF421A002AC72D /* DogModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8B470F22DF421A002AC72D /* DogModel.m */; };
+		4D8B471522DF421A002AC72D /* KVOTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8B471222DF421A002AC72D /* KVOTestViewController.m */; };
+		4D8B471622DF421A002AC72D /* KVOTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D8B471322DF421A002AC72D /* KVOTestViewController.xib */; };
 		4DD9D36320087FCA007396D2 /* ColorUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9D36120087FCA007396D2 /* ColorUtils.m */; };
-		4DE4F40222DDF596008B8C17 /* DogModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DE4F3FD22DDF595008B8C17 /* DogModel.m */; };
-		4DE4F40322DDF596008B8C17 /* KVOTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DE4F40022DDF595008B8C17 /* KVOTestViewController.m */; };
-		4DE4F40422DDF596008B8C17 /* KVOTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DE4F40122DDF595008B8C17 /* KVOTestViewController.xib */; };
 		4DFEACD6200DEC9A003DBCDA /* CustomViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DFEACD4200DEC9A003DBCDA /* CustomViewViewController.m */; };
 		4DFEACD7200DEC9A003DBCDA /* CustomViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DFEACD5200DEC9A003DBCDA /* CustomViewViewController.xib */; };
 		7F2F85E6204D879500A1307D /* UIViewAnimationTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2F85E5204D879500A1307D /* UIViewAnimationTestViewController.m */; };
@@ -67,13 +67,13 @@
 		4D52FF512064E38500ABB17A /* CollectionViewAnimationFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewAnimationFlowLayout.m; sourceTree = "<group>"; };
 		4D73D42F2010B4F100C61B21 /* IMG_3964.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_3964.JPG; sourceTree = "<group>"; };
 		4D73D4312011A4D100C61B21 /* IMG_0397.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_0397.JPG; sourceTree = "<group>"; };
+		4D8B470E22DF421A002AC72D /* DogModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DogModel.h; sourceTree = "<group>"; };
+		4D8B470F22DF421A002AC72D /* DogModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DogModel.m; sourceTree = "<group>"; };
+		4D8B471122DF421A002AC72D /* KVOTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVOTestViewController.h; sourceTree = "<group>"; };
+		4D8B471222DF421A002AC72D /* KVOTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVOTestViewController.m; sourceTree = "<group>"; };
+		4D8B471322DF421A002AC72D /* KVOTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KVOTestViewController.xib; sourceTree = "<group>"; };
 		4DD9D36120087FCA007396D2 /* ColorUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorUtils.m; sourceTree = "<group>"; };
 		4DD9D36220087FCA007396D2 /* ColorUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorUtils.h; sourceTree = "<group>"; };
-		4DE4F3FC22DDF595008B8C17 /* DogModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DogModel.h; sourceTree = "<group>"; };
-		4DE4F3FD22DDF595008B8C17 /* DogModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DogModel.m; sourceTree = "<group>"; };
-		4DE4F3FF22DDF595008B8C17 /* KVOTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVOTestViewController.h; sourceTree = "<group>"; };
-		4DE4F40022DDF595008B8C17 /* KVOTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVOTestViewController.m; sourceTree = "<group>"; };
-		4DE4F40122DDF595008B8C17 /* KVOTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KVOTestViewController.xib; sourceTree = "<group>"; };
 		4DFEACD3200DEC9A003DBCDA /* CustomViewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomViewViewController.h; sourceTree = "<group>"; };
 		4DFEACD4200DEC9A003DBCDA /* CustomViewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomViewViewController.m; sourceTree = "<group>"; };
 		4DFEACD5200DEC9A003DBCDA /* CustomViewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomViewViewController.xib; sourceTree = "<group>"; };
@@ -193,6 +193,34 @@
 			path = Resouce;
 			sourceTree = "<group>";
 		};
+		4D8B470C22DF421A002AC72D /* KVOTest */ = {
+			isa = PBXGroup;
+			children = (
+				4D8B470D22DF421A002AC72D /* Model */,
+				4D8B471022DF421A002AC72D /* ViewController */,
+			);
+			path = KVOTest;
+			sourceTree = "<group>";
+		};
+		4D8B470D22DF421A002AC72D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4D8B470E22DF421A002AC72D /* DogModel.h */,
+				4D8B470F22DF421A002AC72D /* DogModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4D8B471022DF421A002AC72D /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4D8B471122DF421A002AC72D /* KVOTestViewController.h */,
+				4D8B471222DF421A002AC72D /* KVOTestViewController.m */,
+				4D8B471322DF421A002AC72D /* KVOTestViewController.xib */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		4DD9D36020087FCA007396D2 /* Color */ = {
 			isa = PBXGroup;
 			children = (
@@ -200,34 +228,6 @@
 				4DD9D36120087FCA007396D2 /* ColorUtils.m */,
 			);
 			path = Color;
-			sourceTree = "<group>";
-		};
-		4DE4F3FA22DDF595008B8C17 /* KVOTest */ = {
-			isa = PBXGroup;
-			children = (
-				4DE4F3FB22DDF595008B8C17 /* Model */,
-				4DE4F3FE22DDF595008B8C17 /* ViewController */,
-			);
-			path = KVOTest;
-			sourceTree = SOURCE_ROOT;
-		};
-		4DE4F3FB22DDF595008B8C17 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				4DE4F3FC22DDF595008B8C17 /* DogModel.h */,
-				4DE4F3FD22DDF595008B8C17 /* DogModel.m */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		4DE4F3FE22DDF595008B8C17 /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				4DE4F3FF22DDF595008B8C17 /* KVOTestViewController.h */,
-				4DE4F40022DDF595008B8C17 /* KVOTestViewController.m */,
-				4DE4F40122DDF595008B8C17 /* KVOTestViewController.xib */,
-			);
-			path = ViewController;
 			sourceTree = "<group>";
 		};
 		7FA04C082007B57A006273C6 /* Animation */ = {
@@ -260,7 +260,7 @@
 		7FF30F921F68BDB2000B3360 /* ProvingGround */ = {
 			isa = PBXGroup;
 			children = (
-				4DE4F3FA22DDF595008B8C17 /* KVOTest */,
+				4D8B470C22DF421A002AC72D /* KVOTest */,
 				4D19696622770998008D057A /* JSONMerge */,
 				4D2A45B52058F50F00A2BE99 /* Utility */,
 				4D04B0D32008BE6F00821591 /* ViewController */,
@@ -343,7 +343,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D2A45CA205A38AB00A2BE99 /* Main.storyboard in Resources */,
-				4DE4F40422DDF596008B8C17 /* KVOTestViewController.xib in Resources */,
+				4D8B471622DF421A002AC72D /* KVOTestViewController.xib in Resources */,
 				4D73D4322011A4D100C61B21 /* IMG_0397.JPG in Resources */,
 				4D52FF3E20623E3000ABB17A /* Accessory-Design-Guidelines.pdf in Resources */,
 				4D2A45A92056867A00A2BE99 /* CollectionViewAnimationViewController.xib in Resources */,
@@ -368,10 +368,10 @@
 				7F4D5B091F69827E00B93721 /* CustomView.m in Sources */,
 				7F4D5B061F68D16D00B93721 /* PaperModel.m in Sources */,
 				4D2A45B42058F32900A2BE99 /* PDFWebViewViewController.m in Sources */,
-				4DE4F40222DDF596008B8C17 /* DogModel.m in Sources */,
+				4D8B471422DF421A002AC72D /* DogModel.m in Sources */,
 				7FF30F981F68BDB2000B3360 /* ViewController.m in Sources */,
 				7F4D5B0C1F6A297600B93721 /* A4PaperModel.m in Sources */,
-				4DE4F40322DDF596008B8C17 /* KVOTestViewController.m in Sources */,
+				4D8B471522DF421A002AC72D /* KVOTestViewController.m in Sources */,
 				7FF30FA31F68BDB2000B3360 /* main.m in Sources */,
 				4D2A45AD20569AC200A2BE99 /* CollectionViewAnimationCell.m in Sources */,
 				7FF30F951F68BDB2000B3360 /* AppDelegate.m in Sources */,
