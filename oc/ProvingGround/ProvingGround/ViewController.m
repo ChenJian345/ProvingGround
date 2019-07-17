@@ -24,6 +24,9 @@
 // JSON Merge Test
 #import "JSONMergeUtil.h"
 
+// KVO Test
+#import "KVOTestViewController.h"
+
 static void *paperKVOContext = &paperKVOContext;
 
 @interface ViewController ()
@@ -255,6 +258,13 @@ int searchInsert(int* nums, int numsSize, int target) {
             NSTimeInterval endTime = [[NSDate date] timeIntervalSince1970];
             NSLog(@"Merge JSON 操作耗时: %.2f ms", (endTime - startTime) * 1000);
             NSLog(@"处理前：%ld 条，处理后的数据条数：%ld 条", arrJsonStrings.count, arrJsonStrAfterMerge.count);
+        }
+            break;
+            
+            case 8:     // KVO
+        {
+            KVOTestViewController *kvoVC = [[KVOTestViewController alloc] init];
+            [self.navigationController pushViewController:kvoVC animated:YES];
         }
             break;
             
