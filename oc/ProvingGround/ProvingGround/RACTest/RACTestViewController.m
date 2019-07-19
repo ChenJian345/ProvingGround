@@ -86,8 +86,4 @@
     }
 }
 
-- (void)dealloc {
-    [NSNotificationCenter removeObserver:self forKeyPath:nil];
-}
-
 @end
