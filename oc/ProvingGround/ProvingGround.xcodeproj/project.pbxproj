@@ -29,6 +29,8 @@
 		4D8B472822DF4448002AC72D /* Accessory-Design-Guidelines.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4D8B472422DF4447002AC72D /* Accessory-Design-Guidelines.pdf */; };
 		4D8B472D22DF44D7002AC72D /* RACTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8B472B22DF44D7002AC72D /* RACTestViewController.m */; };
 		4D8B472E22DF44D7002AC72D /* RACTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D8B472C22DF44D7002AC72D /* RACTestViewController.xib */; };
+		4D8B473322E1A3ED002AC72D /* DeviceInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8B473122E1A3ED002AC72D /* DeviceInfoViewController.m */; };
+		4D8B473422E1A3ED002AC72D /* DeviceInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D8B473222E1A3ED002AC72D /* DeviceInfoViewController.xib */; };
 		4DD9D36320087FCA007396D2 /* ColorUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9D36120087FCA007396D2 /* ColorUtils.m */; };
 		4DFEACD6200DEC9A003DBCDA /* CustomViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DFEACD4200DEC9A003DBCDA /* CustomViewViewController.m */; };
 		4DFEACD7200DEC9A003DBCDA /* CustomViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DFEACD5200DEC9A003DBCDA /* CustomViewViewController.xib */; };
@@ -79,6 +81,9 @@
 		4D8B472A22DF44D7002AC72D /* RACTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RACTestViewController.h; sourceTree = "<group>"; };
 		4D8B472B22DF44D7002AC72D /* RACTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RACTestViewController.m; sourceTree = "<group>"; };
 		4D8B472C22DF44D7002AC72D /* RACTestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RACTestViewController.xib; sourceTree = "<group>"; };
+		4D8B473022E1A3ED002AC72D /* DeviceInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeviceInfoViewController.h; sourceTree = "<group>"; };
+		4D8B473122E1A3ED002AC72D /* DeviceInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeviceInfoViewController.m; sourceTree = "<group>"; };
+		4D8B473222E1A3ED002AC72D /* DeviceInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeviceInfoViewController.xib; sourceTree = "<group>"; };
 		4DD9D36120087FCA007396D2 /* ColorUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorUtils.m; sourceTree = "<group>"; };
 		4DD9D36220087FCA007396D2 /* ColorUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorUtils.h; sourceTree = "<group>"; };
 		4DFEACD3200DEC9A003DBCDA /* CustomViewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomViewViewController.h; sourceTree = "<group>"; };
@@ -242,6 +247,16 @@
 			path = RACTest;
 			sourceTree = "<group>";
 		};
+		4D8B472F22E1A3CF002AC72D /* DeviceInfo */ = {
+			isa = PBXGroup;
+			children = (
+				4D8B473022E1A3ED002AC72D /* DeviceInfoViewController.h */,
+				4D8B473122E1A3ED002AC72D /* DeviceInfoViewController.m */,
+				4D8B473222E1A3ED002AC72D /* DeviceInfoViewController.xib */,
+			);
+			path = DeviceInfo;
+			sourceTree = "<group>";
+		};
 		4DD9D36020087FCA007396D2 /* Color */ = {
 			isa = PBXGroup;
 			children = (
@@ -281,6 +296,7 @@
 		7FF30F921F68BDB2000B3360 /* ProvingGround */ = {
 			isa = PBXGroup;
 			children = (
+				4D8B472F22E1A3CF002AC72D /* DeviceInfo */,
 				4D8B472922DF44C2002AC72D /* RACTest */,
 				4D8B470C22DF421A002AC72D /* KVOTest */,
 				4D19696622770998008D057A /* JSONMerge */,
@@ -288,7 +304,6 @@
 				4D04B0D32008BE6F00821591 /* ViewController */,
 				4DD9D36020087FCA007396D2 /* Color */,
 				7FA04C082007B57A006273C6 /* Animation */,
-				4D8B472022DF4447002AC72D /* Resouce */,
 				7FF30F931F68BDB2000B3360 /* AppDelegate.h */,
 				7FF30F941F68BDB2000B3360 /* AppDelegate.m */,
 				7FF30F961F68BDB2000B3360 /* ViewController.h */,
@@ -303,6 +318,7 @@
 				7F4D5B0A1F6A297600B93721 /* A4PaperModel.h */,
 				7F4D5B0B1F6A297600B93721 /* A4PaperModel.m */,
 				4D2A45CC205A38C600A2BE99 /* Info.plist */,
+				4D8B472022DF4447002AC72D /* Resouce */,
 			);
 			path = ProvingGround;
 			sourceTree = "<group>";
@@ -379,6 +395,7 @@
 				4D8B472722DF4448002AC72D /* IMG_0397.JPG in Resources */,
 				4D8B472E22DF44D7002AC72D /* RACTestViewController.xib in Resources */,
 				4D2A45CA205A38AB00A2BE99 /* Main.storyboard in Resources */,
+				4D8B473422E1A3ED002AC72D /* DeviceInfoViewController.xib in Resources */,
 				4D8B471622DF421A002AC72D /* KVOTestViewController.xib in Resources */,
 				4D8B472522DF4448002AC72D /* IMG_3964.JPG in Resources */,
 				4D2A45A92056867A00A2BE99 /* CollectionViewAnimationViewController.xib in Resources */,
@@ -432,6 +449,7 @@
 				7FF30F981F68BDB2000B3360 /* ViewController.m in Sources */,
 				7F4D5B0C1F6A297600B93721 /* A4PaperModel.m in Sources */,
 				4D8B471522DF421A002AC72D /* KVOTestViewController.m in Sources */,
+				4D8B473322E1A3ED002AC72D /* DeviceInfoViewController.m in Sources */,
 				7FF30FA31F68BDB2000B3360 /* main.m in Sources */,
 				4D2A45AD20569AC200A2BE99 /* CollectionViewAnimationCell.m in Sources */,
 				7FF30F951F68BDB2000B3360 /* AppDelegate.m in Sources */,
