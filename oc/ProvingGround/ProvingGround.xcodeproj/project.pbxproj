@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		28890CEA34979C57717AF900 /* libPods-ProvingGround.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA8CC18F8A28FBD06951F2E2 /* libPods-ProvingGround.a */; };
 		4D04B0D62008BE8600821591 /* AnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D04B0D52008BE8600821591 /* AnimationViewController.m */; };
 		4D04B0D92008BF7100821591 /* ImageCompressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D04B0D82008BF7100821591 /* ImageCompressViewController.m */; };
 		4D04B0DC2008BFB800821591 /* AlgorithmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D04B0DB2008BFB800821591 /* AlgorithmViewController.m */; };
@@ -26,6 +27,8 @@
 		4D8B472622DF4448002AC72D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D8B472222DF4447002AC72D /* Assets.xcassets */; };
 		4D8B472722DF4448002AC72D /* IMG_0397.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 4D8B472322DF4447002AC72D /* IMG_0397.JPG */; };
 		4D8B472822DF4448002AC72D /* Accessory-Design-Guidelines.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4D8B472422DF4447002AC72D /* Accessory-Design-Guidelines.pdf */; };
+		4D8B472D22DF44D7002AC72D /* RACTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8B472B22DF44D7002AC72D /* RACTestViewController.m */; };
+		4D8B472E22DF44D7002AC72D /* RACTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D8B472C22DF44D7002AC72D /* RACTestViewController.xib */; };
 		4DD9D36320087FCA007396D2 /* ColorUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9D36120087FCA007396D2 /* ColorUtils.m */; };
 		4DFEACD6200DEC9A003DBCDA /* CustomViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DFEACD4200DEC9A003DBCDA /* CustomViewViewController.m */; };
 		4DFEACD7200DEC9A003DBCDA /* CustomViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DFEACD5200DEC9A003DBCDA /* CustomViewViewController.xib */; };
@@ -73,11 +76,15 @@
 		4D8B472222DF4447002AC72D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4D8B472322DF4447002AC72D /* IMG_0397.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_0397.JPG; sourceTree = "<group>"; };
 		4D8B472422DF4447002AC72D /* Accessory-Design-Guidelines.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Accessory-Design-Guidelines.pdf"; sourceTree = "<group>"; };
+		4D8B472A22DF44D7002AC72D /* RACTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RACTestViewController.h; sourceTree = "<group>"; };
+		4D8B472B22DF44D7002AC72D /* RACTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RACTestViewController.m; sourceTree = "<group>"; };
+		4D8B472C22DF44D7002AC72D /* RACTestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RACTestViewController.xib; sourceTree = "<group>"; };
 		4DD9D36120087FCA007396D2 /* ColorUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorUtils.m; sourceTree = "<group>"; };
 		4DD9D36220087FCA007396D2 /* ColorUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorUtils.h; sourceTree = "<group>"; };
 		4DFEACD3200DEC9A003DBCDA /* CustomViewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomViewViewController.h; sourceTree = "<group>"; };
 		4DFEACD4200DEC9A003DBCDA /* CustomViewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomViewViewController.m; sourceTree = "<group>"; };
 		4DFEACD5200DEC9A003DBCDA /* CustomViewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomViewViewController.xib; sourceTree = "<group>"; };
+		50ED1CA5AF191A55EB1DA42E /* Pods-ProvingGround.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProvingGround.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProvingGround/Pods-ProvingGround.debug.xcconfig"; sourceTree = "<group>"; };
 		7F2F85E4204D879500A1307D /* UIViewAnimationTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIViewAnimationTestViewController.h; sourceTree = "<group>"; };
 		7F2F85E5204D879500A1307D /* UIViewAnimationTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIViewAnimationTestViewController.m; sourceTree = "<group>"; };
 		7F4D5B041F68D16D00B93721 /* PaperModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PaperModel.h; sourceTree = "<group>"; };
@@ -96,6 +103,8 @@
 		7FF30F9A1F68BDB2000B3360 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7FF30F9F1F68BDB2000B3360 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7FF30FA21F68BDB2000B3360 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CA32487F7123E0DD525F46EB /* Pods-ProvingGround.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProvingGround.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProvingGround/Pods-ProvingGround.release.xcconfig"; sourceTree = "<group>"; };
+		EA8CC18F8A28FBD06951F2E2 /* libPods-ProvingGround.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ProvingGround.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +113,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D2A45B9205918C500A2BE99 /* QuickLook.framework in Frameworks */,
+				28890CEA34979C57717AF900 /* libPods-ProvingGround.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				4D2A45B8205918C500A2BE99 /* QuickLook.framework */,
+				EA8CC18F8A28FBD06951F2E2 /* libPods-ProvingGround.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -221,6 +232,16 @@
 			path = Resouce;
 			sourceTree = "<group>";
 		};
+		4D8B472922DF44C2002AC72D /* RACTest */ = {
+			isa = PBXGroup;
+			children = (
+				4D8B472A22DF44D7002AC72D /* RACTestViewController.h */,
+				4D8B472B22DF44D7002AC72D /* RACTestViewController.m */,
+				4D8B472C22DF44D7002AC72D /* RACTestViewController.xib */,
+			);
+			path = RACTest;
+			sourceTree = "<group>";
+		};
 		4DD9D36020087FCA007396D2 /* Color */ = {
 			isa = PBXGroup;
 			children = (
@@ -245,6 +266,7 @@
 				7FF30F921F68BDB2000B3360 /* ProvingGround */,
 				7FF30F911F68BDB2000B3360 /* Products */,
 				4D2A45B7205918C400A2BE99 /* Frameworks */,
+				AC29E6AFAD84C7AD7B3F28A3 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -259,6 +281,7 @@
 		7FF30F921F68BDB2000B3360 /* ProvingGround */ = {
 			isa = PBXGroup;
 			children = (
+				4D8B472922DF44C2002AC72D /* RACTest */,
 				4D8B470C22DF421A002AC72D /* KVOTest */,
 				4D19696622770998008D057A /* JSONMerge */,
 				4D2A45B52058F50F00A2BE99 /* Utility */,
@@ -284,6 +307,15 @@
 			path = ProvingGround;
 			sourceTree = "<group>";
 		};
+		AC29E6AFAD84C7AD7B3F28A3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				50ED1CA5AF191A55EB1DA42E /* Pods-ProvingGround.debug.xcconfig */,
+				CA32487F7123E0DD525F46EB /* Pods-ProvingGround.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -291,6 +323,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7FF30FA61F68BDB2000B3360 /* Build configuration list for PBXNativeTarget "ProvingGround" */;
 			buildPhases = (
+				D0F7CE19C176B83C08BA93B2 /* [CP] Check Pods Manifest.lock */,
 				7FF30F8C1F68BDB2000B3360 /* Sources */,
 				7FF30F8D1F68BDB2000B3360 /* Frameworks */,
 				7FF30F8E1F68BDB2000B3360 /* Resources */,
@@ -344,6 +377,7 @@
 			files = (
 				4D8B472822DF4448002AC72D /* Accessory-Design-Guidelines.pdf in Resources */,
 				4D8B472722DF4448002AC72D /* IMG_0397.JPG in Resources */,
+				4D8B472E22DF44D7002AC72D /* RACTestViewController.xib in Resources */,
 				4D2A45CA205A38AB00A2BE99 /* Main.storyboard in Resources */,
 				4D8B471622DF421A002AC72D /* KVOTestViewController.xib in Resources */,
 				4D8B472522DF4448002AC72D /* IMG_3964.JPG in Resources */,
@@ -355,6 +389,31 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		D0F7CE19C176B83C08BA93B2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ProvingGround-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7FF30F8C1F68BDB2000B3360 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -363,6 +422,7 @@
 				4D2A45A82056867A00A2BE99 /* CollectionViewAnimationViewController.m in Sources */,
 				4D04B0D92008BF7100821591 /* ImageCompressViewController.m in Sources */,
 				4D04B0D62008BE8600821591 /* AnimationViewController.m in Sources */,
+				4D8B472D22DF44D7002AC72D /* RACTestViewController.m in Sources */,
 				7F2F85E6204D879500A1307D /* UIViewAnimationTestViewController.m in Sources */,
 				7FA04C0B2007B57A006273C6 /* BallPulseLoadingView.m in Sources */,
 				7F4D5B091F69827E00B93721 /* CustomView.m in Sources */,
@@ -516,6 +576,7 @@
 		};
 		7FF30FA71F68BDB2000B3360 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 50ED1CA5AF191A55EB1DA42E /* Pods-ProvingGround.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -531,6 +592,7 @@
 		};
 		7FF30FA81F68BDB2000B3360 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CA32487F7123E0DD525F46EB /* Pods-ProvingGround.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
