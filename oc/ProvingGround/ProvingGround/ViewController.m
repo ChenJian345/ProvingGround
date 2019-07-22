@@ -30,6 +30,9 @@
 // RAC Test
 #import "RACTestViewController.h"
 
+// Device Information Viewer
+#import "DeviceInfoViewController.h"
+
 static void *paperKVOContext = &paperKVOContext;
 
 @interface ViewController ()
@@ -275,6 +278,13 @@ int searchInsert(int* nums, int numsSize, int target) {
         {
             RACTestViewController *racVC = [[RACTestViewController alloc] init];
             [self.navigationController pushViewController:racVC animated:YES];
+        }
+            break;
+            
+        case 10:        // Device Information Viewer
+        {
+            DeviceInfoViewController *deviceInfoVC = [[DeviceInfoViewController alloc] init];
+            [self.navigationController pushViewController:deviceInfoVC animated:YES];
         }
             break;
             

@@ -31,6 +31,7 @@
 		4D8B472E22DF44D7002AC72D /* RACTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D8B472C22DF44D7002AC72D /* RACTestViewController.xib */; };
 		4D8B473322E1A3ED002AC72D /* DeviceInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8B473122E1A3ED002AC72D /* DeviceInfoViewController.m */; };
 		4D8B473422E1A3ED002AC72D /* DeviceInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D8B473222E1A3ED002AC72D /* DeviceInfoViewController.xib */; };
+		4D8B473722E1B99C002AC72D /* DeviceInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8B473622E1B99C002AC72D /* DeviceInfoModel.m */; };
 		4DD9D36320087FCA007396D2 /* ColorUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9D36120087FCA007396D2 /* ColorUtils.m */; };
 		4DFEACD6200DEC9A003DBCDA /* CustomViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DFEACD4200DEC9A003DBCDA /* CustomViewViewController.m */; };
 		4DFEACD7200DEC9A003DBCDA /* CustomViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DFEACD5200DEC9A003DBCDA /* CustomViewViewController.xib */; };
@@ -84,6 +85,8 @@
 		4D8B473022E1A3ED002AC72D /* DeviceInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeviceInfoViewController.h; sourceTree = "<group>"; };
 		4D8B473122E1A3ED002AC72D /* DeviceInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeviceInfoViewController.m; sourceTree = "<group>"; };
 		4D8B473222E1A3ED002AC72D /* DeviceInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeviceInfoViewController.xib; sourceTree = "<group>"; };
+		4D8B473522E1B99C002AC72D /* DeviceInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeviceInfoModel.h; sourceTree = "<group>"; };
+		4D8B473622E1B99C002AC72D /* DeviceInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeviceInfoModel.m; sourceTree = "<group>"; };
 		4DD9D36120087FCA007396D2 /* ColorUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorUtils.m; sourceTree = "<group>"; };
 		4DD9D36220087FCA007396D2 /* ColorUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorUtils.h; sourceTree = "<group>"; };
 		4DFEACD3200DEC9A003DBCDA /* CustomViewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomViewViewController.h; sourceTree = "<group>"; };
@@ -253,6 +256,8 @@
 				4D8B473022E1A3ED002AC72D /* DeviceInfoViewController.h */,
 				4D8B473122E1A3ED002AC72D /* DeviceInfoViewController.m */,
 				4D8B473222E1A3ED002AC72D /* DeviceInfoViewController.xib */,
+				4D8B473522E1B99C002AC72D /* DeviceInfoModel.h */,
+				4D8B473622E1B99C002AC72D /* DeviceInfoModel.m */,
 			);
 			path = DeviceInfo;
 			sourceTree = "<group>";
@@ -453,6 +458,7 @@
 				7FF30FA31F68BDB2000B3360 /* main.m in Sources */,
 				4D2A45AD20569AC200A2BE99 /* CollectionViewAnimationCell.m in Sources */,
 				7FF30F951F68BDB2000B3360 /* AppDelegate.m in Sources */,
+				4D8B473722E1B99C002AC72D /* DeviceInfoModel.m in Sources */,
 				4D196969227709B9008D057A /* JSONMergeUtil.m in Sources */,
 				4D52FF522064E38500ABB17A /* CollectionViewAnimationFlowLayout.m in Sources */,
 				4DD9D36320087FCA007396D2 /* ColorUtils.m in Sources */,
