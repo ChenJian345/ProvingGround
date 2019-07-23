@@ -314,4 +314,121 @@
     return mutArray;
 }
 
+#pragma mark - Disk Usage
++ (NSArray *)getDiskInfo {
+    NSMutableArray *mutArray = [[NSMutableArray alloc] init];
+    
+    NSString *totalDiskSpace = [NSString stringWithFormat:@"%.2f GB", ([self getTotalDiskSpace] * 1.0)/(1024*1024*1024)];
+    [mutArray addObject:[[DeviceInfoModel alloc] initWithName:@"Total Disk Space" value:totalDiskSpace]];
+    
+    NSString *usedDiskSpace = [NSString stringWithFormat:@"%.2f GB", ([self getUsedDiskSpace] * 1.0)/(1024*1024*1024)];
+    [mutArray addObject:[[DeviceInfoModel alloc] initWithName:@"Used Disk Space" value:usedDiskSpace]];
+    
+    NSString *leftDiskSpace = [NSString stringWithFormat:@"%.2f GB", ([self getFreeDiskSpace] * 1.0)/(1024*1024*1024)];
+    [mutArray addObject:[[DeviceInfoModel alloc] initWithName:@"Left Disk Space" value:leftDiskSpace]];
+    
+    return mutArray;
+}
+
++ (int64_t)getTotalDiskSpace {
+    NSError *error = nil;
+    NSDictionary *attrs = [[NSFileManager defaultManager] attributesOfFileSystemForPath:NSHomeDirectory() error:&error];
+    if (error) return -1;
+    int64_t space =  [[attrs objectForKey:NSFileSystemSize] longLongValue];
+    if (space < 0) space = -1;
+    return space;
+}
+
++ (int64_t)getUsedDiskSpace {
+    int64_t totalDisk = [self getTotalDiskSpace];
+    int64_t freeDisk = [self getFreeDiskSpace];
+    if (totalDisk < 0 || freeDisk < 0) return -1;
+    int64_t usedDisk = totalDisk - freeDisk;
+    if (usedDisk < 0) usedDisk = -1;
+    return usedDisk;
+}
+
++ (int64_t)getFreeDiskSpace {
+    NSError *error = nil;
+    NSDictionary *attrs = [[NSFileManager defaultManager] attributesOfFileSystemForPath:NSHomeDirectory() error:&error];
+    if (error) return -1;
+    int64_t space =  [[attrs objectForKey:NSFileSystemFreeSize] longLongValue];
+    if (space < 0) space = -1;
+    return space;
+}
+
+#pragma mark - CPU
++ (NSArray *)getCPUInfo {
+    NSMutableArray *mutArray = [[NSMutableArray alloc] init];
+    
+    NSString *cpuCount = [NSString stringWithFormat:@"%ld", [self getCPUCount]];
+    [mutArray addObject:[[DeviceInfoModel alloc] initWithName:@"Core Count" value:cpuCount]];
+    
+    NSString *cpuUsage = [NSString stringWithFormat:@"%d %%", (int)([self getCPUUsage] * 100)];
+    [mutArray addObject:[[DeviceInfoModel alloc] initWithName:@"CPU Usage" value:cpuUsage]];
+    
+    return mutArray;
+}
+
++ (NSUInteger)getCPUCount {
+    return [NSProcessInfo processInfo].activeProcessorCount;
+}
+
++ (float)getCPUUsage {
+    float cpu = 0;
+    NSArray *cpus = [self getPerCPUUsage];
+    if (cpus.count == 0) return -1;
+    for (NSNumber *n in cpus) {
+        cpu += n.floatValue;
+    }
+    return cpu;
+}
+
++ (NSArray *)getPerCPUUsage {
+    processor_info_array_t _cpuInfo, _prevCPUInfo = nil;
+    mach_msg_type_number_t _numCPUInfo, _numPrevCPUInfo = 0;
+    unsigned _numCPUs;
+    NSLock *_cpuUsageLock;
+    
+    int _mib[2U] = { CTL_HW, HW_NCPU };
+    size_t _sizeOfNumCPUs = sizeof(_numCPUs);
+    int _status = sysctl(_mib, 2U, &_numCPUs, &_sizeOfNumCPUs, NULL, 0U);
+    if (_status)
+        _numCPUs = 1;
+    
+    _cpuUsageLock = [[NSLock alloc] init];
+    
+    natural_t _numCPUsU = 0U;
+    kern_return_t err = host_processor_info(mach_host_self(), PROCESSOR_CPU_LOAD_INFO, &_numCPUsU, &_cpuInfo, &_numCPUInfo);
+    if (err == KERN_SUCCESS) {
+        [_cpuUsageLock lock];
+        
+        NSMutableArray *cpus = [NSMutableArray new];
+        for (unsigned i = 0U; i < _numCPUs; ++i) {
+            Float32 _inUse, _total;
+            if (_prevCPUInfo) {
+                _inUse = (
+                          (_cpuInfo[(CPU_STATE_MAX * i) + CPU_STATE_USER]   - _prevCPUInfo[(CPU_STATE_MAX * i) + CPU_STATE_USER])
+                          + (_cpuInfo[(CPU_STATE_MAX * i) + CPU_STATE_SYSTEM] - _prevCPUInfo[(CPU_STATE_MAX * i) + CPU_STATE_SYSTEM])
+                          + (_cpuInfo[(CPU_STATE_MAX * i) + CPU_STATE_NICE]   - _prevCPUInfo[(CPU_STATE_MAX * i) + CPU_STATE_NICE])
+                          );
+                _total = _inUse + (_cpuInfo[(CPU_STATE_MAX * i) + CPU_STATE_IDLE] - _prevCPUInfo[(CPU_STATE_MAX * i) + CPU_STATE_IDLE]);
+            } else {
+                _inUse = _cpuInfo[(CPU_STATE_MAX * i) + CPU_STATE_USER] + _cpuInfo[(CPU_STATE_MAX * i) + CPU_STATE_SYSTEM] + _cpuInfo[(CPU_STATE_MAX * i) + CPU_STATE_NICE];
+                _total = _inUse + _cpuInfo[(CPU_STATE_MAX * i) + CPU_STATE_IDLE];
+            }
+            [cpus addObject:@(_inUse / _total)];
+        }
+        
+        [_cpuUsageLock unlock];
+        if (_prevCPUInfo) {
+            size_t prevCpuInfoSize = sizeof(integer_t) * _numPrevCPUInfo;
+            vm_deallocate(mach_task_self(), (vm_address_t)_prevCPUInfo, prevCpuInfoSize);
+        }
+        return cpus;
+    } else {
+        return nil;
+    }
+}
+
 @end

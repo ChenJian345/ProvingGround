@@ -26,6 +26,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSArray *)getAdvertisementInfo;
 
++ (NSArray *)getDiskInfo;
+
++ (NSArray *)getCPUInfo;
+
 @end
 
 NS_ASSUME_NONNULL_END
