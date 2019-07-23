@@ -57,6 +57,14 @@
     [mutArray addObject:[[DeviceInfoModel alloc] initWithName:@"System Name" value:device.systemName]];
     [mutArray addObject:[[DeviceInfoModel alloc] initWithName:@"System Version" value:device.systemVersion]];
     
+    NSString *sysUpDuration = [NSString stringWithFormat:@"%.2f hours", [[NSProcessInfo processInfo] systemUptime]/3600];
+    [mutArray addObject:[[DeviceInfoModel alloc] initWithName:@"System Up Duration" value:sysUpDuration]];
+    
+    NSString *sysUpTime = [NSDateFormatter localizedStringFromDate:[self getSystemUptime]
+                                                         dateStyle:NSDateFormatterFullStyle
+                                                         timeStyle:NSDateFormatterFullStyle];
+    [mutArray addObject:[[DeviceInfoModel alloc] initWithName:@"System Up Time" value:sysUpTime]];
+    
     return mutArray;
 }
 
@@ -171,6 +179,11 @@
     uname(&systemInfo);
     NSString *deviceString = [NSString stringWithCString:systemInfo.machine encoding:NSUTF8StringEncoding];
     return platformMap[deviceString] ?: deviceString;
+}
+
++ (NSDate *)getSystemUptime {
+    NSTimeInterval time = [[NSProcessInfo processInfo] systemUptime];
+    return [[NSDate alloc] initWithTimeIntervalSinceNow:(0 - time)];
 }
 
 #pragma mark - 当前App信息
