@@ -20,6 +20,10 @@ NSString * const kTypeOther = @"other-Info";
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
 @property (nonatomic, strong) NSDictionary *dicDatasource;
 
+// Battery
+@property (nonatomic, strong) DeviceInfoModel *batteryStatusModel;
+@property (nonatomic, strong) DeviceInfoModel *batteryLevelModel;
+
 @end
 
 @implementation DeviceInfoViewController
@@ -31,19 +35,25 @@ NSString * const kTypeOther = @"other-Info";
     [self setupDatasource];
     self.tableview.delegate = self;
     self.tableview.dataSource = self;
+    
+    [self startBatteryMonitoring];
 }
 
 - (void)setupDatasource {
+    [self createBatteryModel];
     self.dicDatasource = @{
                            @"General Device Info" : [DeviceInfoModel getGeneralDeviceInfo],
                            @"App Information" : [DeviceInfoModel getAppInfo],
                            @"Hareware Information" : [DeviceInfoModel getHardwareInfo],
                            @"Network Information" : [DeviceInfoModel getNetworkInfo],
-                           @"Advertisement Information" : [DeviceInfoModel getAdvertisementInfo]
+                           @"Advertisement Information" : [DeviceInfoModel getAdvertisementInfo],
+                           @"Battery Information" : [self createBatteryModel]
                            };
 }
 
-#pragma mark - UITableViewDelegate
+- (void)dealloc {
+    [self stopBatteryMonitoring];
+}
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -75,6 +85,129 @@ NSString * const kTypeOther = @"other-Info";
     }
     
     return cell;
+}
+
+#pragma mark - 电池信息
+- (void)startBatteryMonitoring {
+    UIDevice *device = [UIDevice currentDevice];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(didBatteryLevelUpdate:)
+                                                 name:UIDeviceBatteryLevelDidChangeNotification
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(didBatteryStatusUpdate:)
+                                                 name:UIDeviceBatteryStateDidChangeNotification
+                                               object:nil];
+    
+    [device setBatteryMonitoringEnabled:YES];
+    
+    // If by any chance battery value is available - update it immediately
+    if ([device batteryState] != UIDeviceBatteryStateUnknown) {
+        
+    }
+}
+
+- (void)stopBatteryMonitoring {
+    [[UIDevice currentDevice] setBatteryMonitoringEnabled:NO];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (NSArray *)createBatteryModel {
+    UIDevice *device = [UIDevice currentDevice];
+    if (!self.batteryStatusModel) {
+        self.batteryStatusModel = [[DeviceInfoModel alloc] init];
+        self.batteryStatusModel.name = @"Battery Status";
+        switch (device.batteryState) {
+            case UIDeviceBatteryStateFull:
+            {
+                self.batteryStatusModel.value = @"Full";
+            }
+                break;
+                
+            case UIDeviceBatteryStateUnknown:
+            {
+                self.batteryStatusModel.value = @"Unknown";
+            }
+                break;
+                
+            case UIDeviceBatteryStateCharging:
+            {
+                self.batteryStatusModel.value = @"Charging";
+            }
+                break;
+                
+            case UIDeviceBatteryStateUnplugged:
+            {
+                self.batteryStatusModel.value = @"Unplugged";
+            }
+                break;
+                
+            default:
+                break;
+        }
+    }
+    
+    if (!self.batteryLevelModel) {
+        self.batteryLevelModel = [[DeviceInfoModel alloc] init];
+        self.batteryLevelModel.name = @"Battery Level";
+        if (device.batteryLevel >= 0) {
+            self.batteryLevelModel.value = [NSString stringWithFormat:@"%d %%", (int)(device.batteryLevel*100)];
+        } else {
+            self.batteryLevelModel.value = @"Unknown";
+        }
+    }
+    
+    return @[self.batteryStatusModel, self.batteryLevelModel];
+}
+
+- (void)didBatteryStatusUpdate:(NSNotification *)notification {
+    NSLog(@"电池状态更新： %@", notification);
+    [self updateBatteryValue];
+    [self.tableview reloadData];
+}
+
+- (void)didBatteryLevelUpdate:(NSNotification *)notification {
+    NSLog(@"电池电量更新：%@", notification);
+    [self updateBatteryValue];
+    [self.tableview reloadData];
+}
+
+- (void)updateBatteryValue {
+    UIDevice *device = [UIDevice currentDevice];
+    switch (device.batteryState) {
+        case UIDeviceBatteryStateFull:
+        {
+            self.batteryStatusModel.value = @"Full";
+        }
+            break;
+            
+        case UIDeviceBatteryStateUnknown:
+        {
+            self.batteryStatusModel.value = @"Unknown";
+        }
+            break;
+            
+        case UIDeviceBatteryStateCharging:
+        {
+            self.batteryStatusModel.value = @"Charging";
+        }
+            break;
+            
+        case UIDeviceBatteryStateUnplugged:
+        {
+            self.batteryStatusModel.value = @"Unplugged";
+        }
+            break;
+            
+        default:
+            break;
+    }
+    
+    if (device.batteryLevel >= 0) {
+        self.batteryLevelModel.value = [NSString stringWithFormat:@"%d%%", (int)(device.batteryLevel*100)];
+    } else {
+        self.batteryLevelModel.value = @"Unknown";
+    }
 }
 
 @end

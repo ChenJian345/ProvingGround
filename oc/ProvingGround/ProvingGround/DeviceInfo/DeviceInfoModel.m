@@ -314,36 +314,4 @@
     return mutArray;
 }
 
-#pragma mark - 电池信息
-//- (void)startBatteryMonitoring {
-//    if (!self.batteryMonitoringEnabled) {
-//        self.batteryMonitoringEnabled = YES;
-//        UIDevice *device = [UIDevice currentDevice];
-//
-//        [[NSNotificationCenter defaultCenter] addObserver:self
-//                                                 selector:@selector(_batteryLevelUpdatedCB:)
-//                                                     name:UIDeviceBatteryLevelDidChangeNotification
-//                                                   object:nil];
-//        [[NSNotificationCenter defaultCenter] addObserver:self
-//                                                 selector:@selector(_batteryStatusUpdatedCB:)
-//                                                     name:UIDeviceBatteryStateDidChangeNotification
-//                                                   object:nil];
-//
-//        [device setBatteryMonitoringEnabled:YES];
-//
-//        // If by any chance battery value is available - update it immediately
-//        if ([device batteryState] != UIDeviceBatteryStateUnknown) {
-//            [self _doUpdateBatteryStatus];
-//        }
-//    }
-//}
-//
-//- (void)stopBatteryMonitoring {
-//    if (self.batteryMonitoringEnabled) {
-//        self.batteryMonitoringEnabled = NO;
-//        [[UIDevice currentDevice] setBatteryMonitoringEnabled:NO];
-//        [[NSNotificationCenter defaultCenter] removeObserver:self];
-//    }
-//}
-
 @end
