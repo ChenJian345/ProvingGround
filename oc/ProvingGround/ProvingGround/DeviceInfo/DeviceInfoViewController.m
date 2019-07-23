@@ -49,7 +49,8 @@ NSString * const kTypeOther = @"other-Info";
                            @"Advertisement Information" : [DeviceInfoModel getAdvertisementInfo],
                            @"Battery Information" : [self createBatteryModel],
                            @"Disk Usage" : [DeviceInfoModel getDiskInfo],
-                           @"CPU Usage" : [DeviceInfoModel getCPUInfo]
+                           @"CPU Usage" : [DeviceInfoModel getCPUInfo],
+                           @"Memory Usage" : [DeviceInfoModel getMemoryInfo],
                            };
 }
 

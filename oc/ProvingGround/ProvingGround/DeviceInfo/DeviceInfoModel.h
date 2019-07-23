@@ -30,6 +30,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSArray *)getCPUInfo;
 
++ (NSArray *)getMemoryInfo;
+
 @end
 
 NS_ASSUME_NONNULL_END

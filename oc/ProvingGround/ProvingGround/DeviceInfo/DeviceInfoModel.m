@@ -431,4 +431,122 @@
     }
 }
 
+#pragma mark - Memory
++ (NSArray *)getMemoryInfo {
+    NSMutableArray *mutArray = [[NSMutableArray alloc] init];
+    
+    NSString *totalMem = [NSString stringWithFormat:@"%lld MB", [self getTotalMemory]/(1024*1024)];
+    [mutArray addObject:[[DeviceInfoModel alloc] initWithName:@"Total Memory" value:totalMem]];
+    
+    NSString *activeMem = [NSString stringWithFormat:@"%lld MB", [self getActiveMemory]/(1024*1024)];
+    [mutArray addObject:[[DeviceInfoModel alloc] initWithName:@"Active Memory" value:activeMem]];
+    
+    NSString *inactiveMem = [NSString stringWithFormat:@"%lld MB", [self getInActiveMemory]/(1024*1024)];
+    [mutArray addObject:[[DeviceInfoModel alloc] initWithName:@"Inactive Memory" value:inactiveMem]];
+    
+    NSString *freeMem = [NSString stringWithFormat:@"%lld MB", [self getFreeMemory]/(1024*1024)];
+    [mutArray addObject:[[DeviceInfoModel alloc] initWithName:@"Free Memory" value:freeMem]];
+    
+    NSString *usageMem = [NSString stringWithFormat:@"%lld MB", [self getUsedMemory]/(1024*1024)];
+    [mutArray addObject:[[DeviceInfoModel alloc] initWithName:@"Usage Memory" value:usageMem]];
+    
+    NSString *wiredMem = [NSString stringWithFormat:@"%lld MB", [self getWiredMemory]/(1024*1024)];
+    [mutArray addObject:[[DeviceInfoModel alloc] initWithName:@"Wired Memory" value:wiredMem]];
+    
+    NSString *purgableMem = [NSString stringWithFormat:@"%lld MB", [self getPurgableMemory]/(1024*1024)];
+    [mutArray addObject:[[DeviceInfoModel alloc] initWithName:@"Purgable Memory" value:purgableMem]];
+    
+    return mutArray;
+}
+
++ (int64_t)getTotalMemory {
+    int64_t totalMemory = [[NSProcessInfo processInfo] physicalMemory];
+    if (totalMemory < -1) totalMemory = -1;
+    return totalMemory;
+}
+
++ (int64_t)getActiveMemory {
+    mach_port_t host_port = mach_host_self();
+    mach_msg_type_number_t host_size = sizeof(vm_statistics_data_t) / sizeof(integer_t);
+    vm_size_t page_size;
+    vm_statistics_data_t vm_stat;
+    kern_return_t kern;
+    
+    kern = host_page_size(host_port, &page_size);
+    if (kern != KERN_SUCCESS) return -1;
+    kern = host_statistics(host_port, HOST_VM_INFO, (host_info_t)&vm_stat, &host_size);
+    if (kern != KERN_SUCCESS) return -1;
+    return vm_stat.active_count * page_size;
+}
+
++ (int64_t)getInActiveMemory {
+    mach_port_t host_port = mach_host_self();
+    mach_msg_type_number_t host_size = sizeof(vm_statistics_data_t) / sizeof(integer_t);
+    vm_size_t page_size;
+    vm_statistics_data_t vm_stat;
+    kern_return_t kern;
+    
+    kern = host_page_size(host_port, &page_size);
+    if (kern != KERN_SUCCESS) return -1;
+    kern = host_statistics(host_port, HOST_VM_INFO, (host_info_t)&vm_stat, &host_size);
+    if (kern != KERN_SUCCESS) return -1;
+    return vm_stat.inactive_count * page_size;
+}
+
++ (int64_t)getFreeMemory {
+    mach_port_t host_port = mach_host_self();
+    mach_msg_type_number_t host_size = sizeof(vm_statistics_data_t) / sizeof(integer_t);
+    vm_size_t page_size;
+    vm_statistics_data_t vm_stat;
+    kern_return_t kern;
+    
+    kern = host_page_size(host_port, &page_size);
+    if (kern != KERN_SUCCESS) return -1;
+    kern = host_statistics(host_port, HOST_VM_INFO, (host_info_t)&vm_stat, &host_size);
+    if (kern != KERN_SUCCESS) return -1;
+    return vm_stat.free_count * page_size;
+}
+
++ (int64_t)getUsedMemory {
+    mach_port_t host_port = mach_host_self();
+    mach_msg_type_number_t host_size = sizeof(vm_statistics_data_t) / sizeof(integer_t);
+    vm_size_t page_size;
+    vm_statistics_data_t vm_stat;
+    kern_return_t kern;
+    
+    kern = host_page_size(host_port, &page_size);
+    if (kern != KERN_SUCCESS) return -1;
+    kern = host_statistics(host_port, HOST_VM_INFO, (host_info_t)&vm_stat, &host_size);
+    if (kern != KERN_SUCCESS) return -1;
+    return page_size * (vm_stat.active_count + vm_stat.inactive_count + vm_stat.wire_count);
+}
+
++ (int64_t)getWiredMemory {
+    mach_port_t host_port = mach_host_self();
+    mach_msg_type_number_t host_size = sizeof(vm_statistics_data_t) / sizeof(integer_t);
+    vm_size_t page_size;
+    vm_statistics_data_t vm_stat;
+    kern_return_t kern;
+    
+    kern = host_page_size(host_port, &page_size);
+    if (kern != KERN_SUCCESS) return -1;
+    kern = host_statistics(host_port, HOST_VM_INFO, (host_info_t)&vm_stat, &host_size);
+    if (kern != KERN_SUCCESS) return -1;
+    return vm_stat.wire_count * page_size;
+}
+
++ (int64_t)getPurgableMemory {
+    mach_port_t host_port = mach_host_self();
+    mach_msg_type_number_t host_size = sizeof(vm_statistics_data_t) / sizeof(integer_t);
+    vm_size_t page_size;
+    vm_statistics_data_t vm_stat;
+    kern_return_t kern;
+    
+    kern = host_page_size(host_port, &page_size);
+    if (kern != KERN_SUCCESS) return -1;
+    kern = host_statistics(host_port, HOST_VM_INFO, (host_info_t)&vm_stat, &host_size);
+    if (kern != KERN_SUCCESS) return -1;
+    return vm_stat.purgeable_count * page_size;
+}
+
 @end
