@@ -8,10 +8,9 @@
 
 #import "DeviceInfoViewController.h"
 #import "DeviceInfoModel.h"
+#import "SensorInfoModel.h"
 
 NSString * const kTableViewCellIdentifier = @"device-info-tableviewcell-identifier_%ld_%ld";
-//NSString * const kTableViewCellIdentifier = @"device-info-tableviewcell-identifier";
-
 NSString * const kTypeGeneralDeviceInfo = @"general-device-info";
 NSString * const kTypeOther = @"other-Info";
 
@@ -23,6 +22,9 @@ NSString * const kTypeOther = @"other-Info";
 // Battery
 @property (nonatomic, strong) DeviceInfoModel *batteryStatusModel;
 @property (nonatomic, strong) DeviceInfoModel *batteryLevelModel;
+
+// 传感器信息
+@property (nonatomic, strong) SensorInfoModel *sensorInfoModel;
 
 @end
 
@@ -37,6 +39,12 @@ NSString * const kTypeOther = @"other-Info";
     self.tableview.dataSource = self;
     
     [self startBatteryMonitoring];
+    
+    // 传感器信息
+    if (self.sensorInfoModel == nil) {
+        self.sensorInfoModel = [[SensorInfoModel alloc] init];
+        [self.sensorInfoModel startMonitor];
+    }
 }
 
 - (void)setupDatasource {
@@ -56,6 +64,11 @@ NSString * const kTypeOther = @"other-Info";
 
 - (void)dealloc {
     [self stopBatteryMonitoring];
+    
+    if (self.sensorInfoModel) {
+        [self.sensorInfoModel stopMonitor];
+        self.sensorInfoModel = nil;
+    }
 }
 
 #pragma mark - UITableViewDataSource
@@ -73,7 +86,7 @@ NSString * const kTypeOther = @"other-Info";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *identifier = [NSString stringWithFormat:kTableViewCellIdentifier, indexPath.section, indexPath.row];
+    NSString *identifier = [NSString stringWithFormat:kTableViewCellIdentifier, (long)indexPath.section, (long)indexPath.row];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];

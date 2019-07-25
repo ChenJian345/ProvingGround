@@ -32,6 +32,7 @@
 		4D8B473322E1A3ED002AC72D /* DeviceInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8B473122E1A3ED002AC72D /* DeviceInfoViewController.m */; };
 		4D8B473422E1A3ED002AC72D /* DeviceInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D8B473222E1A3ED002AC72D /* DeviceInfoViewController.xib */; };
 		4D8B473722E1B99C002AC72D /* DeviceInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8B473622E1B99C002AC72D /* DeviceInfoModel.m */; };
+		4D8B473D22E6B9F3002AC72D /* SensorInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8B473B22E6B9F3002AC72D /* SensorInfoModel.m */; };
 		4DD9D36320087FCA007396D2 /* ColorUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9D36120087FCA007396D2 /* ColorUtils.m */; };
 		4DFEACD6200DEC9A003DBCDA /* CustomViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DFEACD4200DEC9A003DBCDA /* CustomViewViewController.m */; };
 		4DFEACD7200DEC9A003DBCDA /* CustomViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DFEACD5200DEC9A003DBCDA /* CustomViewViewController.xib */; };
@@ -87,6 +88,8 @@
 		4D8B473222E1A3ED002AC72D /* DeviceInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeviceInfoViewController.xib; sourceTree = "<group>"; };
 		4D8B473522E1B99C002AC72D /* DeviceInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeviceInfoModel.h; sourceTree = "<group>"; };
 		4D8B473622E1B99C002AC72D /* DeviceInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeviceInfoModel.m; sourceTree = "<group>"; };
+		4D8B473B22E6B9F3002AC72D /* SensorInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SensorInfoModel.m; sourceTree = "<group>"; };
+		4D8B473C22E6B9F3002AC72D /* SensorInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SensorInfoModel.h; sourceTree = "<group>"; };
 		4DD9D36120087FCA007396D2 /* ColorUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorUtils.m; sourceTree = "<group>"; };
 		4DD9D36220087FCA007396D2 /* ColorUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorUtils.h; sourceTree = "<group>"; };
 		4DFEACD3200DEC9A003DBCDA /* CustomViewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomViewViewController.h; sourceTree = "<group>"; };
@@ -258,6 +261,8 @@
 				4D8B473222E1A3ED002AC72D /* DeviceInfoViewController.xib */,
 				4D8B473522E1B99C002AC72D /* DeviceInfoModel.h */,
 				4D8B473622E1B99C002AC72D /* DeviceInfoModel.m */,
+				4D8B473C22E6B9F3002AC72D /* SensorInfoModel.h */,
+				4D8B473B22E6B9F3002AC72D /* SensorInfoModel.m */,
 			);
 			path = DeviceInfo;
 			sourceTree = "<group>";
@@ -465,6 +470,7 @@
 				4DFEACD6200DEC9A003DBCDA /* CustomViewViewController.m in Sources */,
 				4D04B0DC2008BFB800821591 /* AlgorithmViewController.m in Sources */,
 				4D2A45BC205918EE00A2BE99 /* PDFQLPreviewController.m in Sources */,
+				4D8B473D22E6B9F3002AC72D /* SensorInfoModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
