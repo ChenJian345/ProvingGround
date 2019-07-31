@@ -34,6 +34,7 @@
 		4D8B473722E1B99C002AC72D /* DeviceInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8B473622E1B99C002AC72D /* DeviceInfoModel.m */; };
 		4D8B473D22E6B9F3002AC72D /* SensorInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8B473B22E6B9F3002AC72D /* SensorInfoModel.m */; };
 		4DD9D36320087FCA007396D2 /* ColorUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9D36120087FCA007396D2 /* ColorUtils.m */; };
+		4DF071BF22F1B0C200E94DFD /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DF071BE22F1B0C200E94DFD /* CoreTelephony.framework */; };
 		4DFEACD6200DEC9A003DBCDA /* CustomViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DFEACD4200DEC9A003DBCDA /* CustomViewViewController.m */; };
 		4DFEACD7200DEC9A003DBCDA /* CustomViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DFEACD5200DEC9A003DBCDA /* CustomViewViewController.xib */; };
 		7F2F85E6204D879500A1307D /* UIViewAnimationTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2F85E5204D879500A1307D /* UIViewAnimationTestViewController.m */; };
@@ -92,6 +93,7 @@
 		4D8B473C22E6B9F3002AC72D /* SensorInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SensorInfoModel.h; sourceTree = "<group>"; };
 		4DD9D36120087FCA007396D2 /* ColorUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorUtils.m; sourceTree = "<group>"; };
 		4DD9D36220087FCA007396D2 /* ColorUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorUtils.h; sourceTree = "<group>"; };
+		4DF071BE22F1B0C200E94DFD /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		4DFEACD3200DEC9A003DBCDA /* CustomViewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomViewViewController.h; sourceTree = "<group>"; };
 		4DFEACD4200DEC9A003DBCDA /* CustomViewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomViewViewController.m; sourceTree = "<group>"; };
 		4DFEACD5200DEC9A003DBCDA /* CustomViewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomViewViewController.xib; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DF071BF22F1B0C200E94DFD /* CoreTelephony.framework in Frameworks */,
 				4D2A45B9205918C500A2BE99 /* QuickLook.framework in Frameworks */,
 				28890CEA34979C57717AF900 /* libPods-ProvingGround.a in Frameworks */,
 			);
@@ -198,6 +201,7 @@
 		4D2A45B7205918C400A2BE99 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4DF071BE22F1B0C200E94DFD /* CoreTelephony.framework */,
 				4D2A45B8205918C500A2BE99 /* QuickLook.framework */,
 				EA8CC18F8A28FBD06951F2E2 /* libPods-ProvingGround.a */,
 			);
@@ -610,11 +614,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = D62BHWAPT5;
+				DEVELOPMENT_TEAM = BHWTW6L8X6;
 				INFOPLIST_FILE = "$(SRCROOT)/ProvingGround/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.markcj.provingground;
+				PRODUCT_BUNDLE_IDENTIFIER = com.meituan.i;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -626,11 +630,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = D62BHWAPT5;
+				DEVELOPMENT_TEAM = BHWTW6L8X6;
 				INFOPLIST_FILE = "$(SRCROOT)/ProvingGround/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.markcj.provingground;
+				PRODUCT_BUNDLE_IDENTIFIER = com.meituan.i;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

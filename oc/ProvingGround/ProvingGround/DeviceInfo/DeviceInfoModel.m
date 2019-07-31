@@ -21,6 +21,10 @@
 #import <sys/ioctl.h>
 #import <arpa/inet.h>
 
+// Telephony
+#import <CoreTelephony/CTCarrier.h>
+#import <CoreTelephony/CTTelephonyNetworkInfo.h>
+
 // IP Address
 #include <ifaddrs.h>
 
@@ -220,10 +224,72 @@
 #pragma mark - 网络信息
 + (NSArray *)getNetworkInfo {
     NSMutableArray *mutArray = [[NSMutableArray alloc] init];
+    [mutArray addObject:[[DeviceInfoModel alloc] initWithName:@"Carrier Name" value:[self carrierName]]];
     [mutArray addObject:[[DeviceInfoModel alloc] initWithName:@"IP Address" value:[self getDeviceIPAddresses]]];
     [mutArray addObject:[[DeviceInfoModel alloc] initWithName:@"Mac Address" value:[NSString stringWithFormat:@"%@", [self getMacAddress]]]];
+    [mutArray addObject:[[DeviceInfoModel alloc] initWithName:@"Allow VoIP" value:[self allowsVOIP]]];
+    [mutArray addObject:[[DeviceInfoModel alloc] initWithName:@"Radio Access Technology" value:[self radioAccessTechnology]]];
+    [mutArray addObject:[[DeviceInfoModel alloc] initWithName:@"Other Carrier Info" value:[self otherCarrierInfo]]];
     
     return mutArray;
+}
+
+// ----- 运营商信息
+// 运营商名称
++ (NSString *)carrierName {
+    CTTelephonyNetworkInfo *info = [[CTTelephonyNetworkInfo alloc] init];
+    CTCarrier *carrier = [info subscriberCellularProvider];
+    NSString *name = nil;
+    if (carrier) {
+        name = [carrier carrierName];
+    }
+    
+    if (name.length == 0) {
+        name = @"Unknown";
+    }
+    
+    return name;
+}
+
++ (NSString *)allowsVOIP {
+    CTTelephonyNetworkInfo *info = [[CTTelephonyNetworkInfo alloc] init];
+    CTCarrier *carrier = [info subscriberCellularProvider];
+    BOOL allowsVOIP = [carrier allowsVOIP];// YES
+    if (allowsVOIP) {
+        return @"Support";
+    } else {
+        return @"Unsupport";
+    }
+}
+
++ (NSString *)radioAccessTechnology {
+    CTTelephonyNetworkInfo *info = [[CTTelephonyNetworkInfo alloc] init];
+    NSString *radioAccessTechnology = info.currentRadioAccessTechnology; // 无线连接技术，如CTRadioAccessTechnologyLTE
+    if (radioAccessTechnology.length == 0) {
+        return @"Unknown";
+    }
+    return radioAccessTechnology;
+}
+
++ (NSString *)otherCarrierInfo {
+    CTTelephonyNetworkInfo *info = [[CTTelephonyNetworkInfo alloc] init];
+    CTCarrier *carrier = [info subscriberCellularProvider];
+    
+    /**
+     IMSI：International Mobile Subscriber Identification Number 国际移动用户识别码;
+     IMSI分为两部分：
+        一部分叫MCC(Mobile Country Code, 移动国家码)，MCC的资源由国际电联(ITU)统一分配，唯一识
+        别移动用户所属的国家，MCC共3位，中国地区的MCC为460
+     
+        另一部分叫MNC(Mobile Network Code 移动网络号码)，用于识别移动客户所属的移动网络运营商。MNC由
+        二到三个十进制数组成，例如中国移动MNC为00、02、07，中国联通的MNC为01、06、09，中国电信的MNC为03、05、11
+     
+     由1、2两点可知，对于中国地区来说IMSI一般为46000(中国移动)、46001(中国联通)、46003(中国电信)等。
+     */
+    NSString *mcc = [carrier mobileCountryCode]; // 国家码 如：460
+    NSString *mnc = [carrier mobileNetworkCode]; // 网络码 如：01
+    NSString *isoCountryCode = [carrier isoCountryCode]; // cn
+    return [NSString stringWithFormat:@"MCC:%@, MNC:%@, ISO Country Code:%@", mcc, mnc, isoCountryCode];
 }
 
 + (NSString *)getMacAddress {
