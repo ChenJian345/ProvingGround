@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+
+<!-- 外部样式表 -->
+<link rel="stylesheet" type="text/css" href="../css/mystyle.css">
+<title>HTML JS</title>
+</head>
+
+<body>
+    <!-- Script -->
+    <p id="clickMeContent">点我干嘛事件响应内容&trade;</p>
+    <h1>这是一个H1标题行</h1>
+    <h2>这是一个H2标题行</h2>
+    <h3>这是一个H3标题行</h3>
+    <h3>这是一个H3标题行</h3>
+    <hr />
+    <code>
+        This is code part // 好像没有什么不同
+    </code>
+
+    <!-- 缩写 -->
+    <br />
+    <abbr>这是缩写</abbr>
+    <hr />
+    <script>
+        // document.write("<h1>这是一个H1标题</h1>")
+        // document.write("<p>Hello world</p>")
+
+        function onClickMe() {
+            document.getElementById("clickMeContent").innerHTML = "点我干嘛？干嘛？";
+            // alert("点我干嘛？干嘛？！")
+        }
+
+        function changeToRed() {
+            document.getElementById("clickMeContent").style.color = "#FF0000"
+        }
+
+        function changeToYellow() {
+            document.getElementById("clickMeContent").style.color = "#FFFF00"
+        }
+    </script>
+    <button type="button" onclick="onClickMe()">点我点我</button>
+    <button type="button" onclick="changeToRed()">变红</button>
+    <button type="button" onclick="changeToYellow()">变黄</button>
+
+</body>
+
+</html>

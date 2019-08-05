@@ -1,15 +1,34 @@
-<style type="text/css">
+@charset "UTF-8";
 
 body {
-	background-color :#cccccc;
+	background-color: antiquewhite;
+	background-image: url("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1564985897607&di=e604dace9edb2470eff06028b7fac00f&imgtype=0&src=http%3A%2F%2Fimg.mp.itc.cn%2Fupload%2F20160407%2Fbab6dc7b4a11408ea35660ae1cd09d4a_th.jpg");
+	background-size: cover;
+	color: white;
 }
 
 p {
 	color: red;
+	text-indent: 50px;
+	font-family: 'Courier New', Courier, monospace;
 }
 
-h1 {
-	color: blue;
+h1,
+h2,
+h3 {
+	color: pink;
+	padding-top: 1em;
 }
 
-</style>
+#clickMeContent {
+	background-color: darkcyan;
+	color: aliceblue;
+	font-size: 30px;
+	text-align: center;
+	border-width: 2px;
+	border-color: yellowgreen;
+	border-top-style: dotted;
+	border-right-style: solid;
+	border-bottom-style: dotted;
+	border-left-style: solid;
+}

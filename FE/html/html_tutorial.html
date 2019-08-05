@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<html>
+
 <head>
 	<!-- Meta信息 -->
 	<meta charset="utf-8">
@@ -20,11 +22,12 @@
 	</style>
 	-->
 </head>
+
 <body>
 	<p>练手代码</p>
 	<a href="" target="_parent">链接测试</a>
 	<h1>测试CSS样式表配置</h1>
-	<div>
+	<div id="div1">
 		<p>这是一个Div元素中的段落</p>
 	</div>
 
@@ -50,7 +53,7 @@
 			哈哈哈😝
 		</div>
 
-		<div id="footer" style="background-color: darkmagenta; column-span: 2; text-align: center"> 
+		<div id="footer" style="background-color: darkmagenta; column-span: 2; text-align: center">
 			版权所有Mark CJ
 		</div>
 	</div>
@@ -70,12 +73,23 @@
 			<option value="saab">Saab</option>
 			<option value="fiat">Fiat</option>
 			<option value="audi">Audi</option>
-			</select>
+		</select>
 		<br />
 		<input type="submit" value="提交">
 
 	</form>
 
 	<!-- iFrame -->
+	<hr />
 	<iframe src="http://www.baidu.com" name="Baidu" width="40%" height="50%"></iframe>
+
+	<button type="button" onclick="onClickMe()">点我JS响应</button>
+
+	<script>
+		function onClickMe() {
+			document.getElementById("div1").innerHTML = "<h2>这是替换之后的div1</h2>";
+		}
+	</script>
 </body>
+
+</html>
