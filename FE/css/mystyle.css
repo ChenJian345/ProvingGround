@@ -18,6 +18,12 @@ h2,
 h3 {
 	color: pink;
 	padding-top: 1em;
+	/* visibility: visible;
+	display: none; */
+}
+
+h3.hidden {
+	visibility: hidden;
 }
 
 #clickMeContent {
