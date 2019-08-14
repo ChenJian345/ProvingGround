@@ -2,11 +2,11 @@
 <html>
 
 <head>
-<meta charset="utf-8">
+    <meta charset="utf-8">
 
-<!-- 外部样式表 -->
-<link rel="stylesheet" type="text/css" href="../css/mystyle.css">
-<title>HTML JS</title>
+    <!-- 外部样式表 -->
+    <link rel="stylesheet" type="text/css" href="../css/mystyle.css">
+    <title>HTML JS</title>
 </head>
 
 <body>
@@ -31,20 +31,82 @@
         function onClickMe() {
             document.getElementById("clickMeContent").innerHTML = "点我干嘛？干嘛？";
             // alert("点我干嘛？干嘛？！")
+
+            // 尝试一段for循环
+            for (var i = 0; i <= 10; i++) {
+                console.log("打印一下从0到10的数字：" + i);
+
+                var key = 'key-' + i;
+                switch (key) {
+                    case 'key-2':
+                        {
+                            console.log("这是key-2");
+                        }
+                        break;
+
+                    case 'key-4':
+                        {
+                            console.log("这是key-4");
+                        }
+                        break;
+
+                    default:
+                        break;
+                }
+            }
+
+            // Switch语句
         }
 
         function changeToRed() {
             document.getElementById("clickMeContent").style.color = "#FF0000"
+
+            // JavaScript 的数据类型，共有六种。（ES6 又新增了第七种 Symbol 类型的值，本教程不涉及。）
+            var str = "this is string";
+            var num = 3;
+            var boolvar = true;
+            console.log(typeof str);
+            console.log(typeof num);
+            console.log(typeof boolvar);
+            console.log(typeof changeToYellow);
+            console.log(typeof {});
+            console.log(typeof []);
+            console.log(typeof null);
+            console.log(typeof undefined);
         }
 
         function changeToYellow() {
             document.getElementById("clickMeContent").style.color = "#FFFF00"
         }
+
+        /*
+        斐波拉契数列数列，index为索引值，从0开始
+        */
+        function getFib(index) {
+            if (index <= 0) {
+                return 1;
+            } 
+
+            if (index == 1) {
+                return 1;
+            }
+
+            return getFib(index - 2) + getFib(index - 1);
+        }
+        
+        function getFibByIndex() {
+            var result = getFib(10);
+            document.getElementById("fibResult").innerHTML = "斐波拉契数列结果：<b style=\"color:red\">" + result + "</b>";
+        }
+
     </script>
     <button type="button" onclick="onClickMe()">点我点我</button>
     <button type="button" onclick="changeToRed()">变红</button>
     <button type="button" onclick="changeToYellow()">变黄</button>
 
+    <hr />
+    <p id="fibResult" style="font: 10; color:white;">斐波拉契数列结果：</p>
+    <button type="button" onclick="getFibByIndex()">斐波拉契数列第X个数</button>
 </body>
 
 </html>
