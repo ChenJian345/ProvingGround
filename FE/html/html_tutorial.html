@@ -2,18 +2,18 @@
 <html>
 
 <head>
-	<!-- Meta信息 -->
-	<meta charset="utf-8">
+    <!-- Meta信息 -->
+    <meta charset="utf-8">
 
-	<!-- 每2s刷新一次 -->
-	<!-- <meta http-equiv="refresh" content="2"> -->
-	<meta name="keywords" content="HTML">
-	<meta name="author" content="Mark Chen">
-	<meta name="description" content="Html学习示例">
+    <!-- 每2s刷新一次 -->
+    <!-- <meta http-equiv="refresh" content="2"> -->
+    <meta name="keywords" content="HTML">
+    <meta name="author" content="Mark Chen">
+    <meta name="description" content="Html学习示例">
 
-	<link rel="stylesheet" type="text/css" href="../css/mystyle.css">
-	<title>Runoob HTML学习</title>
-	<!-- 头文件中使用CSS样式
+    <link rel="stylesheet" type="text/css" href="../css/mystyle.css">
+    <title>Runoob HTML学习</title>
+    <!-- 头文件中使用CSS样式
 	<style type="text/css">
 		body {
 			background-color: lightcoral
@@ -24,72 +24,72 @@
 </head>
 
 <body>
-	<p>练手代码</p>
-	<a href="" target="_parent">链接测试</a>
-	<h1>测试CSS样式表配置</h1>
-	<div id="div1">
-		<p>这是一个Div元素中的段落</p>
-	</div>
+    <p>练手代码</p>
+    <a href="" target="_parent">链接测试</a>
+    <h1>测试CSS样式表配置</h1>
+    <div id="div1">
+        <p>这是一个Div元素中的段落</p>
+    </div>
 
-	<div id="container" style="width: 500px; background-color: cadetblue">
-		<div id="header" style="background-color: bisque">
-			这里是Header Div中的内容
-		</div>
+    <div id="container" style="width: 500px; background-color: cadetblue">
+        <div id="header" style="background-color: bisque">
+            这里是Header Div中的内容
+        </div>
 
-		<div id="menu" style="background-color: brown; width: 100px; height:100%; float: left;">
-			<ul>
-				<li>首页</li>
-				<li>子页面1</li>
-				<li>子页面2</li>
-				<li>子页面3</li>
-			</ul>
+        <div id="menu" style="background-color: brown; width: 100px; height:100%; float: left;">
+            <ul>
+                <li>首页</li>
+                <li>子页面1</li>
+                <li>子页面2</li>
+                <li>子页面3</li>
+            </ul>
 
-		</div>
+        </div>
 
-		<div id="content" style="background-color: chartreuse; float: left; width: 400px; height: 100%">
-			这里是div的Content 部分
-			<p>哈哈哈</p>
-			<br />
-			哈哈哈😝
-		</div>
+        <div id="content" style="background-color: chartreuse; float: left; width: 400px; height: 100%">
+            这里是div的Content 部分
+            <p>哈哈哈</p>
+            <br />
+            哈哈哈😝
+        </div>
 
-		<div id="footer" style="background-color: darkmagenta; column-span: 2; text-align: center">
-			版权所有Mark CJ
-		</div>
-	</div>
+        <div id="footer" style="background-color: darkmagenta; column-span: 2; text-align: center">
+            版权所有Mark CJ
+        </div>
+    </div>
 
-	<br />
-	<br />
-	<br />
-	<!-- 表单元素 -->
-	<form action="">
-		First Name : <input type="text" name="firstname" placeholder="您的姓">
-		Last Name : <input type="text" name="lastname" placeholder="您的名">
+    <br />
+    <br />
+    <br />
+    <!-- 表单元素 -->
+    <form action="">
+        First Name : <input type="text" name="firstname" placeholder="您的姓">
+        Last Name : <input type="text" name="lastname" placeholder="您的名">
 
-		<br />
-		Password : <input type="password" name="passwd" placeholder="请输入密码">
-		<select name="cars">
-			<option value="volvo">Volvo</option>
-			<option value="saab">Saab</option>
-			<option value="fiat">Fiat</option>
-			<option value="audi">Audi</option>
-		</select>
-		<br />
-		<input type="submit" value="提交">
+        <br />
+        Password : <input type="password" name="passwd" placeholder="请输入密码">
+        <select name="cars">
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="fiat">Fiat</option>
+            <option value="audi">Audi</option>
+        </select>
+        <br />
+        <input type="submit" value="提交">
 
-	</form>
+    </form>
 
-	<!-- iFrame -->
-	<hr />
-	<iframe src="http://www.baidu.com" name="Baidu" width="40%" height="50%"></iframe>
+    <!-- iFrame -->
+    <hr />
+    <iframe src="http://www.baidu.com" name="Baidu" width="40%" height="50%"></iframe>
 
-	<button type="button" onclick="onClickMe()">点我JS响应</button>
+    <button type="button" onclick="onClickMe()">点我JS响应</button>
 
-	<script>
-		function onClickMe() {
-			document.getElementById("div1").innerHTML = "<h2>这是替换之后的div1</h2>";
-		}
-	</script>
+    <script>
+        function onClickMe() {
+            document.getElementById("div1").innerHTML = "<h2>这是替换之后的div1</h2>";
+        }
+    </script>
 </body>
 
 </html>

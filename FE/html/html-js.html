@@ -90,13 +90,24 @@
             if (index == 1) {
                 return 1;
             }
-
+            // 递归调用
             return getFib(index - 2) + getFib(index - 1);
         }
         
         function getFibByIndex() {
             var result = getFib(10);
-            document.getElementById("fibResult").innerHTML = "斐波拉契数列结果：<b style=\"color:red\">" + result + "</b>";
+            document.getElementById("fibResult").innerHTML = "斐波拉契数列结果：<b style=\"color:red\">" + result + "</b><p>函数源码如下：" + getFib.toString() + "</p>";
+
+            // Object
+            var person = { name:'Mark', age:12};
+            // window.alert("人名：" + person.name + "，年龄: " + person.age);
+
+            // Array
+            // var persons = [person, person];
+            // persons[2] = person;
+            // window.alert("人数：" + persons.length);
+
+            
         }
 
     </script>
