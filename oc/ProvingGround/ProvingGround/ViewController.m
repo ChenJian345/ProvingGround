@@ -33,6 +33,9 @@
 // Device Information Viewer
 #import "DeviceInfoViewController.h"
 
+// Core Motion Test ViewController
+#import "MotionInfoViewController.h"
+
 static void *paperKVOContext = &paperKVOContext;
 
 @interface ViewController ()
@@ -285,6 +288,13 @@ int searchInsert(int* nums, int numsSize, int target) {
         {
             DeviceInfoViewController *deviceInfoVC = [[DeviceInfoViewController alloc] init];
             [self.navigationController pushViewController:deviceInfoVC animated:YES];
+        }
+            break;
+            
+        case 11:
+        {
+            MotionInfoViewController *motionInfoVC = [[MotionInfoViewController alloc] init];
+            [self.navigationController pushViewController:motionInfoVC animated:YES];
         }
             break;
             
