@@ -20,11 +20,8 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing" translatesAutoresizingMaskIntoConstraints="NO" id="h8s-4u-cyQ">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="400"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="400" id="JeB-Ee-YXD"/>
-                    </constraints>
                     <color key="textColor" systemColor="systemGreenColor" red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -32,6 +29,7 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="h8s-4u-cyQ" firstAttribute="bottom" secondItem="Q5M-cg-NOt" secondAttribute="bottom" id="XNG-jX-c1z"/>
                 <constraint firstItem="h8s-4u-cyQ" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="cSE-9X-odw"/>
                 <constraint firstItem="h8s-4u-cyQ" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="dfM-Zz-nQV"/>
                 <constraint firstItem="h8s-4u-cyQ" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="ec7-S0-uS2"/>

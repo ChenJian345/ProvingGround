@@ -25,6 +25,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"CoreMotion";
     // Do any additional setup after loading the view from its nib.
     
     self.tvConsole.text = @"";
@@ -122,6 +123,7 @@
             weakSelf.tvConsole.text = [NSString stringWithFormat:@"%@\n%@=> %@", oldText, time, newText];
         }
         
+        
         NSRange bottom = NSMakeRange(weakSelf.tvConsole.text.length -1, 1);
         [weakSelf.tvConsole scrollRangeToVisible:bottom];
     });
@@ -134,7 +136,7 @@
         
         // ----------------- 陀螺仪 -----------------
         // 陀螺仪更新速率，单位s
-        self.motionManager.gyroUpdateInterval = 1;
+        self.motionManager.gyroUpdateInterval = 4;
         
         // 需要时采集数据
         //        [self.motionManager startGyroUpdates];
@@ -142,14 +144,14 @@
         
         // 数据实时更新
         [self.motionManager startGyroUpdatesToQueue:self.operationQueue withHandler:^(CMGyroData * _Nullable gyroData, NSError * _Nullable error) {
-            NSString *txtGyroData = [NSString stringWithFormat:@"x = %f, y = %f, z = %f", gyroData.rotationRate.x, gyroData.rotationRate.y, gyroData.rotationRate.z];
+            NSString *txtGyroData = [NSString stringWithFormat:@"陀螺仪 x = %f, y = %f, z = %f", gyroData.rotationRate.x, gyroData.rotationRate.y, gyroData.rotationRate.z];
             NSLog(@"%@", txtGyroData);
             [weakSelf appendToConsole:txtGyroData];
         }];
         
         // ----------------- 加速度计 -----------------
         // 设置采样频率
-        self.motionManager.accelerometerUpdateInterval = 1.0;
+        self.motionManager.accelerometerUpdateInterval = 4.0;
         
         //        // 需要时采集
         //        [self.motionManager startAccelerometerUpdates]
@@ -163,7 +165,7 @@
         }];
         
         // ----------------- 磁力计 -----------------
-        self.motionManager.magnetometerUpdateInterval = 1.0;
+        self.motionManager.magnetometerUpdateInterval = 4.0;
         [self.motionManager startMagnetometerUpdatesToQueue:self.operationQueue withHandler:^(CMMagnetometerData * _Nullable magnetometerData, NSError * _Nullable error) {
             NSString *str = [NSString stringWithFormat:@"磁力计 x=%f, y=%f, z=%f", magnetometerData.magneticField.x, magnetometerData.magneticField.y, magnetometerData.magneticField.z];
             NSLog(@"%@", str);
@@ -172,7 +174,7 @@
         
         
         // ----------------- DeviceMotion -----------------
-        self.motionManager.deviceMotionUpdateInterval = 1.0;
+        self.motionManager.deviceMotionUpdateInterval = 4.0;
         [self.motionManager startDeviceMotionUpdatesToQueue:self.operationQueue withHandler:^(CMDeviceMotion * _Nullable motion, NSError * _Nullable error) {
             NSString *str = [NSString stringWithFormat:@"DeviceMotion = %@", motion];
             NSLog(@"%@", str);
