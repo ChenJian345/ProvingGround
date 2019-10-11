@@ -14,8 +14,8 @@
 
 @property (nonatomic, strong) NSOperationQueue *operationQueue;
 @property (nonatomic, strong) CMMotionActivityManager *activityManager; // 运动状态
-
 @property (nonatomic, strong) CMMotionManager *motionManager;   // 运动传感器Manager
+@property (nonatomic, strong) CMAltimeter *altimeter;           // 高度传感器
 
 @property (weak, nonatomic) IBOutlet UITextView *tvConsole;
 
@@ -26,22 +26,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"CoreMotion";
-    // Do any additional setup after loading the view from its nib.
-    
     self.tvConsole.text = @"";
     
     // 初始化组件
     self.operationQueue = [[NSOperationQueue alloc] init];
     self.activityManager = [[CMMotionActivityManager alloc] init];
+    self.altimeter = [[CMAltimeter alloc] init];
     
     // 运动传感器
     self.motionManager = [[CMMotionManager alloc] init];
+    
     
     // 运动状态判断检测
     [self startActivityMonitor];
     
     // 加速度，陀螺仪
-    [self startSensorMotionMonitor];
+    // [self startSensorMotionMonitor];
+    
+    // 处理后的设备运动状态信息
+    [self startProcessedDeviceMotionDataMonitor];
 }
 
 - (void)dealloc {
@@ -130,13 +133,14 @@
 }
 
 #pragma mark - 陀螺仪
+// 获取DeviceMotion相关数据
 - (BOOL)startSensorMotionMonitor {
     if (self.motionManager && self.motionManager.isDeviceMotionAvailable) {
         __weak typeof(self) weakSelf = self;
         
         // ----------------- 陀螺仪 -----------------
         // 陀螺仪更新速率，单位s
-        self.motionManager.gyroUpdateInterval = 4;
+        self.motionManager.gyroUpdateInterval = 5;
         
         // 需要时采集数据
         //        [self.motionManager startGyroUpdates];
@@ -151,7 +155,7 @@
         
         // ----------------- 加速度计 -----------------
         // 设置采样频率
-        self.motionManager.accelerometerUpdateInterval = 4.0;
+        self.motionManager.accelerometerUpdateInterval = 5.0;
         
         //        // 需要时采集
         //        [self.motionManager startAccelerometerUpdates]
@@ -165,7 +169,7 @@
         }];
         
         // ----------------- 磁力计 -----------------
-        self.motionManager.magnetometerUpdateInterval = 4.0;
+        self.motionManager.magnetometerUpdateInterval = 5.0;
         [self.motionManager startMagnetometerUpdatesToQueue:self.operationQueue withHandler:^(CMMagnetometerData * _Nullable magnetometerData, NSError * _Nullable error) {
             NSString *str = [NSString stringWithFormat:@"磁力计 x=%f, y=%f, z=%f", magnetometerData.magneticField.x, magnetometerData.magneticField.y, magnetometerData.magneticField.z];
             NSLog(@"%@", str);
@@ -174,7 +178,7 @@
         
         
         // ----------------- DeviceMotion -----------------
-        self.motionManager.deviceMotionUpdateInterval = 4.0;
+        self.motionManager.deviceMotionUpdateInterval = 5.0;
         [self.motionManager startDeviceMotionUpdatesToQueue:self.operationQueue withHandler:^(CMDeviceMotion * _Nullable motion, NSError * _Nullable error) {
             NSString *str = [NSString stringWithFormat:@"DeviceMotion = %@", motion];
             NSLog(@"%@", str);
@@ -193,6 +197,33 @@
         if (self.motionManager.isGyroActive) {
             [self.motionManager stopGyroUpdates];
         }
+    }
+}
+
+#pragma mark - 处理后的Device Motion Data
+- (BOOL)startProcessedDeviceMotionDataMonitor {
+    if (self.altimeter && [CMAltimeter isRelativeAltitudeAvailable]) {
+        if (@available(iOS 11.0, *)) {
+            if ([CMAltimeter authorizationStatus] != CMAuthorizationStatusAuthorized) {
+                [self appendToConsole:@"获取高度未被授权"];
+            }
+        } else {
+            // Fallback on earlier versions
+        }
+        
+        [self.altimeter startRelativeAltitudeUpdatesToQueue:self.operationQueue withHandler:^(CMAltitudeData * _Nullable altitudeData, NSError * _Nullable error) {
+            NSString *str = [NSString stringWithFormat:@"高度计 : relativeAltitude = %@ 米, 气压 = %@ kPa", altitudeData.relativeAltitude, altitudeData.pressure];
+            NSLog(@"%@", str);
+            [self appendToConsole:str];
+        }];
+    }
+    
+    return YES;
+}
+
+- (void)stopProcessedDeviceMotionDataMonitor {
+    if (self.altimeter && [CMAltimeter isRelativeAltitudeAvailable]) {
+        [self.altimeter stopRelativeAltitudeUpdates];
     }
 }
 

@@ -22,6 +22,10 @@
 	<true/>
 	<key>NSMotionUsageDescription</key>
 	<string>为了更好的读取计步器，运动状态数据等</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>location</string>
+	</array>
 	<key>UIFileSharingEnabled</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>
