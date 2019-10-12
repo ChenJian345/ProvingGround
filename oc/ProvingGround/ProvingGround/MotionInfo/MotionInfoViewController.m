@@ -15,7 +15,8 @@
 @property (nonatomic, strong) NSOperationQueue *operationQueue;
 @property (nonatomic, strong) CMMotionActivityManager *activityManager; // 运动状态
 @property (nonatomic, strong) CMMotionManager *motionManager;   // 运动传感器Manager
-@property (nonatomic, strong) CMAltimeter *altimeter;           // 高度传感器
+@property (nonatomic, strong) CMAltimeter *altimeter;           // 海拔 & 高度
+@property (nonatomic, strong) CMPedometer *pedometer;           // 步数、楼层等
 
 @property (weak, nonatomic) IBOutlet UITextView *tvConsole;
 
@@ -32,6 +33,7 @@
     self.operationQueue = [[NSOperationQueue alloc] init];
     self.activityManager = [[CMMotionActivityManager alloc] init];
     self.altimeter = [[CMAltimeter alloc] init];
+    self.pedometer = [[CMPedometer alloc] init];
     
     // 运动传感器
     self.motionManager = [[CMMotionManager alloc] init];
@@ -202,6 +204,8 @@
 
 #pragma mark - 处理后的Device Motion Data
 - (BOOL)startProcessedDeviceMotionDataMonitor {
+    __weak typeof(self) weakSelf = self;
+    // 高度、海拔相关
     if (self.altimeter && [CMAltimeter isRelativeAltitudeAvailable]) {
         if (@available(iOS 11.0, *)) {
             if ([CMAltimeter authorizationStatus] != CMAuthorizationStatusAuthorized) {
@@ -210,12 +214,48 @@
         } else {
             // Fallback on earlier versions
         }
-        
+
         [self.altimeter startRelativeAltitudeUpdatesToQueue:self.operationQueue withHandler:^(CMAltitudeData * _Nullable altitudeData, NSError * _Nullable error) {
             NSString *str = [NSString stringWithFormat:@"高度计 : relativeAltitude = %@ 米, 气压 = %@ kPa", altitudeData.relativeAltitude, altitudeData.pressure];
             NSLog(@"%@", str);
-            [self appendToConsole:str];
+            [weakSelf appendToConsole:str];
         }];
+    } else {
+        NSLog(@"本设备不支持高度数据读取");
+    }
+    
+    // 步数
+    if (self.pedometer && [CMPedometer isStepCountingAvailable]) {
+        if (@available(iOS 11.0, *)) {
+            if ([CMPedometer authorizationStatus] != CMAuthorizationStatusAuthorized) {
+                [self appendToConsole:@"获取步数未被授权"];
+            }
+        }
+        
+        self.pedometer.inter
+        
+        [self.pedometer startPedometerUpdatesFromDate:[NSDate date] withHandler:^(CMPedometerData * _Nullable pedometerData, NSError * _Nullable error) {
+            
+            NSString *str = [NSString stringWithFormat:@"步数数据: %@-%@, 步数: %@, 距离:%@米, 上楼%@层，下楼%@层, 步速%@ s/m, 步频%@ steps/s", pedometerData.startDate, pedometerData.endDate, pedometerData.numberOfSteps, pedometerData.distance, pedometerData.floorsAscended, pedometerData.floorsDescended, pedometerData.currentPace, pedometerData.currentCadence];
+            
+            if (@available(iOS 10.0, *)) {
+                str = [str stringByAppendingFormat:@", 平均步速%@ s/m", pedometerData.averageActivePace];
+            }
+            NSLog(@"%@", str);
+            [weakSelf appendToConsole:str];
+        }];
+        
+        if (@available(iOS 10.0, *)) {
+            [self.pedometer startPedometerEventUpdatesWithHandler:^(CMPedometerEvent * _Nullable pedometerEvent, NSError * _Nullable error) {
+                NSString *str = [[NSString alloc] initWithFormat:@"步数事件 : pedometerEvent = %@", pedometerEvent];
+                NSLog(@"%@", str);
+                [weakSelf appendToConsole:str];
+            }];
+        } else {
+            // 低版本不支持
+        };
+    } else {
+        NSLog(@"本设备不支持计步数据读取");
     }
     
     return YES;
