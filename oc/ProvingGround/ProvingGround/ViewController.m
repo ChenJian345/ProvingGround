@@ -36,6 +36,12 @@
 // Core Motion Test ViewController
 #import "MotionInfoViewController.h"
 
+// AI TensorFlow
+#import "AITensorFlowMainViewController.h"
+
+// BLE
+#import "BleInfoViewController.h"
+
 static void *paperKVOContext = &paperKVOContext;
 
 @interface ViewController ()
@@ -295,6 +301,20 @@ int searchInsert(int* nums, int numsSize, int target) {
         {
             MotionInfoViewController *motionInfoVC = [[MotionInfoViewController alloc] init];
             [self.navigationController pushViewController:motionInfoVC animated:YES];
+        }
+            break;
+            
+        case 12:
+        {
+            AITensorFlowMainViewController *aiTF = [[AITensorFlowMainViewController alloc] init];
+            [self.navigationController pushViewController:aiTF animated:YES];
+        }
+            break;
+            
+        case 13:
+        {
+            BleInfoViewController *bleVC = [[BleInfoViewController alloc] init];
+            [self.navigationController pushViewController:bleVC animated:YES];
         }
             break;
             

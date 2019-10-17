@@ -232,8 +232,6 @@
             }
         }
         
-        self.pedometer.inter
-        
         [self.pedometer startPedometerUpdatesFromDate:[NSDate date] withHandler:^(CMPedometerData * _Nullable pedometerData, NSError * _Nullable error) {
             
             NSString *str = [NSString stringWithFormat:@"步数数据: %@-%@, 步数: %@, 距离:%@米, 上楼%@层，下楼%@层, 步速%@ s/m, 步频%@ steps/s", pedometerData.startDate, pedometerData.endDate, pedometerData.numberOfSteps, pedometerData.distance, pedometerData.floorsAscended, pedometerData.floorsDescended, pedometerData.currentPace, pedometerData.currentCadence];

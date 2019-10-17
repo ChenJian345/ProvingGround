@@ -35,6 +35,10 @@
 		4D8B473422E1A3ED002AC72D /* DeviceInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D8B473222E1A3ED002AC72D /* DeviceInfoViewController.xib */; };
 		4D8B473722E1B99C002AC72D /* DeviceInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8B473622E1B99C002AC72D /* DeviceInfoModel.m */; };
 		4D8B473D22E6B9F3002AC72D /* SensorInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8B473B22E6B9F3002AC72D /* SensorInfoModel.m */; };
+		4D8C97AF235181C500394FC7 /* AITensorFlowMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8C97AD235181C500394FC7 /* AITensorFlowMainViewController.m */; };
+		4D8C97B0235181C500394FC7 /* AITensorFlowMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D8C97AE235181C500394FC7 /* AITensorFlowMainViewController.xib */; };
+		4D8C97B5235717BF00394FC7 /* BleInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8C97B3235717BF00394FC7 /* BleInfoViewController.m */; };
+		4D8C97B6235717BF00394FC7 /* BleInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D8C97B4235717BF00394FC7 /* BleInfoViewController.xib */; };
 		4DD9D36320087FCA007396D2 /* ColorUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9D36120087FCA007396D2 /* ColorUtils.m */; };
 		4DF071BF22F1B0C200E94DFD /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DF071BE22F1B0C200E94DFD /* CoreTelephony.framework */; };
 		4DFEACD6200DEC9A003DBCDA /* CustomViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DFEACD4200DEC9A003DBCDA /* CustomViewViewController.m */; };
@@ -96,6 +100,12 @@
 		4D8B473622E1B99C002AC72D /* DeviceInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeviceInfoModel.m; sourceTree = "<group>"; };
 		4D8B473B22E6B9F3002AC72D /* SensorInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SensorInfoModel.m; sourceTree = "<group>"; };
 		4D8B473C22E6B9F3002AC72D /* SensorInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SensorInfoModel.h; sourceTree = "<group>"; };
+		4D8C97AC235181C500394FC7 /* AITensorFlowMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AITensorFlowMainViewController.h; sourceTree = "<group>"; };
+		4D8C97AD235181C500394FC7 /* AITensorFlowMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AITensorFlowMainViewController.m; sourceTree = "<group>"; };
+		4D8C97AE235181C500394FC7 /* AITensorFlowMainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AITensorFlowMainViewController.xib; sourceTree = "<group>"; };
+		4D8C97B2235717BF00394FC7 /* BleInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BleInfoViewController.h; sourceTree = "<group>"; };
+		4D8C97B3235717BF00394FC7 /* BleInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BleInfoViewController.m; sourceTree = "<group>"; };
+		4D8C97B4235717BF00394FC7 /* BleInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BleInfoViewController.xib; sourceTree = "<group>"; };
 		4DD9D36120087FCA007396D2 /* ColorUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorUtils.m; sourceTree = "<group>"; };
 		4DD9D36220087FCA007396D2 /* ColorUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorUtils.h; sourceTree = "<group>"; };
 		4DF071BE22F1B0C200E94DFD /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
@@ -213,6 +223,24 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		4D56CB4A23517C0B007A4268 /* AI-MachineLearning */ = {
+			isa = PBXGroup;
+			children = (
+				4D56CB4B23517C1D007A4268 /* TensorFlow */,
+			);
+			path = "AI-MachineLearning";
+			sourceTree = "<group>";
+		};
+		4D56CB4B23517C1D007A4268 /* TensorFlow */ = {
+			isa = PBXGroup;
+			children = (
+				4D8C97AC235181C500394FC7 /* AITensorFlowMainViewController.h */,
+				4D8C97AD235181C500394FC7 /* AITensorFlowMainViewController.m */,
+				4D8C97AE235181C500394FC7 /* AITensorFlowMainViewController.xib */,
+			);
+			path = TensorFlow;
+			sourceTree = "<group>";
+		};
 		4D750EB6234093CE005A71DD /* MotionInfo */ = {
 			isa = PBXGroup;
 			children = (
@@ -286,6 +314,16 @@
 			path = DeviceInfo;
 			sourceTree = "<group>";
 		};
+		4D8C97B1235717A000394FC7 /* Bluetooth */ = {
+			isa = PBXGroup;
+			children = (
+				4D8C97B2235717BF00394FC7 /* BleInfoViewController.h */,
+				4D8C97B3235717BF00394FC7 /* BleInfoViewController.m */,
+				4D8C97B4235717BF00394FC7 /* BleInfoViewController.xib */,
+			);
+			path = Bluetooth;
+			sourceTree = "<group>";
+		};
 		4DD9D36020087FCA007396D2 /* Color */ = {
 			isa = PBXGroup;
 			children = (
@@ -325,6 +363,8 @@
 		7FF30F921F68BDB2000B3360 /* ProvingGround */ = {
 			isa = PBXGroup;
 			children = (
+				4D8C97B1235717A000394FC7 /* Bluetooth */,
+				4D56CB4A23517C0B007A4268 /* AI-MachineLearning */,
 				4D750EB6234093CE005A71DD /* MotionInfo */,
 				4D8B472F22E1A3CF002AC72D /* DeviceInfo */,
 				4D8B472922DF44C2002AC72D /* RACTest */,
@@ -425,9 +465,11 @@
 				4D8B472722DF4448002AC72D /* IMG_0397.JPG in Resources */,
 				4D8B472E22DF44D7002AC72D /* RACTestViewController.xib in Resources */,
 				4D2A45CA205A38AB00A2BE99 /* Main.storyboard in Resources */,
+				4D8C97B0235181C500394FC7 /* AITensorFlowMainViewController.xib in Resources */,
 				4D8B473422E1A3ED002AC72D /* DeviceInfoViewController.xib in Resources */,
 				4D8B471622DF421A002AC72D /* KVOTestViewController.xib in Resources */,
 				4D8B472522DF4448002AC72D /* IMG_3964.JPG in Resources */,
+				4D8C97B6235717BF00394FC7 /* BleInfoViewController.xib in Resources */,
 				4D2A45A92056867A00A2BE99 /* CollectionViewAnimationViewController.xib in Resources */,
 				4D750EBB23409476005A71DD /* MotionInfoViewController.xib in Resources */,
 				4D8B472622DF4448002AC72D /* Assets.xcassets in Resources */,
@@ -467,6 +509,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D8C97B5235717BF00394FC7 /* BleInfoViewController.m in Sources */,
 				4D2A45A82056867A00A2BE99 /* CollectionViewAnimationViewController.m in Sources */,
 				4D04B0D92008BF7100821591 /* ImageCompressViewController.m in Sources */,
 				4D04B0D62008BE8600821591 /* AnimationViewController.m in Sources */,
@@ -478,6 +521,7 @@
 				4D2A45B42058F32900A2BE99 /* PDFWebViewViewController.m in Sources */,
 				4D8B471422DF421A002AC72D /* DogModel.m in Sources */,
 				7FF30F981F68BDB2000B3360 /* ViewController.m in Sources */,
+				4D8C97AF235181C500394FC7 /* AITensorFlowMainViewController.m in Sources */,
 				7F4D5B0C1F6A297600B93721 /* A4PaperModel.m in Sources */,
 				4D8B471522DF421A002AC72D /* KVOTestViewController.m in Sources */,
 				4D8B473322E1A3ED002AC72D /* DeviceInfoViewController.m in Sources */,
