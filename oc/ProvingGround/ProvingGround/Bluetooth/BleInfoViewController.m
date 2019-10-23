@@ -151,7 +151,7 @@
             
             NSString *str = [[NSString alloc] initWithFormat:@"BLE - NAME = %@, RSSI = %d, ADV Data = %@", localName, RSSI.intValue, advertisementData];
             [self appendToConsole:str];
-            NSLog(str);
+            NSLog(@"%@", str);
         }
     }
 }

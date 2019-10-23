@@ -2,6 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>WhenInUse的用途描述</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>定位权限请求什么时候always？什么时候是WhenInUse？</string>
+	<key>NSLocationUsageDescription</key>
+	<string>I want to use your location</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -24,6 +30,7 @@
 	<string>为了更好的读取计步器，运动状态数据等</string>
 	<key>UIBackgroundModes</key>
 	<array>
+		<string>bluetooth-central</string>
 		<string>location</string>
 	</array>
 	<key>UIFileSharingEnabled</key>

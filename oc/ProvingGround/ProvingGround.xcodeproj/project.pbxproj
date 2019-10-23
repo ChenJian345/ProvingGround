@@ -39,6 +39,12 @@
 		4D8C97B0235181C500394FC7 /* AITensorFlowMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D8C97AE235181C500394FC7 /* AITensorFlowMainViewController.xib */; };
 		4D8C97B5235717BF00394FC7 /* BleInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8C97B3235717BF00394FC7 /* BleInfoViewController.m */; };
 		4D8C97B6235717BF00394FC7 /* BleInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D8C97B4235717BF00394FC7 /* BleInfoViewController.xib */; };
+		4D8C97B8235F1DFC00394FC7 /* OlympicForestPark.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 4D8C97B7235F1DFC00394FC7 /* OlympicForestPark.gpx */; };
+		4D8C97BD235FF4CB00394FC7 /* CoreLocationTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8C97BB235FF4CB00394FC7 /* CoreLocationTestViewController.m */; };
+		4D8C97BE235FF4CB00394FC7 /* CoreLocationTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D8C97BC235FF4CB00394FC7 /* CoreLocationTestViewController.xib */; };
+		4D8C97C02360360900394FC7 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8C97BF2360360900394FC7 /* MapKit.framework */; };
+		4D8C97C2236037B700394FC7 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8C97C1236037B700394FC7 /* CoreLocation.framework */; };
+		4D8C97C4236037C600394FC7 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8C97C3236037C600394FC7 /* CoreBluetooth.framework */; };
 		4DD9D36320087FCA007396D2 /* ColorUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9D36120087FCA007396D2 /* ColorUtils.m */; };
 		4DF071BF22F1B0C200E94DFD /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DF071BE22F1B0C200E94DFD /* CoreTelephony.framework */; };
 		4DFEACD6200DEC9A003DBCDA /* CustomViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DFEACD4200DEC9A003DBCDA /* CustomViewViewController.m */; };
@@ -106,6 +112,13 @@
 		4D8C97B2235717BF00394FC7 /* BleInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BleInfoViewController.h; sourceTree = "<group>"; };
 		4D8C97B3235717BF00394FC7 /* BleInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BleInfoViewController.m; sourceTree = "<group>"; };
 		4D8C97B4235717BF00394FC7 /* BleInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BleInfoViewController.xib; sourceTree = "<group>"; };
+		4D8C97B7235F1DFC00394FC7 /* OlympicForestPark.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = OlympicForestPark.gpx; sourceTree = "<group>"; };
+		4D8C97BA235FF4CB00394FC7 /* CoreLocationTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreLocationTestViewController.h; sourceTree = "<group>"; };
+		4D8C97BB235FF4CB00394FC7 /* CoreLocationTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreLocationTestViewController.m; sourceTree = "<group>"; };
+		4D8C97BC235FF4CB00394FC7 /* CoreLocationTestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoreLocationTestViewController.xib; sourceTree = "<group>"; };
+		4D8C97BF2360360900394FC7 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		4D8C97C1236037B700394FC7 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		4D8C97C3236037C600394FC7 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		4DD9D36120087FCA007396D2 /* ColorUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorUtils.m; sourceTree = "<group>"; };
 		4DD9D36220087FCA007396D2 /* ColorUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorUtils.h; sourceTree = "<group>"; };
 		4DF071BE22F1B0C200E94DFD /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
@@ -140,6 +153,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D8C97C4236037C600394FC7 /* CoreBluetooth.framework in Frameworks */,
+				4D8C97C2236037B700394FC7 /* CoreLocation.framework in Frameworks */,
+				4D8C97C02360360900394FC7 /* MapKit.framework in Frameworks */,
 				4DF071BF22F1B0C200E94DFD /* CoreTelephony.framework in Frameworks */,
 				4D2A45B9205918C500A2BE99 /* QuickLook.framework in Frameworks */,
 				28890CEA34979C57717AF900 /* libPods-ProvingGround.a in Frameworks */,
@@ -216,6 +232,9 @@
 		4D2A45B7205918C400A2BE99 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4D8C97C3236037C600394FC7 /* CoreBluetooth.framework */,
+				4D8C97C1236037B700394FC7 /* CoreLocation.framework */,
+				4D8C97BF2360360900394FC7 /* MapKit.framework */,
 				4DF071BE22F1B0C200E94DFD /* CoreTelephony.framework */,
 				4D2A45B8205918C500A2BE99 /* QuickLook.framework */,
 				EA8CC18F8A28FBD06951F2E2 /* libPods-ProvingGround.a */,
@@ -282,6 +301,7 @@
 		4D8B472022DF4447002AC72D /* Resouce */ = {
 			isa = PBXGroup;
 			children = (
+				4D8C97B7235F1DFC00394FC7 /* OlympicForestPark.gpx */,
 				4D8B472122DF4447002AC72D /* IMG_3964.JPG */,
 				4D8B472222DF4447002AC72D /* Assets.xcassets */,
 				4D8B472322DF4447002AC72D /* IMG_0397.JPG */,
@@ -324,6 +344,16 @@
 			path = Bluetooth;
 			sourceTree = "<group>";
 		};
+		4D8C97B9235FF4B200394FC7 /* CoreLocation */ = {
+			isa = PBXGroup;
+			children = (
+				4D8C97BA235FF4CB00394FC7 /* CoreLocationTestViewController.h */,
+				4D8C97BB235FF4CB00394FC7 /* CoreLocationTestViewController.m */,
+				4D8C97BC235FF4CB00394FC7 /* CoreLocationTestViewController.xib */,
+			);
+			path = CoreLocation;
+			sourceTree = "<group>";
+		};
 		4DD9D36020087FCA007396D2 /* Color */ = {
 			isa = PBXGroup;
 			children = (
@@ -363,6 +393,7 @@
 		7FF30F921F68BDB2000B3360 /* ProvingGround */ = {
 			isa = PBXGroup;
 			children = (
+				4D8C97B9235FF4B200394FC7 /* CoreLocation */,
 				4D8C97B1235717A000394FC7 /* Bluetooth */,
 				4D56CB4A23517C0B007A4268 /* AI-MachineLearning */,
 				4D750EB6234093CE005A71DD /* MotionInfo */,
@@ -472,7 +503,9 @@
 				4D8C97B6235717BF00394FC7 /* BleInfoViewController.xib in Resources */,
 				4D2A45A92056867A00A2BE99 /* CollectionViewAnimationViewController.xib in Resources */,
 				4D750EBB23409476005A71DD /* MotionInfoViewController.xib in Resources */,
+				4D8C97BE235FF4CB00394FC7 /* CoreLocationTestViewController.xib in Resources */,
 				4D8B472622DF4448002AC72D /* Assets.xcassets in Resources */,
+				4D8C97B8235F1DFC00394FC7 /* OlympicForestPark.gpx in Resources */,
 				4DFEACD7200DEC9A003DBCDA /* CustomViewViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -536,6 +569,7 @@
 				4DFEACD6200DEC9A003DBCDA /* CustomViewViewController.m in Sources */,
 				4D04B0DC2008BFB800821591 /* AlgorithmViewController.m in Sources */,
 				4D2A45BC205918EE00A2BE99 /* PDFQLPreviewController.m in Sources */,
+				4D8C97BD235FF4CB00394FC7 /* CoreLocationTestViewController.m in Sources */,
 				4D8B473D22E6B9F3002AC72D /* SensorInfoModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

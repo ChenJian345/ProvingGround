@@ -42,6 +42,9 @@
 // BLE
 #import "BleInfoViewController.h"
 
+// Core Location
+#import "CoreLocationTestViewController.h"
+
 static void *paperKVOContext = &paperKVOContext;
 
 @interface ViewController ()
@@ -315,6 +318,13 @@ int searchInsert(int* nums, int numsSize, int target) {
         {
             BleInfoViewController *bleVC = [[BleInfoViewController alloc] init];
             [self.navigationController pushViewController:bleVC animated:YES];
+        }
+            break;
+            
+        case 14:
+        {
+            CoreLocationTestViewController *locationVC = [[CoreLocationTestViewController alloc] init];
+            [self.navigationController pushViewController:locationVC animated:YES];
         }
             break;
             
