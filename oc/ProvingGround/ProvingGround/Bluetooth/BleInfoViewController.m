@@ -8,6 +8,9 @@
 
 #import "BleInfoViewController.h"
 #import <CoreBluetooth/CoreBluetooth.h>
+#import <CommonCrypto/CommonCrypto.h>
+
+#define CC_MD5_DIGEST_LENGTH    16          /* digest length in bytes */
 
 @interface BleInfoViewController () <CBCentralManagerDelegate>
 
@@ -31,7 +34,7 @@
     UIGestureRecognizer *tapReg = [[UIGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:tapReg];
     
-    self.targetName = @"DDBG";
+    self.targetName = nil;
     
     // Scan device in the main thread
     self.centralManager = [[CBCentralManager alloc] initWithDelegate:self queue:nil options:[NSDictionary dictionaryWithObject:@YES forKey:CBCentralManagerOptionShowPowerAlertKey]];
@@ -87,7 +90,6 @@
 - (void)startScan {
     NSLog(@"=============== BLE - Start Scan BLE Device ===============");
     if (self.centralManager.state == CBCentralManagerStatePoweredOn && !self.scanning){
-        NSLog(@"BLE - Ready, start scan!");
         [self scanDevices];
     } else {
         NSLog(@"BLE - NOT Ready.");
@@ -107,6 +109,7 @@
 
 - (void)scanDevices {
     if (self.centralManager != nil) {
+        NSLog(@"BLE - 开始扫描设备: %@", self.targetName);
         [self.centralManager scanForPeripheralsWithServices:nil
                                                     options:@{ CBCentralManagerScanOptionAllowDuplicatesKey: @YES }];
         self.scanning = YES;
@@ -126,35 +129,36 @@
 - (void)centralManager:(CBCentralManager *)central didDiscoverPeripheral:(CBPeripheral *)peripheral advertisementData:(NSDictionary *)advertisementData RSSI:(NSNumber *)RSSI {
     NSString *localName = [advertisementData objectForKey:CBAdvertisementDataLocalNameKey];
     NSArray *arrServices = [advertisementData objectForKey:CBAdvertisementDataServiceUUIDsKey];
-    
+    NSData *manufactureData = [advertisementData objectForKey:CBAdvertisementDataManufacturerDataKey];
     if (localName != nil && localName.length > 0) {
-        NSLog(@"找到设备 : %@", localName);
-        if ([localName hasPrefix:self.targetName]) {
-            NSString *macAddress = nil;     // Mac地址作为设备区分ID，这不合理，但硬件同事说无法用UUID写入广播的ManufacturerData, ...
-            if (arrServices.count > 0) {
-                CBUUID *service = arrServices.firstObject;
-                NSString *strUuid = service.UUIDString;
-                if (strUuid.length >= 12) {
-                    macAddress = [strUuid substringFromIndex:strUuid.length-12];
-                    // 转换为用英文冒号分隔的字符串
-                    NSMutableString *insertedMutableString = [NSMutableString string];
-                    NSUInteger i = 0;
-                    while (i + 2 < macAddress.length) {
-                        [insertedMutableString appendString:[macAddress substringWithRange:NSMakeRange(i, 2)]];
-                        [insertedMutableString appendString:@":"];
-                        i += 2;
-                    }
-                    [insertedMutableString appendString:[macAddress substringWithRange:NSMakeRange(i, macAddress.length - i)]];
-                    macAddress = [insertedMutableString copy];
-                }
-            }
-            
-            NSString *str = [[NSString alloc] initWithFormat:@"BLE - NAME = %@, RSSI = %d, ADV Data = %@", localName, RSSI.intValue, advertisementData];
+        // 目标设备为空时，默认扫描所有所有设备
+        if (!self.targetName || self.targetName.length == 0 || [localName hasPrefix:self.targetName]) {
+            NSString *str = [[NSString alloc] initWithFormat:@"BLE - NAME = %@, RSSI = %d, ADV Data = %@, Services = %@, ManufactureData = %@", localName, RSSI.intValue, advertisementData, arrServices, manufactureData];
             [self appendToConsole:str];
             NSLog(@"%@", str);
         }
     }
 }
 
+- (NSData *)getEncryptKeyBySeed:(NSString *)keySeed {
+    uint8_t md5[CC_MD5_DIGEST_LENGTH];
+    NSData *dataKeySeed = [keySeed dataUsingEncoding:NSUTF8StringEncoding];
+    CC_MD5(dataKeySeed.bytes, (CC_LONG)dataKeySeed.length, md5);
+    NSData *data = [NSData dataWithBytes:md5 length:CC_MD5_DIGEST_LENGTH];
+    NSLog(@"BLE - MD5 KeySeed = %@, md5 = %@", keySeed, [self getHexString:data]);
+    return data;
+}
+
+- (NSString *)getHexString:(NSData *)data {
+    if (data.length == 0) {
+        return @"";
+    }
+    uint8_t *byteArray = (uint8_t *)[data bytes];
+    NSMutableString *strResult = [[NSMutableString alloc] init];
+    for (int i = 0; i < [data length]; i++) {
+        [strResult appendFormat:@"%02X", byteArray[i]];
+    }
+    return strResult;
+}
 
 @end
