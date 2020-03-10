@@ -242,6 +242,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		4D2B57DD2417CB3E00406BBE /* FlatBuffer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = FlatBuffer;
+			sourceTree = "<group>";
+		};
 		4D56CB4A23517C0B007A4268 /* AI-MachineLearning */ = {
 			isa = PBXGroup;
 			children = (
@@ -393,6 +400,7 @@
 		7FF30F921F68BDB2000B3360 /* ProvingGround */ = {
 			isa = PBXGroup;
 			children = (
+				4D2B57DD2417CB3E00406BBE /* FlatBuffer */,
 				4D8C97B9235FF4B200394FC7 /* CoreLocation */,
 				4D8C97B1235717A000394FC7 /* Bluetooth */,
 				4D56CB4A23517C0B007A4268 /* AI-MachineLearning */,

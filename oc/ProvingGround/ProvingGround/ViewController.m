@@ -57,7 +57,6 @@ static void *paperKVOContext = &paperKVOContext;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     self.title = @"Test List";
     
     UIView *headerView = [UIView new];
@@ -220,51 +219,15 @@ int searchInsert(int* nums, int numsSize, int target) {
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    NSString *className = cell.reuseIdentifier;
+    if (className.length > 0) {
+        UIViewController *controller = [[NSClassFromString(className) alloc] init];
+        [self.navigationController pushViewController:controller animated:YES];
+        return;
+    }
+    
     switch (indexPath.row) {
-        case 0:     // Image Compress
-        {
-            [self.navigationController pushViewController:[[ImageCompressViewController alloc] init] animated:YES];
-        }
-            break;
-            
-        case 1:         // Animation View
-        {
-            [self.navigationController pushViewController:[[AnimationViewController alloc] init] animated:YES];
-        }
-            break;
-            
-        case 2:         // Algorithm
-        {
-            [self.navigationController pushViewController:[[AlgorithmViewController alloc] init] animated:YES];
-        }
-            break;
-            
-        case 3:         // UI Animation
-        {
-            [self.navigationController pushViewController:[[UIViewAnimationTestViewController alloc] init] animated:YES];
-        }
-            break;
-            
-        case 4:         // Collection View keyframe animation
-        {
-            [self.navigationController pushViewController:[[CollectionViewAnimationViewController alloc] init] animated:YES];
-        }
-            break;
-            
-        case 5:         // PDF WebView
-        {
-            PDFWebViewViewController *pdfViewController = [[PDFWebViewViewController alloc] init];
-            [self.navigationController pushViewController:pdfViewController animated:YES];
-        }
-            break;
-            
-        case 6:         // PDF Quick look view
-        {
-            PDFQLPreviewController *pdfViewController = [[PDFQLPreviewController alloc] init];
-            [self.navigationController pushViewController:pdfViewController animated:YES];
-        }
-            break;
-            
         case 7:         // JSON Merge time usage test
         {
             // 测试JSON Merge数据
@@ -276,55 +239,6 @@ int searchInsert(int* nums, int numsSize, int target) {
             NSTimeInterval endTime = [[NSDate date] timeIntervalSince1970];
             NSLog(@"Merge JSON 操作耗时: %.2f ms", (endTime - startTime) * 1000);
             NSLog(@"处理前：%ld 条，处理后的数据条数：%ld 条", arrJsonStrings.count, arrJsonStrAfterMerge.count);
-        }
-            break;
-            
-        case 8:     // KVO
-        {
-            KVOTestViewController *kvoVC = [[KVOTestViewController alloc] init];
-            [self.navigationController pushViewController:kvoVC animated:YES];
-        }
-            break;
-            
-        case 9:     // RAC
-        {
-            RACTestViewController *racVC = [[RACTestViewController alloc] init];
-            [self.navigationController pushViewController:racVC animated:YES];
-        }
-            break;
-            
-        case 10:        // Device Information Viewer
-        {
-            DeviceInfoViewController *deviceInfoVC = [[DeviceInfoViewController alloc] init];
-            [self.navigationController pushViewController:deviceInfoVC animated:YES];
-        }
-            break;
-            
-        case 11:
-        {
-            MotionInfoViewController *motionInfoVC = [[MotionInfoViewController alloc] init];
-            [self.navigationController pushViewController:motionInfoVC animated:YES];
-        }
-            break;
-            
-        case 12:
-        {
-            AITensorFlowMainViewController *aiTF = [[AITensorFlowMainViewController alloc] init];
-            [self.navigationController pushViewController:aiTF animated:YES];
-        }
-            break;
-            
-        case 13:
-        {
-            BleInfoViewController *bleVC = [[BleInfoViewController alloc] init];
-            [self.navigationController pushViewController:bleVC animated:YES];
-        }
-            break;
-            
-        case 14:
-        {
-            CoreLocationTestViewController *locationVC = [[CoreLocationTestViewController alloc] init];
-            [self.navigationController pushViewController:locationVC animated:YES];
         }
             break;
             
