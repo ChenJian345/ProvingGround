@@ -2,8 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSCameraUsageDescription</key>
+	<string>通过摄像头获取周围环境光线数据</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>WhenInUse的用途描述</string>
+	<string>定位权限WhenInUse的用途描述</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>定位权限请求什么时候always？什么时候是WhenInUse？</string>
 	<key>NSLocationUsageDescription</key>

@@ -19,6 +19,8 @@
 		4D2A45B9205918C500A2BE99 /* QuickLook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D2A45B8205918C500A2BE99 /* QuickLook.framework */; };
 		4D2A45BC205918EE00A2BE99 /* PDFQLPreviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D2A45BB205918EE00A2BE99 /* PDFQLPreviewController.m */; };
 		4D2A45CA205A38AB00A2BE99 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FF30F991F68BDB2000B3360 /* Main.storyboard */; };
+		4D2B57E22418804200406BBE /* PhoneSensorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D2B57E02418804200406BBE /* PhoneSensorViewController.m */; };
+		4D2B57E32418804200406BBE /* PhoneSensorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D2B57E12418804200406BBE /* PhoneSensorViewController.xib */; };
 		4D52FF522064E38500ABB17A /* CollectionViewAnimationFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D52FF512064E38500ABB17A /* CollectionViewAnimationFlowLayout.m */; };
 		4D750EBA23409476005A71DD /* MotionInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D750EB823409476005A71DD /* MotionInfoViewController.m */; };
 		4D750EBB23409476005A71DD /* MotionInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D750EB923409476005A71DD /* MotionInfoViewController.xib */; };
@@ -81,6 +83,9 @@
 		4D2A45BA205918EE00A2BE99 /* PDFQLPreviewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PDFQLPreviewController.h; sourceTree = "<group>"; };
 		4D2A45BB205918EE00A2BE99 /* PDFQLPreviewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PDFQLPreviewController.m; sourceTree = "<group>"; };
 		4D2A45CC205A38C600A2BE99 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D2B57DF2418804200406BBE /* PhoneSensorViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhoneSensorViewController.h; sourceTree = "<group>"; };
+		4D2B57E02418804200406BBE /* PhoneSensorViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhoneSensorViewController.m; sourceTree = "<group>"; };
+		4D2B57E12418804200406BBE /* PhoneSensorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhoneSensorViewController.xib; sourceTree = "<group>"; };
 		4D52FF3C206238A900ABB17A /* PDFMicros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PDFMicros.h; sourceTree = "<group>"; };
 		4D52FF502064E38500ABB17A /* CollectionViewAnimationFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewAnimationFlowLayout.h; sourceTree = "<group>"; };
 		4D52FF512064E38500ABB17A /* CollectionViewAnimationFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewAnimationFlowLayout.m; sourceTree = "<group>"; };
@@ -249,6 +254,16 @@
 			path = FlatBuffer;
 			sourceTree = "<group>";
 		};
+		4D2B57DE2418800600406BBE /* PhoneSensor */ = {
+			isa = PBXGroup;
+			children = (
+				4D2B57DF2418804200406BBE /* PhoneSensorViewController.h */,
+				4D2B57E02418804200406BBE /* PhoneSensorViewController.m */,
+				4D2B57E12418804200406BBE /* PhoneSensorViewController.xib */,
+			);
+			path = PhoneSensor;
+			sourceTree = "<group>";
+		};
 		4D56CB4A23517C0B007A4268 /* AI-MachineLearning */ = {
 			isa = PBXGroup;
 			children = (
@@ -400,6 +415,7 @@
 		7FF30F921F68BDB2000B3360 /* ProvingGround */ = {
 			isa = PBXGroup;
 			children = (
+				4D2B57DE2418800600406BBE /* PhoneSensor */,
 				4D2B57DD2417CB3E00406BBE /* FlatBuffer */,
 				4D8C97B9235FF4B200394FC7 /* CoreLocation */,
 				4D8C97B1235717A000394FC7 /* Bluetooth */,
@@ -501,6 +517,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D8B472822DF4448002AC72D /* Accessory-Design-Guidelines.pdf in Resources */,
+				4D2B57E32418804200406BBE /* PhoneSensorViewController.xib in Resources */,
 				4D8B472722DF4448002AC72D /* IMG_0397.JPG in Resources */,
 				4D8B472E22DF44D7002AC72D /* RACTestViewController.xib in Resources */,
 				4D2A45CA205A38AB00A2BE99 /* Main.storyboard in Resources */,
@@ -557,6 +574,7 @@
 				4D8B472D22DF44D7002AC72D /* RACTestViewController.m in Sources */,
 				7F2F85E6204D879500A1307D /* UIViewAnimationTestViewController.m in Sources */,
 				7FA04C0B2007B57A006273C6 /* BallPulseLoadingView.m in Sources */,
+				4D2B57E22418804200406BBE /* PhoneSensorViewController.m in Sources */,
 				7F4D5B091F69827E00B93721 /* CustomView.m in Sources */,
 				7F4D5B061F68D16D00B93721 /* PaperModel.m in Sources */,
 				4D2A45B42058F32900A2BE99 /* PDFWebViewViewController.m in Sources */,
