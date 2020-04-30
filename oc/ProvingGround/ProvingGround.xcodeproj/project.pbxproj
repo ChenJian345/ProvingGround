@@ -179,8 +179,6 @@
 				4D04B0D52008BE8600821591 /* AnimationViewController.m */,
 				4D04B0D72008BF7100821591 /* ImageCompressViewController.h */,
 				4D04B0D82008BF7100821591 /* ImageCompressViewController.m */,
-				4D04B0DA2008BFB800821591 /* AlgorithmViewController.h */,
-				4D04B0DB2008BFB800821591 /* AlgorithmViewController.m */,
 				4DFEACD3200DEC9A003DBCDA /* CustomViewViewController.h */,
 				4DFEACD4200DEC9A003DBCDA /* CustomViewViewController.m */,
 				4DFEACD5200DEC9A003DBCDA /* CustomViewViewController.xib */,
@@ -262,6 +260,15 @@
 				4D2B57E12418804200406BBE /* PhoneSensorViewController.xib */,
 			);
 			path = PhoneSensor;
+			sourceTree = "<group>";
+		};
+		4D563462245AC2F600CC19AF /* Algorithm */ = {
+			isa = PBXGroup;
+			children = (
+				4D04B0DA2008BFB800821591 /* AlgorithmViewController.h */,
+				4D04B0DB2008BFB800821591 /* AlgorithmViewController.m */,
+			);
+			path = Algorithm;
 			sourceTree = "<group>";
 		};
 		4D56CB4A23517C0B007A4268 /* AI-MachineLearning */ = {
@@ -415,6 +422,7 @@
 		7FF30F921F68BDB2000B3360 /* ProvingGround */ = {
 			isa = PBXGroup;
 			children = (
+				4D563462245AC2F600CC19AF /* Algorithm */,
 				4D2B57DE2418800600406BBE /* PhoneSensor */,
 				4D2B57DD2417CB3E00406BBE /* FlatBuffer */,
 				4D8C97B9235FF4B200394FC7 /* CoreLocation */,

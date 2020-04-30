@@ -62,7 +62,7 @@
     if ([self.avCaptureSession canAddOutput:output]) {
         [self.avCaptureSession addOutput:output];
     }
-    
+
     // 9.启动会话
     [self.avCaptureSession startRunning];
 }
