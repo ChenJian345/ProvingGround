@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface RACTestViewController : UIViewController
 
+@property (nonatomic, strong) NSString *valueForRACObserve;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -22,6 +22,7 @@
 		4D2B57E22418804200406BBE /* PhoneSensorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D2B57E02418804200406BBE /* PhoneSensorViewController.m */; };
 		4D2B57E32418804200406BBE /* PhoneSensorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D2B57E12418804200406BBE /* PhoneSensorViewController.xib */; };
 		4D52FF522064E38500ABB17A /* CollectionViewAnimationFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D52FF512064E38500ABB17A /* CollectionViewAnimationFlowLayout.m */; };
+		4D563465245AC8CE00CC19AF /* 30daysTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4D563463245AC8CE00CC19AF /* 30daysTest.cpp */; };
 		4D750EBA23409476005A71DD /* MotionInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D750EB823409476005A71DD /* MotionInfoViewController.m */; };
 		4D750EBB23409476005A71DD /* MotionInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D750EB923409476005A71DD /* MotionInfoViewController.xib */; };
 		4D8B471422DF421A002AC72D /* DogModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8B470F22DF421A002AC72D /* DogModel.m */; };
@@ -89,6 +90,8 @@
 		4D52FF3C206238A900ABB17A /* PDFMicros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PDFMicros.h; sourceTree = "<group>"; };
 		4D52FF502064E38500ABB17A /* CollectionViewAnimationFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewAnimationFlowLayout.h; sourceTree = "<group>"; };
 		4D52FF512064E38500ABB17A /* CollectionViewAnimationFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewAnimationFlowLayout.m; sourceTree = "<group>"; };
+		4D563463245AC8CE00CC19AF /* 30daysTest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 30daysTest.cpp; sourceTree = "<group>"; };
+		4D563464245AC8CE00CC19AF /* 30daysTest.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = 30daysTest.hpp; sourceTree = "<group>"; };
 		4D750EB723409476005A71DD /* MotionInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MotionInfoViewController.h; sourceTree = "<group>"; };
 		4D750EB823409476005A71DD /* MotionInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MotionInfoViewController.m; sourceTree = "<group>"; };
 		4D750EB923409476005A71DD /* MotionInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MotionInfoViewController.xib; sourceTree = "<group>"; };
@@ -267,6 +270,8 @@
 			children = (
 				4D04B0DA2008BFB800821591 /* AlgorithmViewController.h */,
 				4D04B0DB2008BFB800821591 /* AlgorithmViewController.m */,
+				4D563463245AC8CE00CC19AF /* 30daysTest.cpp */,
+				4D563464245AC8CE00CC19AF /* 30daysTest.hpp */,
 			);
 			path = Algorithm;
 			sourceTree = "<group>";
@@ -595,6 +600,7 @@
 				7FF30FA31F68BDB2000B3360 /* main.m in Sources */,
 				4D2A45AD20569AC200A2BE99 /* CollectionViewAnimationCell.m in Sources */,
 				4D750EBA23409476005A71DD /* MotionInfoViewController.m in Sources */,
+				4D563465245AC8CE00CC19AF /* 30daysTest.cpp in Sources */,
 				7FF30F951F68BDB2000B3360 /* AppDelegate.m in Sources */,
 				4D8B473722E1B99C002AC72D /* DeviceInfoModel.m in Sources */,
 				4D196969227709B9008D057A /* JSONMergeUtil.m in Sources */,
