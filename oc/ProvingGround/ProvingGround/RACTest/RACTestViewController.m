@@ -113,6 +113,9 @@
         
         // 测试创建信号操作
         [self createRACSignalAndSubscribe];
+        
+        // 测试命令操作
+        [self createRACCommandAndUse];
     }];
     [alertCtrler addAction:actionOK];
     [self.navigationController presentViewController:alertCtrler animated:YES completion:nil];
@@ -141,5 +144,27 @@
         NSLog(@"接收数据, %@", x);
     }];
 }
+
+// 处理事件的类：RACCommand
+// 用于监听事件点击、网络请求等，可以把事件如何处理，事件中的数据如何传递等包装到这个类中。
+//
+- (void)createRACCommandAndUse {
+    RACCommand *racCmd = [[RACCommand alloc] initWithSignalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
+       
+        // 执行动作命令
+        return [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+            [subscriber sendNext:input];
+            [subscriber sendCompleted];
+            return nil;
+        }];
+    }];
+    
+    [racCmd.executionSignals subscribeNext:^(id  _Nullable x) {
+        NSLog(@"执行命令");
+    }];
+    
+    [racCmd execute:@"命令内容"];
+}
+
 
 @end
