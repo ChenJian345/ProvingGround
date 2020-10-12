@@ -8,6 +8,7 @@
 
 #import "RACTestViewController.h"
 #import <ReactiveObjC.h>
+#import "MCLoginDemoViewController.h"
 
 @interface RACTestViewController ()
 
@@ -121,7 +122,12 @@
     [self.navigationController presentViewController:alertCtrler animated:YES completion:nil];
 }
 
-#pragma mark - 进阶
+- (IBAction)didLoginDemoButtonClicked:(id)sender {
+    MCLoginDemoViewController *loginDemoVC = [[MCLoginDemoViewController alloc] init];
+    [self.navigationController pushViewController:loginDemoVC animated:YES];
+}
+
+#pragma mark - RAC进阶
 // RAC核心类: RACSignal
 // 创建信号 -> 激活信号 -> 废弃信号
 - (void)createRACSignalAndSubscribe {
@@ -166,5 +172,12 @@
     [racCmd execute:@"命令内容"];
 }
 
+#pragma mark - RAC常见宏
+
+// RAC(TARGET, [KEYPATH, [NIL_VALUE]]=…
+// 将两个对象属性进行绑定，一个对象的属性一旦发生变化，自动触发绑定的对象属性变更
+
+// RACObserve(TARGET, [KEYPATH])
+// 用于监听某个对象的某个属性,返回信号。上面有使用案例
 
 @end

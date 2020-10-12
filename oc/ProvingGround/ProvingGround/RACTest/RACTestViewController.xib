@@ -66,6 +66,14 @@
                                 <action selector="btnAlertView:" destination="-1" eventType="touchUpInside" id="Fqx-6c-HEt"/>
                             </connections>
                         </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hRI-CM-UE0">
+                            <rect key="frame" x="194" y="73" width="82" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Login Demo"/>
+                            <connections>
+                                <action selector="didLoginDemoButtonClicked:" destination="-1" eventType="touchUpInside" id="CVe-Ap-9dp"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>

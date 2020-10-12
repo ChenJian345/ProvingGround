@@ -48,6 +48,8 @@
 		4D8C97C02360360900394FC7 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8C97BF2360360900394FC7 /* MapKit.framework */; };
 		4D8C97C2236037B700394FC7 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8C97C1236037B700394FC7 /* CoreLocation.framework */; };
 		4D8C97C4236037C600394FC7 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8C97C3236037C600394FC7 /* CoreBluetooth.framework */; };
+		4DBAEE0D2533F213000B198D /* MCLoginDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DBAEE0B2533F213000B198D /* MCLoginDemoViewController.m */; };
+		4DBAEE0E2533F213000B198D /* MCLoginDemoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DBAEE0C2533F213000B198D /* MCLoginDemoViewController.xib */; };
 		4DD9D36320087FCA007396D2 /* ColorUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9D36120087FCA007396D2 /* ColorUtils.m */; };
 		4DF071BF22F1B0C200E94DFD /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DF071BE22F1B0C200E94DFD /* CoreTelephony.framework */; };
 		4DFEACD6200DEC9A003DBCDA /* CustomViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DFEACD4200DEC9A003DBCDA /* CustomViewViewController.m */; };
@@ -127,6 +129,9 @@
 		4D8C97BF2360360900394FC7 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		4D8C97C1236037B700394FC7 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		4D8C97C3236037C600394FC7 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		4DBAEE0A2533F213000B198D /* MCLoginDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCLoginDemoViewController.h; sourceTree = "<group>"; };
+		4DBAEE0B2533F213000B198D /* MCLoginDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCLoginDemoViewController.m; sourceTree = "<group>"; };
+		4DBAEE0C2533F213000B198D /* MCLoginDemoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MCLoginDemoViewController.xib; sourceTree = "<group>"; };
 		4DD9D36120087FCA007396D2 /* ColorUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorUtils.m; sourceTree = "<group>"; };
 		4DD9D36220087FCA007396D2 /* ColorUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorUtils.h; sourceTree = "<group>"; };
 		4DF071BE22F1B0C200E94DFD /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
@@ -347,6 +352,7 @@
 		4D8B472922DF44C2002AC72D /* RACTest */ = {
 			isa = PBXGroup;
 			children = (
+				4DBAEE092533F1CF000B198D /* LoginDemoUsingRAC */,
 				4D8B472A22DF44D7002AC72D /* RACTestViewController.h */,
 				4D8B472B22DF44D7002AC72D /* RACTestViewController.m */,
 				4D8B472C22DF44D7002AC72D /* RACTestViewController.xib */,
@@ -386,6 +392,16 @@
 				4D8C97BC235FF4CB00394FC7 /* CoreLocationTestViewController.xib */,
 			);
 			path = CoreLocation;
+			sourceTree = "<group>";
+		};
+		4DBAEE092533F1CF000B198D /* LoginDemoUsingRAC */ = {
+			isa = PBXGroup;
+			children = (
+				4DBAEE0A2533F213000B198D /* MCLoginDemoViewController.h */,
+				4DBAEE0B2533F213000B198D /* MCLoginDemoViewController.m */,
+				4DBAEE0C2533F213000B198D /* MCLoginDemoViewController.xib */,
+			);
+			path = LoginDemoUsingRAC;
 			sourceTree = "<group>";
 		};
 		4DD9D36020087FCA007396D2 /* Color */ = {
@@ -532,6 +548,7 @@
 				4D8B472822DF4448002AC72D /* Accessory-Design-Guidelines.pdf in Resources */,
 				4D2B57E32418804200406BBE /* PhoneSensorViewController.xib in Resources */,
 				4D8B472722DF4448002AC72D /* IMG_0397.JPG in Resources */,
+				4DBAEE0E2533F213000B198D /* MCLoginDemoViewController.xib in Resources */,
 				4D8B472E22DF44D7002AC72D /* RACTestViewController.xib in Resources */,
 				4D2A45CA205A38AB00A2BE99 /* Main.storyboard in Resources */,
 				4D8C97B0235181C500394FC7 /* AITensorFlowMainViewController.xib in Resources */,
@@ -583,6 +600,7 @@
 				4D8C97B5235717BF00394FC7 /* BleInfoViewController.m in Sources */,
 				4D2A45A82056867A00A2BE99 /* CollectionViewAnimationViewController.m in Sources */,
 				4D04B0D92008BF7100821591 /* ImageCompressViewController.m in Sources */,
+				4DBAEE0D2533F213000B198D /* MCLoginDemoViewController.m in Sources */,
 				4D04B0D62008BE8600821591 /* AnimationViewController.m in Sources */,
 				4D8B472D22DF44D7002AC72D /* RACTestViewController.m in Sources */,
 				7F2F85E6204D879500A1307D /* UIViewAnimationTestViewController.m in Sources */,
