@@ -52,6 +52,8 @@
 		4DBAEE0E2533F213000B198D /* MCLoginDemoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DBAEE0C2533F213000B198D /* MCLoginDemoViewController.xib */; };
 		4DD9D36320087FCA007396D2 /* ColorUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9D36120087FCA007396D2 /* ColorUtils.m */; };
 		4DF071BF22F1B0C200E94DFD /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DF071BE22F1B0C200E94DFD /* CoreTelephony.framework */; };
+		4DFC14BE25372130007D577D /* MCLoginUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DFC14BD25372130007D577D /* MCLoginUserModel.m */; };
+		4DFC14C32537220A007D577D /* MCLoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DFC14C22537220A007D577D /* MCLoginViewModel.m */; };
 		4DFEACD6200DEC9A003DBCDA /* CustomViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DFEACD4200DEC9A003DBCDA /* CustomViewViewController.m */; };
 		4DFEACD7200DEC9A003DBCDA /* CustomViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DFEACD5200DEC9A003DBCDA /* CustomViewViewController.xib */; };
 		7F2F85E6204D879500A1307D /* UIViewAnimationTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2F85E5204D879500A1307D /* UIViewAnimationTestViewController.m */; };
@@ -135,6 +137,10 @@
 		4DD9D36120087FCA007396D2 /* ColorUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorUtils.m; sourceTree = "<group>"; };
 		4DD9D36220087FCA007396D2 /* ColorUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorUtils.h; sourceTree = "<group>"; };
 		4DF071BE22F1B0C200E94DFD /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		4DFC14BC25372130007D577D /* MCLoginUserModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCLoginUserModel.h; sourceTree = "<group>"; };
+		4DFC14BD25372130007D577D /* MCLoginUserModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCLoginUserModel.m; sourceTree = "<group>"; };
+		4DFC14C12537220A007D577D /* MCLoginViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCLoginViewModel.h; sourceTree = "<group>"; };
+		4DFC14C22537220A007D577D /* MCLoginViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCLoginViewModel.m; sourceTree = "<group>"; };
 		4DFEACD3200DEC9A003DBCDA /* CustomViewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomViewViewController.h; sourceTree = "<group>"; };
 		4DFEACD4200DEC9A003DBCDA /* CustomViewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomViewViewController.m; sourceTree = "<group>"; };
 		4DFEACD5200DEC9A003DBCDA /* CustomViewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomViewViewController.xib; sourceTree = "<group>"; };
@@ -397,6 +403,9 @@
 		4DBAEE092533F1CF000B198D /* LoginDemoUsingRAC */ = {
 			isa = PBXGroup;
 			children = (
+				4DFC14C025372152007D577D /* ViewModel */,
+				4DFC14BF2537214B007D577D /* View */,
+				4DFC14BB25372113007D577D /* Model */,
 				4DBAEE0A2533F213000B198D /* MCLoginDemoViewController.h */,
 				4DBAEE0B2533F213000B198D /* MCLoginDemoViewController.m */,
 				4DBAEE0C2533F213000B198D /* MCLoginDemoViewController.xib */,
@@ -411,6 +420,31 @@
 				4DD9D36120087FCA007396D2 /* ColorUtils.m */,
 			);
 			path = Color;
+			sourceTree = "<group>";
+		};
+		4DFC14BB25372113007D577D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4DFC14BC25372130007D577D /* MCLoginUserModel.h */,
+				4DFC14BD25372130007D577D /* MCLoginUserModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4DFC14BF2537214B007D577D /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4DFC14C025372152007D577D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4DFC14C12537220A007D577D /* MCLoginViewModel.h */,
+				4DFC14C22537220A007D577D /* MCLoginViewModel.m */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		7FA04C082007B57A006273C6 /* Animation */ = {
@@ -619,11 +653,13 @@
 				4D2A45AD20569AC200A2BE99 /* CollectionViewAnimationCell.m in Sources */,
 				4D750EBA23409476005A71DD /* MotionInfoViewController.m in Sources */,
 				4D563465245AC8CE00CC19AF /* 30daysTest.cpp in Sources */,
+				4DFC14BE25372130007D577D /* MCLoginUserModel.m in Sources */,
 				7FF30F951F68BDB2000B3360 /* AppDelegate.m in Sources */,
 				4D8B473722E1B99C002AC72D /* DeviceInfoModel.m in Sources */,
 				4D196969227709B9008D057A /* JSONMergeUtil.m in Sources */,
 				4D52FF522064E38500ABB17A /* CollectionViewAnimationFlowLayout.m in Sources */,
 				4DD9D36320087FCA007396D2 /* ColorUtils.m in Sources */,
+				4DFC14C32537220A007D577D /* MCLoginViewModel.m in Sources */,
 				4DFEACD6200DEC9A003DBCDA /* CustomViewViewController.m in Sources */,
 				4D04B0DC2008BFB800821591 /* AlgorithmViewController.m in Sources */,
 				4D2A45BC205918EE00A2BE99 /* PDFQLPreviewController.m in Sources */,
